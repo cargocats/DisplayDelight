@@ -9,6 +9,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
+import static com.github.cargocats.util.DisplayDelightAssociations.*;
+
 public class DDItemTagsProvider extends FabricTagProvider.ItemTagProvider {
     public DDItemTagsProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
@@ -326,65 +328,5 @@ public class DDItemTagsProvider extends FabricTagProvider.ItemTagProvider {
                 .addOptional(endersDelightPath("chorus_pie_slice"))
                 .addOptional(endsDelightPath("chorus_fruit_pie_slice"))
                 .addOptional(myNethersDelightPath("magma_cake_slice"));
-    }
-
-    public static Identifier farmersDelightPath(String path) {
-        return Identifier.of("farmersdelight", path);
-    }
-    
-    public static Identifier myNethersDelightPath(String path) {
-        return Identifier.of("mynethersdelight", path);
-    }
-    
-    public static Identifier endsDelightPath(String path) {
-        return Identifier.of("ends_delight", path);
-    }
-
-    public static Identifier endersDelightPath(String path) {
-        return Identifier.of("endersdelight", path);
-    }
-
-    public static Identifier aquacultureDelightPath(String path) {
-        return Identifier.of("aquaculturedelight", path);
-    }
-    
-    public static Identifier cornDelightPath(String path) {
-        return Identifier.of("corn_delight", path);
-    }
-    
-    public static Identifier expandedDelightPath(String path) {
-        return Identifier.of("expandeddelight", path);
-    }
-
-    public static Identifier delightfulPath(String path) {
-        return Identifier.of("delightful", path);
-    }
-
-    public static Identifier brewinAndChewinPath(String path) {
-        return Identifier.of("brewinandchewin", path);
-    }
-
-    public static Identifier festiveDelightPath(String path) {
-        return Identifier.of("festive_delight", path);
-    }
-
-    public static Identifier alexsDelightPath(String path) {
-        return Identifier.of("alexsdelight", path);
-    }
-
-    public static Identifier culturalDelightPath(String path) {
-        return Identifier.of("culturaldelights", path);
-    }
-
-    public static Identifier largeMealsPath(String path) {
-        return Identifier.of("largemeals", path);
-    }
-
-    public static Identifier pineappleDelightPath(String path) {
-        return Identifier.of("pineapple_delight", path);
-    }
-
-    public static Identifier oceansDelightPath(String path) {
-        return Identifier.of("oceansdelight", path);
     }
 }

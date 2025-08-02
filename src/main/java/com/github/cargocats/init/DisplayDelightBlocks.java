@@ -8,6 +8,7 @@ import com.github.cargocats.block.FoodBlock;
 import com.github.cargocats.block.PlatedFoodBlock;
 import com.github.cargocats.block.SmallPlatedFoodBlock;
 import com.github.cargocats.block.WideFoodBlock;
+import com.github.cargocats.util.DisplayDelightAssociations;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.piston.PistonBehavior;
@@ -16,6 +17,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,45 +59,65 @@ public class DisplayDelightBlocks {
         ));
     }
 
-    public static Block createFoodBlock(String name) {
+    public static Block createFoodBlock(String name, Identifier foodItemId) {
         return register(
                 name,
-                FoodBlock::new,
+                settings -> new FoodBlock(foodItemId, settings),
                 baseBlockSettings()
         );
     }
 
-    public static Block createWideFoodBlock(String name) {
+    public static Block createWideFoodBlock(String name, Identifier foodItemId) {
         return register(
                 name,
-                WideFoodBlock::new,
+                settings -> new WideFoodBlock(foodItemId, settings),
                 baseBlockSettings()
         );
     }
 
-    public static Block createDrinkFoodBlock(String name) {
+    public static Block createDrinkFoodBlock(String name, Identifier foodItemId) {
         return register(
                 name,
-                DrinkFoodBlock::new,
+                settings -> new DrinkFoodBlock(foodItemId, settings),
                 baseBlockSettings()
                         .sounds(BlockSoundGroup.GLASS)
         );
     }
 
-    public static Block createSmallPlatedBlock(String name) {
+    public static Block createDrinkFoodBlock(String name) {
+        return createDrinkFoodBlock(name, DisplayDelightAssociations.farmersDelightPath(name));
+    }
+
+    public static Block createFoodBlock(String name) {
+        return createFoodBlock(name, DisplayDelightAssociations.farmersDelightPath(name));
+    }
+
+    public static Block createWideFoodBlock(String name) {
+        return createWideFoodBlock(name, DisplayDelightAssociations.farmersDelightPath(name));
+    }
+
+    public static Block createSmallPlatedBlock(String name, Identifier foodItemId) {
         return register(
                 name,
-                SmallPlatedFoodBlock::new,
+                settings -> new SmallPlatedFoodBlock(foodItemId, settings),
+                baseBlockSettings()
+        );
+    }
+
+    public static Block createSmallPlatedBlock(String name) {
+        return createSmallPlatedBlock(name, DisplayDelightAssociations.farmersDelightPath(name.replaceFirst("^small_plated_", "")));
+    }
+
+    public static Block createStackablePlatedBlock(String name, Identifier foodItemId, int maxStacks) {
+        return register(
+                name,
+                settings -> new PlatedFoodBlock(foodItemId, maxStacks, settings),
                 baseBlockSettings()
         );
     }
 
     public static Block createStackablePlatedBlock(String name, int maxStacks) {
-        return register(
-                name,
-                settings -> new PlatedFoodBlock(settings, maxStacks),
-                baseBlockSettings()
-        );
+        return createStackablePlatedBlock(name, DisplayDelightAssociations.farmersDelightPath(name.replaceFirst("^plated_", "")), maxStacks);
     }
 
     public static Block createPlatedBlock(String name) {

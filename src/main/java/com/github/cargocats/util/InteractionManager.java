@@ -6,6 +6,7 @@ import com.github.cargocats.block.SmallPlatedFoodBlock;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
@@ -26,10 +27,9 @@ public class InteractionManager {
         BlockPos clickedPos = blockHitResult.getBlockPos();
         Direction side = blockHitResult.getSide();
 
-        Block block = BlockAssociations.ITEM_BLOCK_MAP.get(itemStack.getItem());
+        Block block = DisplayDelightAssociations.getDisplayBlockForItem(itemStack.getItem());
         BlockPos placePos = clickedPos.offset(side);
-
-        if (block == null) {
+        if (block == Blocks.AIR) {
             DisplayDelight.LOG.warn("Missing displayable block association for item {}", itemStack);
             return false;
         }
@@ -49,9 +49,8 @@ public class InteractionManager {
         ItemStack itemStack = player.getStackInHand(hand);
         BlockPos clickedPos = blockHitResult.getBlockPos();
 
-        Block block = BlockAssociations.SMALL_PLATE_ITEM_BLOCK_MAP.get(itemStack.getItem());
-
-        if (block == null) {
+        Block block = DisplayDelightAssociations.getSmallPlateBlockForItem(itemStack.getItem());
+        if (block == Blocks.AIR) {
             DisplayDelight.LOG.warn("Missing small plate block association for item {}", itemStack);
             return false;
         }
@@ -72,9 +71,9 @@ public class InteractionManager {
         BlockState blockState = world.getBlockState(blockPos);
 
         if (!(blockState.getBlock() instanceof PlatedFoodBlock)) return false;
-        Block platedBlock = BlockAssociations.PLATE_ITEM_BLOCK_MAP.get(itemStack.getItem());
+        Block platedBlock = DisplayDelightAssociations.getPlateBlockForItem(itemStack.getItem());
 
-        if (platedBlock == null) {
+        if (platedBlock == Blocks.AIR) {
             DisplayDelight.LOG.warn("Missing plate block association for item {}", itemStack);
             return false;
         }
@@ -104,9 +103,8 @@ public class InteractionManager {
         BlockState blockState = world.getBlockState(blockPos);
         Block block = blockState.getBlock();
 
-        if (block instanceof SmallPlatedFoodBlock && !blockState.isOf(DisplayDelightBlocks.SMALL_EMPTY_PLATE)) {
-            Item plateItem = BlockAssociations.SMALL_PLATE_BLOCK_ITEM_MAP.get(block);
-
+        if (block instanceof SmallPlatedFoodBlock smallPlatedFoodBlock && !blockState.isOf(DisplayDelightBlocks.SMALL_EMPTY_PLATE)) {
+            Item plateItem = smallPlatedFoodBlock.getFoodItem();
             if (plateItem == null) {
                 DisplayDelight.LOG.warn("Missing small plate block association for block {} when taking", block);
                 return false;
@@ -124,7 +122,7 @@ public class InteractionManager {
 
             return true;
         } else if (block instanceof PlatedFoodBlock platedFoodBlock && !blockState.isOf(DisplayDelightBlocks.EMPTY_PLATE)) {
-            Item plateItem = BlockAssociations.PLATE_BLOCK_ITEM_MAP.get(block);
+            Item plateItem = platedFoodBlock.getFoodItem();
             if (plateItem == null) {
                 DisplayDelight.LOG.warn("Missing plate block association for block {} when taking", block);
                 return false;

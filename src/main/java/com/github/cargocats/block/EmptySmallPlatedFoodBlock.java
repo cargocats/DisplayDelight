@@ -3,12 +3,13 @@ package com.github.cargocats.block;
 import com.github.cargocats.init.DisplayDelightItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldView;
 
 public class EmptySmallPlatedFoodBlock extends SmallPlatedFoodBlock {
     public EmptySmallPlatedFoodBlock(Settings settings) {
-        super(settings);
+        super(Identifier.ofVanilla("air"), settings);
     }
 
     @Override

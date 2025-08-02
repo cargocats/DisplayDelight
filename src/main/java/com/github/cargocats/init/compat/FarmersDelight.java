@@ -4,6 +4,7 @@ import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import net.minecraft.block.Block;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FarmersDelight {
@@ -64,71 +65,75 @@ public class FarmersDelight {
     public static final Block PLATED_SALMON_ROLL = DisplayDelightBlocks.createStackablePlatedBlock("plated_salmon_roll", 6);
     public static final Block PLATED_SWEET_BERRY_COOKIE = DisplayDelightBlocks.createStackablePlatedBlock("plated_sweet_berry_cookie", 4);
     public static final Block PLATED_HONEY_COOKIE = DisplayDelightBlocks.createStackablePlatedBlock("plated_honey_cookie", 4);
-    
+
+    public static final ArrayList<Block> displayableBlocks = new ArrayList<>(List.of(
+            GLOW_BERRY_CUSTARD,
+            FRUIT_SALAD,
+            COOKED_RICE,
+            MIXED_SALAD,
+            BEEF_STEW,
+            CHICKEN_SOUP,
+            VEGETABLE_SOUP,
+            FISH_STEW,
+            FRIED_RICE,
+            PUMPKIN_SOUP,
+            BAKED_COD_STEW,
+            NOODLE_SOUP,
+            BONE_BROTH,
+            BACON_AND_EGGS,
+            PASTA_WITH_MEATBALLS,
+            PASTA_WITH_MUTTON_CHOP,
+            ROASTED_MUTTON_CHOPS,
+            STEAK_AND_POTATOES,
+            VEGETABLE_NOODLES,
+            RATATOUILLE,
+            SQUID_INK_PASTA,
+            GRILLED_SALMON,
+            MUSHROOM_RICE,
+            ROAST_CHICKEN,
+            STUFFED_PUMPKIN,
+            HONEY_GLAZED_HAM,
+            SHEPHERDS_PIE,
+            APPLE_CIDER,
+            MELON_JUICE,
+            HOT_COCOA
+    ));
+
+    public static final ArrayList<Block> smallPlateableBlocks = new ArrayList<>(List.of(
+            SMALL_PLATED_CAKE_SLICE,
+            SMALL_PLATED_APPLE_PIE_SLICE,
+            SMALL_PLATED_CHOCOLATE_PIE_SLICE,
+            SMALL_PLATED_SWEET_BERRY_CHEESECAKE_SLICE,
+            SMALL_PLATED_STUFFED_POTATO,
+            SMALL_PLATED_COD_ROLL,
+            SMALL_PLATED_SALMON_ROLL,
+            SMALL_PLATED_KELP_ROLL_SLICE,
+            SMALL_PLATED_CABBAGE_ROLLS
+    ));
+
+    public static final ArrayList<Block> plateableBlocks = new ArrayList<>(List.of(
+            PLATED_DUMPLINGS,
+            PLATED_HAMBURGER,
+            PLATED_BARBECUE_STICK,
+            PLATED_CHICKEN_SANDWICH,
+            PLATED_EGG_SANDWICH,
+            PLATED_KELP_ROLL,
+            PLATED_MELON_POPSICLE,
+            PLATED_STUFFED_POTATO,
+            PLATED_MUTTON_WRAP,
+            PLATED_BACON_SANDWICH,
+            PLATED_CABBAGE_ROLL,
+            PLATED_COD_ROLL,
+            PLATED_KELP_ROLL_SLICE,
+            PLATED_SALMON_ROLL,
+            PLATED_SWEET_BERRY_COOKIE,
+            PLATED_HONEY_COOKIE
+    ));
+
     public static void init() {
-        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.addAll(List.of(
-                GLOW_BERRY_CUSTARD,
-                FRUIT_SALAD,
-                COOKED_RICE,
-                MIXED_SALAD,
-                BEEF_STEW,
-                CHICKEN_SOUP,
-                VEGETABLE_SOUP,
-                FISH_STEW,
-                FRIED_RICE,
-                PUMPKIN_SOUP,
-                BAKED_COD_STEW,
-                NOODLE_SOUP,
-                BONE_BROTH,
-                BACON_AND_EGGS,
-                PASTA_WITH_MEATBALLS,
-                PASTA_WITH_MUTTON_CHOP,
-                ROASTED_MUTTON_CHOPS,
-                STEAK_AND_POTATOES,
-                VEGETABLE_NOODLES,
-                RATATOUILLE,
-                SQUID_INK_PASTA,
-                GRILLED_SALMON,
-                MUSHROOM_RICE,
-                ROAST_CHICKEN,
-                STUFFED_PUMPKIN,
-                HONEY_GLAZED_HAM,
-                SHEPHERDS_PIE,
-                APPLE_CIDER,
-                MELON_JUICE,
-                HOT_COCOA
-        ));
-
-        DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS.addAll(List.of(
-                SMALL_PLATED_CAKE_SLICE,
-                SMALL_PLATED_APPLE_PIE_SLICE,
-                SMALL_PLATED_CHOCOLATE_PIE_SLICE,
-                SMALL_PLATED_SWEET_BERRY_CHEESECAKE_SLICE,
-                SMALL_PLATED_STUFFED_POTATO,
-                SMALL_PLATED_COD_ROLL,
-                SMALL_PLATED_SALMON_ROLL,
-                SMALL_PLATED_KELP_ROLL_SLICE,
-                SMALL_PLATED_CABBAGE_ROLLS
-        ));
-
-        DisplayDelightBlocks.PLATEABLE_BLOCKS.addAll(List.of(
-                PLATED_DUMPLINGS,
-                PLATED_HAMBURGER,
-                PLATED_BARBECUE_STICK,
-                PLATED_CHICKEN_SANDWICH,
-                PLATED_EGG_SANDWICH,
-                PLATED_KELP_ROLL,
-                PLATED_MELON_POPSICLE,
-                PLATED_STUFFED_POTATO,
-                PLATED_MUTTON_WRAP,
-                PLATED_BACON_SANDWICH,
-                PLATED_CABBAGE_ROLL,
-                PLATED_COD_ROLL,
-                PLATED_KELP_ROLL_SLICE,
-                PLATED_SALMON_ROLL,
-                PLATED_SWEET_BERRY_COOKIE,
-                PLATED_HONEY_COOKIE
-        ));
+        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.addAll(displayableBlocks);
+        DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS.addAll(smallPlateableBlocks);
+        DisplayDelightBlocks.PLATEABLE_BLOCKS.addAll(plateableBlocks);
 
         DisplayDelight.LOG.info("Initialized Farmers Delight compatibility");
     }

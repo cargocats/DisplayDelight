@@ -24,7 +24,7 @@ public class DisplayDelight implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		if (FabricLoader.getInstance().isModLoaded("farmersdelight")) {
+		if (isModLoadedOrDev("farmersdelight")) {
 			FarmersDelight.init();
 		}
 
@@ -34,6 +34,11 @@ public class DisplayDelight implements ModInitializer {
 		DisplayDelightItemGroup.init();
 
 		LOG.info("Initialized Display Delight");
+	}
+
+	private boolean isModLoadedOrDev(String name) {
+		FabricLoader fabricLoader = FabricLoader.getInstance();
+		return fabricLoader.isModLoaded(name) || fabricLoader.isDevelopmentEnvironment();
 	}
 
 	public static Identifier id(String path) {
