@@ -1,0 +1,20 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "displaydelight:block/ad_plated_bison_burger_1"
+  },
+  "facing=south": {
+   "model": "displaydelight:block/ad_plated_bison_burger_1",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "displaydelight:block/ad_plated_bison_burger_1",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "displaydelight:block/ad_plated_bison_burger_1",
+   "y": 90
+  }
+  }
+ }
+}

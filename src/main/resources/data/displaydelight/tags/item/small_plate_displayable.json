@@ -1,0 +1,141 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "farmersdelight:cake_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:apple_pie_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:sweet_berry_cheesecake_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:chocolate_pie_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:stuffed_potato",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage_rolls",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:salmon_roll",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cod_roll",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:kelp_roll_slice",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:cheese_slice",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:glow_berry_sweet_roll",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:berry_sweet_roll",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:sweet_roll",
+      "required": false
+    },
+    {
+      "id": "delightful:salmonberry_pie_slice",
+      "required": false
+    },
+    {
+      "id": "delightful:pumpkin_pie_slice",
+      "required": false
+    },
+    {
+      "id": "pineapple_delight:pineapple_pie_side",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:elder_guardian_roll",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:fugu_roll",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:chicken_roll_slice",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:midori_roll_slice",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:pufferfish_roll",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:tropical_roll",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:rice_ball",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:egg_roll",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:calamari_roll",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:cut_pickle",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:quiche_slice",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:cranberry_cobbler_slice",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:honeyed_goat_cheese_tart_slice",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:raw_fish_fillet_roll",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:fried_perch_roll",
+      "required": false
+    },
+    {
+      "id": "endersdelight:chorus_pie_slice",
+      "required": false
+    },
+    {
+      "id": "ends_delight:chorus_fruit_pie_slice",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:magma_cake_slice",
+      "required": false
+    }
+  ]
+}

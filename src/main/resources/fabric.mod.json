@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "displaydelight",
+	"version": "${version}",
+	"name": "Display Delight [Fabric]",
+	"description": "Allows to place every food item in Farmer's Delight in 3D",
+	"authors": [
+		"cargocats"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/displaydelight/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.github.cargocats.DisplayDelight"
+		],
+		"client": [
+			"com.github.cargocats.DisplayDelightClient"
+		],
+		"fabric-datagen": [
+			"com.github.cargocats.data.DisplayDelightDataGenerator"
+		]
+	},
+	"mixins": [
+		"displaydelight.mixins.json",
+		{
+			"config": "displaydelight.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
