@@ -1,2 +1,4 @@
 // 1.21.8	-999999999-01-01T00:00:00	Display Delight [Fabric]/Tags for minecraft:item
-3fb878ccd6bd9960c667d0372e9afb9bf269db7f data/displaydelight/tags/item/displayable.json
+03f0c38edde5b32bbc7a8800908154b828e5d16d data/displaydelight/tags/item/displayable.json
+cbd1535c02486ffee0cff504a319c7987e92f6cc data/displaydelight/tags/item/plate_displayable.json
+d10d7d382ea1de1d693e2d4e3f8e9070da067a20 data/displaydelight/tags/item/small_plate_displayable.json
