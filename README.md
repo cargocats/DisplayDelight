@@ -4,7 +4,7 @@ A port of the NeoForge mod https://modrinth.com/mod/display-delight.
 Currently the mod only supports Minecraft version **1.21.1**
 
 ## Issues
-* Only some compatiblity is added. The following are compatible:
+* Only some compatibility is added. The following are compatible:
   * Farmer's Delight
   * Ocean Delight 
 
