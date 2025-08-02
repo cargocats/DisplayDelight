@@ -39,12 +39,12 @@ public class DisplayDelightBlocks {
             baseBlockSettings()
     );
 
-    public static final Block MUSHROOM_STEW = createFoodBlock("mushroom_stew");
-    public static final Block RABBIT_STEW = createFoodBlock("rabbit_stew");
-    public static final Block BEETROOT_STEW = createFoodBlock("beetroot_soup");
+    public static final Block MUSHROOM_STEW = createFoodBlock("vna_mushroom_stew");
+    public static final Block RABBIT_STEW = createFoodBlock("vna_rabbit_stew");
+    public static final Block BEETROOT_STEW = createFoodBlock("vna_beetroot_soup");
 
-    public static final Block PLATED_COOKIE = createStackablePlatedBlock("plated_cookie",4);
-    public static final Block PLATED_PUMPKIN_PIE = createPlatedBlock("plated_pumpkin_pie");
+    public static final Block PLATED_COOKIE = createStackablePlatedBlock("vna_plated_cookie",4);
+    public static final Block PLATED_PUMPKIN_PIE = createPlatedBlock("vna_plated_pumpkin_pie");
 
     public static void init() {
         DISPLAYABLE_BLOCKS.addAll(List.of(
@@ -85,15 +85,15 @@ public class DisplayDelightBlocks {
     }
 
     public static Block createDrinkFoodBlock(String name) {
-        return createDrinkFoodBlock(name, DisplayDelightAssociations.farmersDelightPath(name));
+        return createDrinkFoodBlock(name, DisplayDelightAssociations.getId(name));
     }
 
     public static Block createFoodBlock(String name) {
-        return createFoodBlock(name, DisplayDelightAssociations.farmersDelightPath(name));
+        return createFoodBlock(name, DisplayDelightAssociations.getId(name));
     }
 
     public static Block createWideFoodBlock(String name) {
-        return createWideFoodBlock(name, DisplayDelightAssociations.farmersDelightPath(name));
+        return createWideFoodBlock(name, DisplayDelightAssociations.getId(name));
     }
 
     public static Block createSmallPlatedBlock(String name, Identifier foodItemId) {
@@ -105,7 +105,7 @@ public class DisplayDelightBlocks {
     }
 
     public static Block createSmallPlatedBlock(String name) {
-        return createSmallPlatedBlock(name, DisplayDelightAssociations.farmersDelightPath(name.replaceFirst("^small_plated_", "")));
+        return createSmallPlatedBlock(name, DisplayDelightAssociations.getId(name));
     }
 
     public static Block createStackablePlatedBlock(String name, Identifier foodItemId, int maxStacks) {
@@ -117,7 +117,7 @@ public class DisplayDelightBlocks {
     }
 
     public static Block createStackablePlatedBlock(String name, int maxStacks) {
-        return createStackablePlatedBlock(name, DisplayDelightAssociations.farmersDelightPath(name.replaceFirst("^plated_", "")), maxStacks);
+        return createStackablePlatedBlock(name, DisplayDelightAssociations.getId(name), maxStacks);
     }
 
     public static Block createPlatedBlock(String name) {
@@ -142,7 +142,7 @@ public class DisplayDelightBlocks {
     }
 
     public static Block register(RegistryKey<Block> key, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
-        Block block = factory.apply(settings.registryKey(key));
+        Block block = factory.apply(settings);
         return Registry.register(Registries.BLOCK, key, block);
     }
 }

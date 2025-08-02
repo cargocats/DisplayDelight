@@ -5,6 +5,7 @@ import com.github.cargocats.init.DisplayDelightEvents;
 import com.github.cargocats.init.DisplayDelightItemGroup;
 import com.github.cargocats.init.DisplayDelightItems;
 import com.github.cargocats.init.compat.FarmersDelight;
+import com.github.cargocats.init.compat.OceansDelight;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.Item;
@@ -24,16 +25,23 @@ public class DisplayDelight implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		if (isModLoadedOrDev("farmersdelight")) {
-			FarmersDelight.init();
-		}
-
+		checkModCompatibilities();
 		DisplayDelightBlocks.init();
 		DisplayDelightItems.init();
 		DisplayDelightEvents.init();
 		DisplayDelightItemGroup.init();
 
 		LOG.info("Initialized Display Delight");
+	}
+
+	private void checkModCompatibilities() {
+		if (isModLoadedOrDev("farmersdelight")) {
+			FarmersDelight.init();
+		}
+
+		if (isModLoadedOrDev("oceansdelight")) {
+			OceansDelight.init();
+		}
 	}
 
 	private boolean isModLoadedOrDev(String name) {

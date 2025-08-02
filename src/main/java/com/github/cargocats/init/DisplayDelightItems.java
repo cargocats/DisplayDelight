@@ -27,7 +27,7 @@ public class DisplayDelightItems {
 
     public static Item register(Block block, BiFunction<Block, Item.Settings, Item> factory, Item.Settings settings) {
         return register(
-                keyOf(Registries.BLOCK.getKey(block).get()), itemSettings -> factory.apply(block, itemSettings), settings.useBlockPrefixedTranslationKey()
+                keyOf(Registries.BLOCK.getKey(block).get()), itemSettings -> factory.apply(block, itemSettings), settings
         );
     }
 
@@ -36,7 +36,7 @@ public class DisplayDelightItems {
     }
 
     public static Item register(RegistryKey<Item> key, Function<Item.Settings, Item> factory, Item.Settings settings) {
-        Item item = factory.apply(settings.registryKey(key));
+        Item item = factory.apply(settings);
         if (item instanceof BlockItem blockItem) {
             blockItem.appendBlocks(Item.BLOCK_ITEMS, item);
         }

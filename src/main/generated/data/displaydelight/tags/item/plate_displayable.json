@@ -1,19 +1,7 @@
 {
   "values": [
     {
-      "id": "farmersdelight:melon_popsicle",
-      "required": false
-    },
-    {
-      "id": "farmersdelight:barbecue_stick",
-      "required": false
-    },
-    {
-      "id": "farmersdelight:egg_sandwich",
-      "required": false
-    },
-    {
-      "id": "farmersdelight:chicken_sandwich",
+      "id": "farmersdelight:dumplings",
       "required": false
     },
     {
@@ -21,31 +9,15 @@
       "required": false
     },
     {
-      "id": "farmersdelight:dumplings",
+      "id": "farmersdelight:barbecue_stick",
       "required": false
     },
     {
-      "id": "farmersdelight:bacon_sandwich",
+      "id": "farmersdelight:chicken_sandwich",
       "required": false
     },
     {
-      "id": "farmersdelight:mutton_wrap",
-      "required": false
-    },
-    {
-      "id": "farmersdelight:stuffed_potato",
-      "required": false
-    },
-    {
-      "id": "farmersdelight:cabbage_rolls",
-      "required": false
-    },
-    {
-      "id": "farmersdelight:salmon_roll",
-      "required": false
-    },
-    {
-      "id": "farmersdelight:cod_roll",
+      "id": "farmersdelight:egg_sandwich",
       "required": false
     },
     {
@@ -53,7 +25,35 @@
       "required": false
     },
     {
+      "id": "farmersdelight:melon_popsicle",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:stuffed_potato",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:mutton_wrap",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:bacon_sandwich",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage_rolls",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cod_roll",
+      "required": false
+    },
+    {
       "id": "farmersdelight:kelp_roll_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:salmon_roll",
       "required": false
     },
     {
@@ -65,7 +65,23 @@
       "required": false
     },
     {
-      "id": "minecraft:pumpkin_pie",
+      "id": "oceansdelight:plated_baked_tentacle_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:plated_elder_guardian_roll",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:plated_fugu_roll",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:plated_honey_fried_kelp",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:plated_cooked_stuffed_cod",
       "required": false
     },
     {
@@ -73,295 +89,7 @@
       "required": false
     },
     {
-      "id": "corn_delight:grilled_corn",
-      "required": false
-    },
-    {
-      "id": "corn_delight:classic_corn_dog",
-      "required": false
-    },
-    {
-      "id": "corn_delight:taco",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:cheese_sandwich",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:grilled_cheese",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:glow_berry_jelly_sandwich",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:sweet_berry_jelly_sandwich",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:peanut_butter_honey_sandwich",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:peanut_butter_sandwich",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:chocolate_cookie",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:sugar_cookie",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:snickerdoodle",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:glow_berry_sweet_roll",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:berry_sweet_roll",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:sweet_roll",
-      "required": false
-    },
-    {
-      "id": "delightful:cooked_marshmallow_stick",
-      "required": false
-    },
-    {
-      "id": "delightful:smore",
-      "required": false
-    },
-    {
-      "id": "delightful:cheeseburger",
-      "required": false
-    },
-    {
-      "id": "delightful:deluxe_cheeseburger",
-      "required": false
-    },
-    {
-      "id": "delightful:cantaloupe_popsicle",
-      "required": false
-    },
-    {
-      "id": "delightful:cantaloupe_bread",
-      "required": false
-    },
-    {
-      "id": "delightful:wrapped_cantaloupe",
-      "required": false
-    },
-    {
-      "id": "delightful:nut_butter_and_jelly_sandwich",
-      "required": false
-    },
-    {
-      "id": "oceansdelight:baked_tentacle_on_a_stick",
-      "required": false
-    },
-    {
-      "id": "oceansdelight:elder_guardian_roll",
-      "required": false
-    },
-    {
-      "id": "oceansdelight:fugu_roll",
-      "required": false
-    },
-    {
-      "id": "oceansdelight:honey_fried_kelp",
-      "required": false
-    },
-    {
-      "id": "oceansdelight:cooked_stuffed_cod",
-      "required": false
-    },
-    {
-      "id": "alexsdelight:gongylidia_bruschetta",
-      "required": false
-    },
-    {
-      "id": "alexsdelight:bison_burger",
-      "required": false
-    },
-    {
-      "id": "alexsdelight:bunfungus_sandwich",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:elote",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:empanada",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:beef_burrito",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:mutton_sandwich",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:eggplant_burger",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:avocado_toast",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:chicken_taco",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:pork_wrap",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:fish_taco",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:chicken_roll",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:midori_roll",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:chicken_roll_slice",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:midori_roll_slice",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:pufferfish_roll",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:tropical_roll",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:rice_ball",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:egg_roll",
-      "required": false
-    },
-    {
-      "id": "culturaldelights:calamari_roll",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:ham_and_cheese_sandwich",
-      "required": false
-    },
-    {
-      "id": "expandeddelight:cranberry_goat_cheese_toast",
-      "required": false
-    },
-    {
-      "id": "aquaculturedelight:catfish_barbecue",
-      "required": false
-    },
-    {
-      "id": "endersdelight:uncanny_cookies",
-      "required": false
-    },
-    {
-      "id": "endersdelight:crispy_skewer",
-      "required": false
-    },
-    {
-      "id": "endersdelight:strange_eclair",
-      "required": false
-    },
-    {
-      "id": "endersdelight:crawling_sandwich",
-      "required": false
-    },
-    {
-      "id": "ends_delight:stuffed_rice_cake",
-      "required": false
-    },
-    {
-      "id": "ends_delight:chorus_flower_pie",
-      "required": false
-    },
-    {
-      "id": "ends_delight:ender_bamboo_rice",
-      "required": false
-    },
-    {
-      "id": "ends_delight:chorus_fruit_popsicle",
-      "required": false
-    },
-    {
-      "id": "ends_delight:end_barbecue_stick",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:stuffed_pepper",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:hotdog_with_mixed_salad",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:hotdog_with_nether_salad",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:chilidog",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:spicy_cotton",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:fries_ghasta",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:deviled_egg",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:spicy_skewer",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:red_loin_on_a_stick",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:nether_burger",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:burnt_roll",
-      "required": false
-    },
-    {
-      "id": "mynethersdelight:hot_cream_cone",
+      "id": "minecraft:pumpkin_pie",
       "required": false
     }
   ]

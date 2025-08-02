@@ -11,34 +11,37 @@ import net.minecraft.util.Identifier;
 import java.util.Optional;
 
 public class DisplayDelightAssociations {
+    // TODO: Handle caching to prevent unnecessary registry lookups and parsing
+
     public static Block getSmallPlateBlockForItem(Item item) {
-        return getSuffixedBlockForItem(item, "small_plated_");
+        return getPrefixedBlockForItem(item, "small_plated_");
     }
 
     public static Block getPlateBlockForItem(Item item) {
-        return getSuffixedBlockForItem(item, "plated_");
+        return getPrefixedBlockForItem(item, "plated_");
     }
 
     public static Block getDisplayBlockForItem(Item item) {
-        return getSuffixedBlockForItem(item, "");
+        return getPrefixedBlockForItem(item, "");
     }
 
-    public static Block getSuffixedBlockForItem(Item item, String suffix) {
+    public static Block getPrefixedBlockForItem(Item item, String prefix) {
         Identifier itemId = Registries.ITEM.getId(item);
-        Identifier translatedId = DisplayDelight.id(getExpandedSuffix(itemId.getNamespace()) + suffix + itemId.getPath());
+        Identifier translatedId = DisplayDelight.id(getExpandedShortPrefix(itemId.getNamespace()) + prefix + itemId.getPath());
 
-        Optional<Block> optBlock = Registries.BLOCK.getOptionalValue(translatedId);
+        Optional<Block> optBlock = Registries.BLOCK.getOrEmpty(translatedId);
         Block block = optBlock.orElse(Blocks.AIR);
 
         if (block == Blocks.AIR) {
-            DisplayDelight.LOG.warn("Could not find suffix {} block {} for item {}", suffix, translatedId, item);
+            DisplayDelight.LOG.warn("Could not find prefix {} block {} for item {}", prefix, translatedId, item);
         }
 
         return block;
     }
 
     public static Item getFoodItem(Identifier foodItemId) {
-        Optional<Item> optItem = Registries.ITEM.getOptionalValue(foodItemId);
+        Identifier translatedId = Identifier.of(foodItemId.getNamespace(), removePrefixes(foodItemId.getPath()));
+        Optional<Item> optItem = Registries.ITEM.getOrEmpty(translatedId);
         Item foodItem = optItem.orElse(Items.AIR);
 
         if (foodItem.equals(Items.AIR)) {
@@ -48,74 +51,44 @@ public class DisplayDelightAssociations {
         return foodItem;
     }
 
-    public static String getExpandedSuffix(String suffix) {
-        switch (suffix) {
-            case "brewinandchewin" -> {
-                return "bnc";
+    public static Identifier getId(String name) {
+        return Identifier.of(getExpandedLongPrefix(getPrefix(name)), removePrefixes(name));
+    }
+
+    public static String removePrefixes(String str) {
+        return str.replaceFirst("^(plated|small_plated|vna_plated|vna|od|od_plated)_", "");
+    }
+
+    public static String getExpandedShortPrefix(String prefix) {
+        switch (prefix) {
+            case "minecraft" -> {
+                return "vna_";
+            }
+            case "oceansdelight" -> {
+                return "od_";
             }
         }
 
-        // farmersdelight and minecraft
+        // Farmers delight
         return "";
     }
 
-    public static Identifier farmersDelightPath(String path) {
-        return Identifier.of("farmersdelight", path);
+    public static String getExpandedLongPrefix(String prefix) {
+        switch (prefix) {
+            case "vna" -> {
+                return "minecraft";
+            }
+            case "od" -> {
+                return "oceansdelight";
+            }
+        }
+
+        return "farmersdelight";
     }
 
-    public static Identifier myNethersDelightPath(String path) {
-        return Identifier.of("mynethersdelight", path);
-    }
-
-    public static Identifier endsDelightPath(String path) {
-        return Identifier.of("ends_delight", path);
-    }
-
-    public static Identifier endersDelightPath(String path) {
-        return Identifier.of("endersdelight", path);
-    }
-
-    public static Identifier aquacultureDelightPath(String path) {
-        return Identifier.of("aquaculturedelight", path);
-    }
-
-    public static Identifier cornDelightPath(String path) {
-        return Identifier.of("corn_delight", path);
-    }
-
-    public static Identifier expandedDelightPath(String path) {
-        return Identifier.of("expandeddelight", path);
-    }
-
-    public static Identifier delightfulPath(String path) {
-        return Identifier.of("delightful", path);
-    }
-
-    public static Identifier brewinAndChewinPath(String path) {
-        return Identifier.of("brewinandchewin", path);
-    }
-
-    public static Identifier festiveDelightPath(String path) {
-        return Identifier.of("festive_delight", path);
-    }
-
-    public static Identifier alexsDelightPath(String path) {
-        return Identifier.of("alexsdelight", path);
-    }
-
-    public static Identifier culturalDelightPath(String path) {
-        return Identifier.of("culturaldelights", path);
-    }
-
-    public static Identifier largeMealsPath(String path) {
-        return Identifier.of("largemeals", path);
-    }
-
-    public static Identifier pineappleDelightPath(String path) {
-        return Identifier.of("pineapple_delight", path);
-    }
-
-    public static Identifier oceansDelightPath(String path) {
-        return Identifier.of("oceansdelight", path);
+    public static String getPrefix(String id) {
+        int firstUnderscore = id.indexOf('_');
+        if (firstUnderscore == -1) return id;
+        return id.substring(0, firstUnderscore);
     }
 }

@@ -13,7 +13,7 @@ public class EmptySmallPlatedFoodBlock extends SmallPlatedFoodBlock {
     }
 
     @Override
-    protected ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state, boolean includeData) {
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
         return new ItemStack(DisplayDelightItems.SMALL_EMPTY_PLATE);
     }
 }

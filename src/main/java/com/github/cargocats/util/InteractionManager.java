@@ -1,6 +1,7 @@
 package com.github.cargocats.util;
 
 import com.github.cargocats.DisplayDelight;
+import com.github.cargocats.block.FoodBlock;
 import com.github.cargocats.block.PlatedFoodBlock;
 import com.github.cargocats.block.SmallPlatedFoodBlock;
 import com.github.cargocats.init.DisplayDelightBlocks;
@@ -29,15 +30,18 @@ public class InteractionManager {
 
         Block block = DisplayDelightAssociations.getDisplayBlockForItem(itemStack.getItem());
         BlockPos placePos = clickedPos.offset(side);
+        BlockState blockState = world.getBlockState(placePos);
+
         if (block == Blocks.AIR) {
             DisplayDelight.LOG.warn("Missing displayable block association for item {}", itemStack);
             return false;
         }
-        if (!world.getBlockState(placePos).canReplace(new ItemPlacementContext(player, hand, itemStack, blockHitResult)))
+        if (!blockState.canReplace(new ItemPlacementContext(player, hand, itemStack, blockHitResult)))
             return false;
-        if (!world.getBlockState(placePos).canPlaceAt(world, placePos)) return false;
+        if (!blockState.canPlaceAt(world, placePos)) return false;
 
         itemStack.decrementUnlessCreative(1, player);
+
         world.setBlockState(placePos, block.getDefaultState(), Block.NOTIFY_ALL);
         world.playSound(null, placePos, block.getDefaultState().getSoundGroup().getPlaceSound(), SoundCategory.BLOCKS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
         player.swingHand(hand, true);
@@ -50,15 +54,17 @@ public class InteractionManager {
         BlockPos clickedPos = blockHitResult.getBlockPos();
 
         Block block = DisplayDelightAssociations.getSmallPlateBlockForItem(itemStack.getItem());
+        BlockState blockState = world.getBlockState(clickedPos);
+
         if (block == Blocks.AIR) {
             DisplayDelight.LOG.warn("Missing small plate block association for item {}", itemStack);
             return false;
         }
 
-        if (!world.getBlockState(clickedPos).isOf(DisplayDelightBlocks.SMALL_EMPTY_PLATE)) return false;
+        if (!blockState.isOf(DisplayDelightBlocks.SMALL_EMPTY_PLATE)) return false;
 
         itemStack.decrementUnlessCreative(1, player);
-        world.setBlockState(clickedPos, block.getDefaultState(), Block.NOTIFY_ALL);
+        world.setBlockState(clickedPos, block.getDefaultState().with(FoodBlock.FACING, blockState.get(FoodBlock.FACING)), Block.NOTIFY_ALL);
         world.playSound(null, clickedPos, block.getDefaultState().getSoundGroup().getPlaceSound(), SoundCategory.BLOCKS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
         player.swingHand(hand, true);
 
@@ -80,7 +86,7 @@ public class InteractionManager {
 
         // Convert to the actual plate block
         if (blockState.isOf(DisplayDelightBlocks.EMPTY_PLATE)) {
-            world.setBlockState(blockPos, platedBlock.getDefaultState().with(PlatedFoodBlock.STACKS, 1), Block.NOTIFY_ALL);
+            world.setBlockState(blockPos, platedBlock.getDefaultState().with(PlatedFoodBlock.STACKS, 1).with(FoodBlock.FACING, blockState.get(FoodBlock.FACING)), Block.NOTIFY_ALL);
         } else {
             // Fill up a plate
             PlatedFoodBlock platedFoodBlock = (PlatedFoodBlock) platedBlock;

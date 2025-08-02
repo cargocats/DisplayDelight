@@ -11,7 +11,7 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.context.LootWorldContext;
+import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -40,7 +40,7 @@ public class FoodBlock extends HorizontalFacingBlock {
     protected MapCodec<? extends HorizontalFacingBlock> getCodec() { return CODEC; }
 
     @Override
-    protected List<ItemStack> getDroppedStacks(BlockState state, LootWorldContext.Builder builder) {
+    protected List<ItemStack> getDroppedStacks(BlockState state, LootContextParameterSet.Builder builder) {
         List<ItemStack> droppedStacks = super.getDroppedStacks(state, builder);
         Block block = state.getBlock();
         Item foodItem = getFoodItem();
@@ -68,7 +68,7 @@ public class FoodBlock extends HorizontalFacingBlock {
     }
 
     @Override
-    protected ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state, boolean includeData) {
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
         return new ItemStack(getFoodItem());
     }
 

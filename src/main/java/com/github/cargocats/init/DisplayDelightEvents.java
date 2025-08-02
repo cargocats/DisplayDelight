@@ -32,7 +32,7 @@ public class DisplayDelightEvents {
                 }
             }
 
-            if (success) return ActionResult.SUCCESS_SERVER;
+            if (success) return ActionResult.SUCCESS;
 
             return ActionResult.PASS;
         });
