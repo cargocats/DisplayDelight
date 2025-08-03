@@ -16,7 +16,7 @@ public class PlatedFoodBlock extends FoodBlock implements StackablePlate {
 
     public PlatedFoodBlock(Identifier foodItemId, int maxStacks, Settings settings) {
         super(foodItemId, settings);
-        this.setDefaultState(this.getDefaultState().with(STACKS, 6));
+        this.setDefaultState(this.getDefaultState().with(STACKS, maxStacks));
         this.maxStacks = maxStacks;
     }
 

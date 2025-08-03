@@ -153,6 +153,26 @@
       "required": false
     },
     {
+      "id": "corndelight:nachos_bowl",
+      "required": false
+    },
+    {
+      "id": "corndelight:creamy_corn_drink",
+      "required": false
+    },
+    {
+      "id": "corndelight:cornbread_stuffing",
+      "required": false
+    },
+    {
+      "id": "corndelight:corn_soup",
+      "required": false
+    },
+    {
+      "id": "corndelight:creamed_corn",
+      "required": false
+    },
+    {
       "id": "minecraft:mushroom_stew",
       "required": false
     },

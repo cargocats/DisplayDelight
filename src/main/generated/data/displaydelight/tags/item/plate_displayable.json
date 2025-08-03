@@ -85,6 +85,18 @@
       "required": false
     },
     {
+      "id": "corndelight:grilled_corn",
+      "required": false
+    },
+    {
+      "id": "corndelight:classic_corn_dog",
+      "required": false
+    },
+    {
+      "id": "corndelight:taco",
+      "required": false
+    },
+    {
       "id": "minecraft:cookie",
       "required": false
     },

@@ -68,7 +68,7 @@ public class DisplayDelightAssociations {
     }
 
     public static String removePrefixes(String str) {
-        return str.replaceFirst("^((plated|small_plated|vna_plated|vna|od|od_plated|pd|pd_small_plated)_)+", "");
+        return str.replaceFirst("^((plated|small_plated|vna_plated|vna|od|od_plated|pd|pd_small_plated|cd|cd_plated)_)+", "");
     }
 
     public static String getExpandedShortPrefix(String prefix) {
@@ -81,6 +81,9 @@ public class DisplayDelightAssociations {
             }
             case "pineapple_delight" -> {
                 return "pd_";
+            }
+            case "corndelight" -> {
+                return "cd_";
             }
         }
 
@@ -98,6 +101,9 @@ public class DisplayDelightAssociations {
             }
             case "pd" -> {
                 return "pineapple_delight";
+            }
+            case "cd" -> {
+                return "corndelight";
             }
         }
 

@@ -12,6 +12,7 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -118,8 +119,7 @@ public class InteractionManager {
 
         if (block instanceof SmallPlatedFoodBlock smallPlatedFoodBlock && !blockState.isOf(DisplayDelightBlocks.SMALL_EMPTY_PLATE)) {
             Item plateItem = smallPlatedFoodBlock.getFoodItem();
-            if (plateItem == null) {
-                DisplayDelight.LOG.warn("Missing small plate block association for block {} when taking", block);
+            if (plateItem.equals(Items.AIR)) {
                 return false;
             }
 
@@ -136,8 +136,7 @@ public class InteractionManager {
             return true;
         } else if (block instanceof PlatedFoodBlock platedFoodBlock && !blockState.isOf(DisplayDelightBlocks.EMPTY_PLATE)) {
             Item plateItem = platedFoodBlock.getFoodItem();
-            if (plateItem == null) {
-                DisplayDelight.LOG.warn("Missing plate block association for block {} when taking", block);
+            if (plateItem.equals(Items.AIR)) {
                 return false;
             }
 

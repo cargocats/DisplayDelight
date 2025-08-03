@@ -4,11 +4,11 @@ import com.github.cargocats.init.DisplayDelightBlocks;
 import com.github.cargocats.init.DisplayDelightEvents;
 import com.github.cargocats.init.DisplayDelightItemGroup;
 import com.github.cargocats.init.DisplayDelightItems;
+import com.github.cargocats.init.compat.CornDelight;
 import com.github.cargocats.init.compat.FarmersDelight;
 import com.github.cargocats.init.compat.OceansDelight;
 import com.github.cargocats.init.compat.PineappleDelight;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -26,7 +26,7 @@ public class DisplayDelight implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		checkModCompatibilities();
+		extraneousModBlocks();
 		DisplayDelightBlocks.init();
 		DisplayDelightItems.init();
 		DisplayDelightEvents.init();
@@ -35,23 +35,11 @@ public class DisplayDelight implements ModInitializer {
 		LOG.info("Initialized Display Delight");
 	}
 
-	private void checkModCompatibilities() {
-		if (isModLoadedOrDev("farmersdelight")) {
-			FarmersDelight.init();
-		}
-
-		if (isModLoadedOrDev("oceansdelight")) {
-			OceansDelight.init();
-		}
-
-		if (isModLoadedOrDev("pineapple_delight")) {
-			PineappleDelight.init();
-		}
-	}
-
-	private boolean isModLoadedOrDev(String name) {
-		FabricLoader fabricLoader = FabricLoader.getInstance();
-		return fabricLoader.isModLoaded(name) || fabricLoader.isDevelopmentEnvironment();
+	private void extraneousModBlocks() {
+		FarmersDelight.init();
+		OceansDelight.init();
+		PineappleDelight.init();
+		CornDelight.init();
 	}
 
 	public static Identifier id(String path) {
