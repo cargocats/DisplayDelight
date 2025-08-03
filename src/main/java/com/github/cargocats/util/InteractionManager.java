@@ -145,12 +145,12 @@ public class InteractionManager {
             int count = 1;
             if (player.isSneaking()) {
                 count = platedFoodBlock.getStacks(blockState);
-                world.setBlockState(blockPos, DisplayDelightBlocks.EMPTY_PLATE.getDefaultState(), Block.NOTIFY_ALL);
+                world.setBlockState(blockPos, DisplayDelightBlocks.EMPTY_PLATE.getDefaultState().with(FoodBlock.FACING, blockState.get(FoodBlock.FACING)), Block.NOTIFY_ALL);
             } else {
                 if (platedFoodBlock.getStacks(blockState) > 1) {
                     world.setBlockState(blockPos, platedFoodBlock.decrementStackState(blockState), Block.NOTIFY_ALL);
                 } else {
-                    world.setBlockState(blockPos, DisplayDelightBlocks.EMPTY_PLATE.getDefaultState(), Block.NOTIFY_ALL);
+                    world.setBlockState(blockPos, DisplayDelightBlocks.EMPTY_PLATE.getDefaultState().with(FoodBlock.FACING, blockState.get(FoodBlock.FACING)), Block.NOTIFY_ALL);
                 }
             }
 
