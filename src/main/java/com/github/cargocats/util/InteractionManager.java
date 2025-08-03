@@ -90,6 +90,8 @@ public class InteractionManager {
         if (blockState.isOf(DisplayDelightBlocks.EMPTY_PLATE)) {
             world.setBlockState(blockPos, platedBlock.getDefaultState().with(PlatedFoodBlock.STACKS, 1).with(FoodBlock.FACING, blockState.get(FoodBlock.FACING)), Block.NOTIFY_ALL);
         } else {
+            if (!platedBlock.equals(blockState.getBlock())) return false;
+
             // Fill up a plate
             PlatedFoodBlock platedFoodBlock = (PlatedFoodBlock) platedBlock;
             if (platedFoodBlock.getStacks(blockState) < platedFoodBlock.getMaxStacks()) {
