@@ -29,7 +29,9 @@ public class DisplayDelightAssociations {
 
     public static Block getPrefixedBlockForItem(Item item, String prefix) {
         Identifier itemId = Registries.ITEM.getId(item);
-        Block cached = BLOCK_CACHE.get(itemId);
+        Identifier cacheKey = itemId.withPrefixedPath(prefix);
+
+        Block cached = BLOCK_CACHE.get(cacheKey);
         if (cached != null) return cached;
 
         Identifier translatedId = DisplayDelight.id(getExpandedShortPrefix(itemId.getNamespace()) + prefix + itemId.getPath());
@@ -41,7 +43,7 @@ public class DisplayDelightAssociations {
             DisplayDelight.LOG.warn("Could not find prefix {} block {} for item {}", prefix, translatedId, item);
         }
 
-        BLOCK_CACHE.put(itemId, block);
+        BLOCK_CACHE.put(cacheKey, block);
         return block;
     }
 
