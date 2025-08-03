@@ -11,7 +11,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -31,19 +30,18 @@ public class InteractionManager {
 
         Block block = DisplayDelightAssociations.getDisplayBlockForItem(itemStack.getItem());
         BlockPos placePos = clickedPos.offset(side);
-        BlockState blockState = world.getBlockState(placePos);
+        BlockState blockState = block.getDefaultState();
 
         if (block.equals(Blocks.AIR)) {
             DisplayDelight.LOG.warn("Missing displayable block association for item {}", itemStack);
             return false;
         }
 
-        if (!blockState.canReplace(new ItemPlacementContext(player, hand, itemStack, blockHitResult))) return false;
+        if (!world.getBlockState(placePos).isAir()) return false;
         if (!blockState.canPlaceAt(world, placePos)) return false;
         if (!world.canPlace(blockState, placePos, ShapeContext.of(player))) return false;
 
         itemStack.decrementUnlessCreative(1, player);
-
         world.setBlockState(placePos, block.getDefaultState(), Block.NOTIFY_ALL);
         world.playSound(null, placePos, block.getDefaultState().getSoundGroup().getPlaceSound(), SoundCategory.BLOCKS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
         player.swingHand(hand, true);
