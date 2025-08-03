@@ -3,7 +3,6 @@ package com.github.cargocats.init;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -18,7 +17,7 @@ public class DisplayDelightItems {
     public static final Item SMALL_EMPTY_PLATE = register(DisplayDelightBlocks.SMALL_EMPTY_PLATE);
     public static final Item EMPTY_PLATE = register(DisplayDelightBlocks.EMPTY_PLATE);
 
-    public static final List<ItemStack> BLOCK_ITEMS = new ArrayList<>();
+    public static final List<Item> BLOCK_ITEMS = new ArrayList<>();
 
     public static void init() {
         DisplayDelightBlocks.DISPLAYABLE_BLOCKS.forEach(DisplayDelightItems::registerFoodBlockItem);
@@ -27,7 +26,7 @@ public class DisplayDelightItems {
     }
 
     private static void registerFoodBlockItem(Block block) {
-        BLOCK_ITEMS.add(new ItemStack(register(block)));
+        BLOCK_ITEMS.add(register(block));
     }
 
     public static Item register(Block block) {

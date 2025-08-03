@@ -32,6 +32,7 @@ bin/
 
 run/
 src/main/generated/.cache
+src/main/resources/assets/displaydelight/disabled
 
 # java
 

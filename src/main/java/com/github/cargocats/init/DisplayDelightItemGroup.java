@@ -24,7 +24,7 @@ public class DisplayDelightItemGroup {
             entries.add(DisplayDelightItems.SMALL_EMPTY_PLATE);
             entries.add(DisplayDelightItems.EMPTY_PLATE);
 
-            entries.addAll(DisplayDelightItems.BLOCK_ITEMS);
+            entries.addAll(DisplayDelightItems.BLOCK_ITEMS.stream().map(ItemStack::new).toList());
         });
     }
 }
