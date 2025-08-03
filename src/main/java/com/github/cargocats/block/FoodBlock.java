@@ -12,7 +12,9 @@ import net.minecraft.block.SideShapeType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.loot.context.LootContextParameterSet;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.Identifier;
@@ -26,6 +28,7 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Optional;
 
 public class FoodBlock extends HorizontalFacingBlock {
     public static final MapCodec<FoodBlock> CODEC = RecordCodecBuilder.mapCodec(
@@ -48,13 +51,22 @@ public class FoodBlock extends HorizontalFacingBlock {
         List<ItemStack> droppedStacks = super.getDroppedStacks(state, builder);
         Block block = state.getBlock();
         Item foodItem = getFoodItem();
+        boolean fallBack = false;
+
+        if (foodItem.equals(Items.AIR)) {
+            Optional<Item> blockItem = Registries.ITEM.getOrEmpty(Registries.BLOCK.getId(block));
+            foodItem = blockItem.orElse(Items.AIR);
+            fallBack = true;
+
+            DisplayDelightAssociations.ITEM_CACHE.put(Registries.BLOCK.getId(block), foodItem);
+        }
 
         if (block instanceof PlatedFoodBlock platedFoodBlock) {
-            droppedStacks.add(new ItemStack(foodItem, platedFoodBlock.getStacks(state)));
-            droppedStacks.add(new ItemStack(DisplayDelightItems.EMPTY_PLATE));
+            droppedStacks.add(new ItemStack(foodItem, !fallBack ? platedFoodBlock.getStacks(state) : 1));
+            if (!fallBack) droppedStacks.add(new ItemStack(DisplayDelightItems.EMPTY_PLATE));
         } else if (block instanceof SmallPlatedFoodBlock) {
             droppedStacks.add(new ItemStack(foodItem));
-            droppedStacks.add(new ItemStack(DisplayDelightItems.SMALL_EMPTY_PLATE));
+            if (!fallBack) droppedStacks.add(new ItemStack(DisplayDelightItems.SMALL_EMPTY_PLATE));
         } else {
             droppedStacks.add(new ItemStack(foodItem));
         }
