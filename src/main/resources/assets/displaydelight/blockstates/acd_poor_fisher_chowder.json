@@ -1,1 +1,19 @@
-{"variants":{"facing=north":{"model":"displaydelight:block/acd_poor_fisher_chowder"},"facing=south":{"model":"displaydelight:block/acd_poor_fisher_chowder","y":180},"facing=west":{"model":"displaydelight:block/acd_poor_fisher_chowder","y":270},"facing=east":{"model":"displaydelight:block/acd_poor_fisher_chowder","y":90}}}
+{
+  "variants": {
+    "facing=north": {
+      "model": "displaydelight:block/acd_poor_fisher_chowder"
+    },
+    "facing=south": {
+      "model": "displaydelight:block/acd_poor_fisher_chowder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "displaydelight:block/acd_poor_fisher_chowder",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "displaydelight:block/acd_poor_fisher_chowder",
+      "y": 90
+    }
+  }
+}

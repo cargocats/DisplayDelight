@@ -30,7 +30,6 @@
       "model": "displaydelight:block/plated_sweet_berry_cookie_2",
       "y": 90
     },
-
     "stacks=3,facing=north": {
       "model": "displaydelight:block/plated_sweet_berry_cookie_3"
     },
@@ -46,7 +45,6 @@
       "model": "displaydelight:block/plated_sweet_berry_cookie_3",
       "y": 90
     },
-
     "stacks=4,facing=north": {
       "model": "displaydelight:block/plated_sweet_berry_cookie_4"
     },
@@ -61,8 +59,7 @@
     "stacks=4,facing=east": {
       "model": "displaydelight:block/plated_sweet_berry_cookie_4",
       "y": 90
-    }
-  ,
+    },
     "stacks=5,facing=north": {
       "model": "displaydelight:block/plated_sweet_berry_cookie_4"
     },

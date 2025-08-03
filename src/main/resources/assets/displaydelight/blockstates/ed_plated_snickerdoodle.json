@@ -30,7 +30,6 @@
       "model": "displaydelight:block/ed_plated_snickerdoodle_2",
       "y": 90
     },
-
     "stacks=3,facing=north": {
       "model": "displaydelight:block/ed_plated_snickerdoodle_3"
     },
@@ -46,7 +45,6 @@
       "model": "displaydelight:block/ed_plated_snickerdoodle_3",
       "y": 90
     },
-
     "stacks=4,facing=north": {
       "model": "displaydelight:block/ed_plated_snickerdoodle_4"
     },
@@ -61,8 +59,7 @@
     "stacks=4,facing=east": {
       "model": "displaydelight:block/ed_plated_snickerdoodle_4",
       "y": 90
-    }
-  ,
+    },
     "stacks=5,facing=north": {
       "model": "displaydelight:block/ed_plated_snickerdoodle_4"
     },

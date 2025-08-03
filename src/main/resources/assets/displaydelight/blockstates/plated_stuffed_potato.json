@@ -55,13 +55,11 @@
     "stacks=4,facing=west": {
       "model": "displaydelight:block/plated_stuffed_potato_3",
       "y": 270
-    }, "stacks=4,facing=east": {
+    },
+    "stacks=4,facing=east": {
       "model": "displaydelight:block/plated_stuffed_potato_3",
       "y": 90
-    }
-
-
-  ,
+    },
     "stacks=5,facing=north": {
       "model": "displaydelight:block/plated_stuffed_potato_3"
     },

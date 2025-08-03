@@ -1,6 +1,11 @@
-{"render_type": "cutout",
-  "texture_size": [16, 16],
+{
+  "render_type": "cutout",
+  "texture_size": [
+    16,
+    16
+  ],
   "textures": {
     "particle": "displaydelight:block/bowl"
   },
-  "elements": []}
+  "elements": []
+}
