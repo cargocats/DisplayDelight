@@ -23,6 +23,8 @@ public class DisplayDelightItemGroup {
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(entries -> {
             entries.add(DisplayDelightItems.SMALL_EMPTY_PLATE);
             entries.add(DisplayDelightItems.EMPTY_PLATE);
+
+            entries.addAll(DisplayDelightItems.BLOCK_ITEMS);
         });
     }
 }
