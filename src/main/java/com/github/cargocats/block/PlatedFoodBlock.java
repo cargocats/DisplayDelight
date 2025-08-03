@@ -26,7 +26,11 @@ public class PlatedFoodBlock extends FoodBlock implements StackablePlate {
     }
 
     public BlockState incrementStackState(BlockState state) {
-        return state.with(STACKS, Math.clamp(state.get(STACKS) + 1, 1, getMaxStacks()));
+        return incrementStackState(state, 1);
+    }
+
+    public BlockState incrementStackState(BlockState state, int count) {
+        return state.with(STACKS, Math.clamp(state.get(STACKS) + count, 1, getMaxStacks()));
     }
 
     public BlockState decrementStackState(BlockState state) {
