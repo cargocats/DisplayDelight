@@ -24,13 +24,7 @@
 			"com.github.cargocats.data.DisplayDelightDataGenerator"
 		]
 	},
-	"mixins": [
-		"displaydelight.mixins.json",
-		{
-			"config": "displaydelight.client.mixins.json",
-			"environment": "client"
-		}
-	],
+	"mixins": [],
 	"depends": {
 		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.21.1",
