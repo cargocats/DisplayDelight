@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "displaydelight:block/small_food_plate",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "displaydelight:block/small_food_plate"
+    },
+    "facing=south": {
+      "model": "displaydelight:block/small_food_plate",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "displaydelight:block/small_food_plate",
+      "y": 270
+    }
+  }
+}
