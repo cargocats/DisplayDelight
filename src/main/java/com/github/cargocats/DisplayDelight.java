@@ -6,6 +6,7 @@ import com.github.cargocats.init.DisplayDelightItemGroup;
 import com.github.cargocats.init.DisplayDelightItems;
 import com.github.cargocats.init.compat.FarmersDelight;
 import com.github.cargocats.init.compat.OceansDelight;
+import com.github.cargocats.init.compat.PineappleDelight;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.Item;
@@ -41,6 +42,10 @@ public class DisplayDelight implements ModInitializer {
 
 		if (isModLoadedOrDev("oceansdelight")) {
 			OceansDelight.init();
+		}
+
+		if (isModLoadedOrDev("pineapple_delight")) {
+			PineappleDelight.init();
 		}
 	}
 

@@ -35,6 +35,10 @@
     {
       "id": "farmersdelight:cabbage_rolls",
       "required": false
+    },
+    {
+      "id": "pineapple_delight:pineapple_pie_side",
+      "required": false
     }
   ]
 }

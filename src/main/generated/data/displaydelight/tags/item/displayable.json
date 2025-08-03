@@ -137,6 +137,22 @@
       "required": false
     },
     {
+      "id": "pineapple_delight:pineapple_fried_rice",
+      "required": false
+    },
+    {
+      "id": "pineapple_delight:pineapple_ice_cream",
+      "required": false
+    },
+    {
+      "id": "pineapple_delight:pineapple_milk_shake",
+      "required": false
+    },
+    {
+      "id": "pineapple_delight:pineapple_juice",
+      "required": false
+    },
+    {
       "id": "minecraft:mushroom_stew",
       "required": false
     },

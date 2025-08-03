@@ -65,23 +65,23 @@
       "required": false
     },
     {
-      "id": "oceansdelight:plated_baked_tentacle_on_a_stick",
+      "id": "oceansdelight:baked_tentacle_on_a_stick",
       "required": false
     },
     {
-      "id": "oceansdelight:plated_elder_guardian_roll",
+      "id": "oceansdelight:elder_guardian_roll",
       "required": false
     },
     {
-      "id": "oceansdelight:plated_fugu_roll",
+      "id": "oceansdelight:fugu_roll",
       "required": false
     },
     {
-      "id": "oceansdelight:plated_honey_fried_kelp",
+      "id": "oceansdelight:honey_fried_kelp",
       "required": false
     },
     {
-      "id": "oceansdelight:plated_cooked_stuffed_cod",
+      "id": "oceansdelight:cooked_stuffed_cod",
       "required": false
     },
     {
