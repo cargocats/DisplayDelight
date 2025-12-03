@@ -8,6 +8,7 @@ import com.github.cargocats.init.compat.CornDelight;
 import com.github.cargocats.init.compat.FarmersDelight;
 import com.github.cargocats.init.compat.OceansDelight;
 import com.github.cargocats.init.compat.PineappleDelight;
+import com.github.cargocats.util.DisplayDelightAssociations;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
@@ -26,7 +27,9 @@ public class DisplayDelight implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		extraneousModBlocks();
+        DisplayDelightAssociations.init();
+        extraneousModBlocks();
+
 		DisplayDelightBlocks.init();
 		DisplayDelightItems.init();
 		DisplayDelightEvents.init();

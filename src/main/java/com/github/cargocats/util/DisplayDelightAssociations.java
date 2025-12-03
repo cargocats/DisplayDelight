@@ -8,12 +8,16 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class DisplayDelightAssociations {
     public static final ConcurrentHashMap<Identifier, Block> BLOCK_CACHE = new ConcurrentHashMap<>();
     public static final ConcurrentHashMap<Identifier, Item> ITEM_CACHE = new ConcurrentHashMap<>();
+    private static final ArrayList<String> allPrefixes = new ArrayList<>(List.of("small_plated_", "plated_"));
+    private static final String[] typePrefixes = new String[] {
+            "plated_", "small_plated_", ""
+    };
 
     public static Block getSmallPlateBlockForItem(Item item) {
         return getPrefixedBlockForItem(item, "small_plated_");
@@ -34,7 +38,7 @@ public class DisplayDelightAssociations {
         Block cached = BLOCK_CACHE.get(cacheKey);
         if (cached != null) return cached;
 
-        Identifier translatedId = DisplayDelight.id(getExpandedShortPrefix(itemId.getNamespace()) + prefix + itemId.getPath());
+        Identifier translatedId = DisplayDelight.id(getNamespace(itemId.getNamespace()) + prefix + itemId.getPath());
 
         Optional<Block> optBlock = Registries.BLOCK.getOrEmpty(translatedId);
         Block block = optBlock.orElse(Blocks.AIR);
@@ -51,7 +55,7 @@ public class DisplayDelightAssociations {
         Item cached = ITEM_CACHE.get(foodItemId);
         if (cached != null) return cached;
 
-        Identifier translatedId = Identifier.of(foodItemId.getNamespace(), removePrefixes(foodItemId.getPath()));
+        Identifier translatedId = Identifier.of(foodItemId.getNamespace(), removeFirstPrefix(foodItemId.getPath()));
         Optional<Item> optItem = Registries.ITEM.getOrEmpty(translatedId);
         Item foodItem = optItem.orElse(Items.AIR);
 
@@ -64,46 +68,38 @@ public class DisplayDelightAssociations {
     }
 
     public static Identifier getId(String name) {
-        return Identifier.of(getExpandedLongPrefix(getPrefix(name)), removePrefixes(name));
+        return Identifier.of(getLongNamespace(getPrefix(name)), removeFirstPrefix(name));
     }
 
-    public static String removePrefixes(String str) {
-        return str.replaceFirst("^((plated|small_plated|vna_plated|vna|od|od_plated|pd|pd_small_plated|cd|cd_plated)_)+", "");
-    }
-
-    public static String getExpandedShortPrefix(String prefix) {
-        switch (prefix) {
-            case "minecraft" -> {
-                return "vna_";
-            }
-            case "oceansdelight" -> {
-                return "od_";
-            }
-            case "pineapple_delight" -> {
-                return "pd_";
-            }
-            case "corndelight" -> {
-                return "cd_";
+    private static String removeFirstPrefix(String path) {
+        for (String prefix : DisplayDelightAssociations.allPrefixes) {
+            if (!prefix.isEmpty() && path.startsWith(prefix)) {
+                return path.substring(prefix.length());
             }
         }
+        return path;
+    }
 
-        // Farmers delight
+    private static final Map<String, String> COMPAT_NAMESPACES = new HashMap<>() {{
+        put("vna_", "minecraft");
+        put("od_", "oceansdelight");
+        put("pd_", "pineapple_delight");
+        put("cd_", "corndelight");
+    }};
+
+    public static String getNamespace(String prefix) {
+        for (String key: COMPAT_NAMESPACES.keySet()) {
+            if (COMPAT_NAMESPACES.get(key).equals(prefix)) {
+                return key;
+            }
+        }
         return "";
     }
 
-    public static String getExpandedLongPrefix(String prefix) {
-        switch (prefix) {
-            case "vna" -> {
-                return "minecraft";
-            }
-            case "od" -> {
-                return "oceansdelight";
-            }
-            case "pd" -> {
-                return "pineapple_delight";
-            }
-            case "cd" -> {
-                return "corndelight";
+    public static String getLongNamespace(String prefix) {
+        for (String key: COMPAT_NAMESPACES.keySet()) {
+            if (prefix.startsWith(key)) {
+                return COMPAT_NAMESPACES.get(key);
             }
         }
 
@@ -111,8 +107,16 @@ public class DisplayDelightAssociations {
     }
 
     public static String getPrefix(String id) {
-        int firstUnderscore = id.indexOf('_');
+        int firstUnderscore = id.indexOf("_");
         if (firstUnderscore == -1) return id;
-        return id.substring(0, firstUnderscore);
+        return id.substring(0, firstUnderscore + 1);
+    }
+
+    public static void init() {
+        for (String compatNamespaces : COMPAT_NAMESPACES.keySet()){
+            for (String typePrefix : typePrefixes) {
+                allPrefixes.add(compatNamespaces + typePrefix);
+            }
+        }
     }
 }
