@@ -4,17 +4,17 @@ import com.github.cargocats.init.DisplayDelightItems;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.HorizontalFacingBlock;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.block.SideShapeType;
+import net.minecraft.block.*;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.loot.context.LootContextParameterSet;
+import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.Identifier;
@@ -49,11 +49,22 @@ public class FoodBlock extends HorizontalFacingBlock {
     @Override
     protected List<ItemStack> getDroppedStacks(BlockState state, LootContextParameterSet.Builder builder) {
         List<ItemStack> droppedStacks = super.getDroppedStacks(state, builder);
+
+        boolean usedSilktouch = false;
+
+        ItemStack tool = builder.get(LootContextParameters.TOOL);
+        var enchantmentRegistry = builder.getWorld().getRegistryManager().get(RegistryKeys.ENCHANTMENT);
+        var silkTouchEntry = enchantmentRegistry.getEntry(Enchantments.SILK_TOUCH);
+
+        if (silkTouchEntry.isPresent() && EnchantmentHelper.getLevel(silkTouchEntry.get(), tool) > 0) {
+            usedSilktouch = true;
+        }
+
         Block block = state.getBlock();
         Item foodItem = getFoodItem();
         boolean fallBack = false;
 
-        if (foodItem.equals(Items.AIR)) {
+        if (foodItem.equals(Items.AIR) || (usedSilktouch && !(block instanceof PlatedFoodBlock))) {
             Optional<Item> blockItem = Registries.ITEM.getOrEmpty(Registries.BLOCK.getId(block));
             foodItem = blockItem.orElse(Items.AIR);
             fallBack = true;
@@ -62,8 +73,12 @@ public class FoodBlock extends HorizontalFacingBlock {
         }
 
         if (block instanceof PlatedFoodBlock platedFoodBlock) {
-            droppedStacks.add(new ItemStack(foodItem, !fallBack ? platedFoodBlock.getStacks(state) : 1));
-            if (!fallBack) droppedStacks.add(new ItemStack(DisplayDelightItems.EMPTY_PLATE));
+            if (usedSilktouch && platedFoodBlock.getStacks(state) >= platedFoodBlock.getMaxStacks()) {
+                droppedStacks.add(new ItemStack(block));
+            } else {
+                droppedStacks.add(new ItemStack(foodItem, !fallBack ? platedFoodBlock.getStacks(state) : 1));
+                if (!fallBack) droppedStacks.add(new ItemStack(DisplayDelightItems.EMPTY_PLATE));
+            }
         } else if (block instanceof SmallPlatedFoodBlock) {
             droppedStacks.add(new ItemStack(foodItem));
             if (!fallBack) droppedStacks.add(new ItemStack(DisplayDelightItems.SMALL_EMPTY_PLATE));
