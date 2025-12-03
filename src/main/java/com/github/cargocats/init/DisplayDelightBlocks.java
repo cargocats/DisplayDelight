@@ -1,13 +1,7 @@
 package com.github.cargocats.init;
 
 import com.github.cargocats.DisplayDelight;
-import com.github.cargocats.block.DrinkFoodBlock;
-import com.github.cargocats.block.EmptyPlatedFoodBlock;
-import com.github.cargocats.block.EmptySmallPlatedFoodBlock;
-import com.github.cargocats.block.FoodBlock;
-import com.github.cargocats.block.PlatedFoodBlock;
-import com.github.cargocats.block.SmallPlatedFoodBlock;
-import com.github.cargocats.block.WideFoodBlock;
+import com.github.cargocats.block.*;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;

@@ -1,14 +1,10 @@
 package com.github.cargocats;
 
-import com.github.cargocats.init.DisplayDelightBlocks;
-import com.github.cargocats.init.DisplayDelightEvents;
-import com.github.cargocats.init.DisplayDelightItemGroup;
-import com.github.cargocats.init.DisplayDelightItems;
+import com.github.cargocats.init.*;
 import com.github.cargocats.init.compat.CornDelight;
 import com.github.cargocats.init.compat.FarmersDelight;
 import com.github.cargocats.init.compat.OceansDelight;
 import com.github.cargocats.init.compat.PineappleDelight;
-import com.github.cargocats.init.DisplayDelightTrades;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.item.Item;
