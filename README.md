@@ -5,10 +5,17 @@ Currently, the mod only supports Minecraft version **1.21.1**
 
 ## Issues
 * Only some compatibility is added. The following are compatible:
-  * Farmer's Delight
-  * Ocean Delight
-  * Pineapple Delight
-  * Corn Delight
+    * Farmer's Delight
+    * Ocean Delight
+    * Pineapple Delight
+    * Corn Delight
+      The following have their respective blocks added, but there is no Fabric mod support.
+    * Delightful
+    * Expanded Delight
+    * Cultural Delights
+    * Festive Delights
+    * Alex Delight
+    * Large Meals
 
 # Credits
 Credits go to [the original mod](https://modrinth.com/mod/display-delight), linked above, for the assets and parts of the code (modified).
