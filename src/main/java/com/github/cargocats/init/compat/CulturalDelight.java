@@ -2,10 +2,9 @@ package com.github.cargocats.init.compat;
 
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
-import net.minecraft.block.Block;
-
 import java.util.ArrayList;
 import java.util.List;
+import net.minecraft.world.level.block.Block;
 
 public class CulturalDelight {
     public static final Block CTD_HEARTY_SALAD = DisplayDelightBlocks.createFoodBlock("ctd_hearty_salad");

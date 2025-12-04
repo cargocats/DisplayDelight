@@ -2,10 +2,9 @@ package com.github.cargocats.init.compat;
 
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
-import net.minecraft.block.Block;
-
 import java.util.ArrayList;
 import java.util.List;
+import net.minecraft.world.level.block.Block;
 
 public class AlexDelight {
     public static final Block AD_MAGGOT_SALAD = DisplayDelightBlocks.createFoodBlock("ad_maggot_salad");

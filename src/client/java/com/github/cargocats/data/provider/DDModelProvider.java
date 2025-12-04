@@ -4,44 +4,52 @@ import com.github.cargocats.block.PlatedFoodBlock;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Block;
-import net.minecraft.data.client.*;
+
+import net.minecraft.data.models.BlockModelGenerators;
+import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.data.models.blockstates.PropertyDispatch;
+import net.minecraft.data.models.blockstates.Variant;
+import net.minecraft.data.models.blockstates.VariantProperties;
+import net.minecraft.data.models.model.ModelLocationUtils;
+import net.minecraft.world.level.block.Block;
 
 public class DDModelProvider extends FabricModelProvider {
     public DDModelProvider(FabricDataOutput output) {
         super(output);
     }
 
+
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        for (Block block : DisplayDelightBlocks.DISPLAYABLE_BLOCKS) {
-            blockStateModelGenerator.registerNorthDefaultHorizontalRotation(block);
+    public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
+        for (net.minecraft.world.level.block.Block block : DisplayDelightBlocks.DISPLAYABLE_BLOCKS) {
+            blockStateModelGenerator.createNonTemplateHorizontalBlock(block);
         }
 
         for (Block block : DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS) {
-            blockStateModelGenerator.registerNorthDefaultHorizontalRotation(block);
+            blockStateModelGenerator.createNonTemplateHorizontalBlock(block);
         }
 
         for (Block block : DisplayDelightBlocks.PLATEABLE_BLOCKS) {
             if (!(block instanceof PlatedFoodBlock plated)) continue;
 
-            var supplier = VariantsBlockStateSupplier.create(block);
-            BlockStateVariantMap.SingleProperty<Integer> variantMap = BlockStateVariantMap.create(PlatedFoodBlock.STACKS);
+            var supplier = MultiVariantGenerator.multiVariant(block);
+            PropertyDispatch.C1<Integer> variantMap = PropertyDispatch.property(PlatedFoodBlock.STACKS);
 
             for (int i = 1; i <= 6; i++) {
-                variantMap.register(i, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block).withSuffixedPath("_" + Math.min(i, plated.getMaxStacks()))));
+                variantMap.select(i, Variant.variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(block).withSuffix("_" + Math.min(i, plated.getMaxStacks()))));
             }
 
-            blockStateModelGenerator.blockStateCollector.accept(supplier.coordinate(variantMap).coordinate(BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates()));
-            blockStateModelGenerator.registerParentedItemModel(block, ModelIds.getBlockModelId(block).withSuffixedPath("_" + plated.getMaxStacks()));
+            blockStateModelGenerator.blockStateOutput.accept(supplier.with(variantMap).with(BlockModelGenerators.createHorizontalFacingDispatch()));
+            blockStateModelGenerator.delegateItemModel(block, ModelLocationUtils.getModelLocation(block).withSuffix("_" + plated.getMaxStacks()));
         }
 
-        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(DisplayDelightBlocks.SMALL_EMPTY_PLATE);
-        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(DisplayDelightBlocks.EMPTY_PLATE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(DisplayDelightBlocks.SMALL_EMPTY_PLATE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(DisplayDelightBlocks.EMPTY_PLATE);
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+    public void generateItemModels(ItemModelGenerators itemModelGenerators) {
 
     }
 }

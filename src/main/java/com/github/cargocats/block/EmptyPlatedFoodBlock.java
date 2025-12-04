@@ -1,17 +1,18 @@
 package com.github.cargocats.block;
 
 import com.github.cargocats.init.DisplayDelightItems;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.WorldView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 
 public class EmptyPlatedFoodBlock extends PlatedFoodBlock {
-    public EmptyPlatedFoodBlock(Settings settings) {
-        super(Identifier.ofVanilla("air"), 1, settings);
+    public EmptyPlatedFoodBlock(Properties settings) {
+        super(ResourceLocation.withDefaultNamespace("air"), 1, settings);
     }
 
     @Override
@@ -20,7 +21,7 @@ public class EmptyPlatedFoodBlock extends PlatedFoodBlock {
     }
 
     @Override
-    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
+    public @NotNull ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state) {
         return new ItemStack(DisplayDelightItems.EMPTY_PLATE);
     }
 }

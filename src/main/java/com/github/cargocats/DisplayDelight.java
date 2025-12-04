@@ -4,10 +4,10 @@ import com.github.cargocats.init.*;
 import com.github.cargocats.init.compat.*;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,9 +15,9 @@ public class DisplayDelight implements ModInitializer {
 	public static final String MOD_ID = "displaydelight";
 	public static final Logger LOG = LoggerFactory.getLogger(MOD_ID);
 
-	public static final TagKey<Item> DISPLAYABLE = TagKey.of(RegistryKeys.ITEM, DisplayDelight.id("displayable"));
-	public static final TagKey<Item> PLATE_DISPLAYABLE = TagKey.of(RegistryKeys.ITEM, DisplayDelight.id("plate_displayable"));
-	public static final TagKey<Item> SMALL_PLATE_DISPLAYABLE = TagKey.of(RegistryKeys.ITEM, DisplayDelight.id("small_plate_displayable"));
+	public static final TagKey<Item> DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("displayable"));
+	public static final TagKey<Item> PLATE_DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("plate_displayable"));
+	public static final TagKey<Item> SMALL_PLATE_DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("small_plate_displayable"));
 
 	@Override
 	public void onInitialize() {
@@ -49,7 +49,7 @@ public class DisplayDelight implements ModInitializer {
         FestiveDelight.init();
 	}
 
-	public static Identifier id(String path) {
-		return Identifier.of(MOD_ID, path);
+	public static ResourceLocation id(String path) {
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
 	}
 }

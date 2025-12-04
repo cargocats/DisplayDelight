@@ -1,19 +1,18 @@
 package com.github.cargocats.util;
 
 import com.github.cargocats.DisplayDelight;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
-
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 public class DisplayDelightAssociations {
-    public static final ConcurrentHashMap<Identifier, Block> BLOCK_CACHE = new ConcurrentHashMap<>();
-    public static final ConcurrentHashMap<Identifier, Item> ITEM_CACHE = new ConcurrentHashMap<>();
+    public static final ConcurrentHashMap<ResourceLocation, Block> BLOCK_CACHE = new ConcurrentHashMap<>();
+    public static final ConcurrentHashMap<ResourceLocation, Item> ITEM_CACHE = new ConcurrentHashMap<>();
     private static final ArrayList<String> allPrefixes = new ArrayList<>(List.of("small_plated_", "plated_"));
     private static final String[] typePrefixes = new String[] {
             "plated_", "small_plated_", ""
@@ -32,15 +31,15 @@ public class DisplayDelightAssociations {
     }
 
     public static Block getPrefixedBlockForItem(Item item, String prefix) {
-        Identifier itemId = Registries.ITEM.getId(item);
-        Identifier cacheKey = itemId.withPrefixedPath(prefix);
+        ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
+        ResourceLocation cacheKey = itemId.withPrefix(prefix);
 
         Block cached = BLOCK_CACHE.get(cacheKey);
         if (cached != null) return cached;
 
-        Identifier translatedId = DisplayDelight.id(getNamespace(itemId.getNamespace()) + prefix + itemId.getPath());
+        ResourceLocation translatedId = DisplayDelight.id(getNamespace(itemId.getNamespace()) + prefix + itemId.getPath());
 
-        Optional<Block> optBlock = Registries.BLOCK.getOrEmpty(translatedId);
+        Optional<Block> optBlock = BuiltInRegistries.BLOCK.getOptional(translatedId);
         Block block = optBlock.orElse(Blocks.AIR);
 
         if (block.equals(Blocks.AIR)) {
@@ -51,12 +50,12 @@ public class DisplayDelightAssociations {
         return block;
     }
 
-    public static Item getFoodItem(Identifier foodItemId) {
+    public static Item getFoodItem(ResourceLocation foodItemId) {
         Item cached = ITEM_CACHE.get(foodItemId);
         if (cached != null) return cached;
 
-        Identifier translatedId = Identifier.of(foodItemId.getNamespace(), removeFirstPrefix(foodItemId.getPath()));
-        Optional<Item> optItem = Registries.ITEM.getOrEmpty(translatedId);
+        ResourceLocation translatedId = ResourceLocation.fromNamespaceAndPath(foodItemId.getNamespace(), removeFirstPrefix(foodItemId.getPath()));
+        Optional<Item> optItem = BuiltInRegistries.ITEM.getOptional(translatedId);
         Item foodItem = optItem.orElse(Items.AIR);
 
         if (foodItem.equals(Items.AIR)) {
@@ -67,8 +66,8 @@ public class DisplayDelightAssociations {
         return foodItem;
     }
 
-    public static Identifier getId(String name) {
-        return Identifier.of(getLongNamespace(getPrefix(name)), removeFirstPrefix(name));
+    public static ResourceLocation getId(String name) {
+        return ResourceLocation.fromNamespaceAndPath(getLongNamespace(getPrefix(name)), removeFirstPrefix(name));
     }
 
     private static String removeFirstPrefix(String path) {

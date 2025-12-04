@@ -1,17 +1,16 @@
 package com.github.cargocats.init;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class DisplayDelightItems {
     public static final Item SMALL_EMPTY_PLATE = register(DisplayDelightBlocks.SMALL_EMPTY_PLATE);
@@ -33,26 +32,26 @@ public class DisplayDelightItems {
         return register(block, BlockItem::new);
     }
 
-    public static Item register(Block block, BiFunction<Block, Item.Settings, Item> factory) {
-        return register(block, factory, new Item.Settings());
+    public static Item register(Block block, BiFunction<Block, Item.Properties, Item> factory) {
+        return register(block, factory, new Item.Properties());
     }
 
-    public static Item register(Block block, BiFunction<Block, Item.Settings, Item> factory, Item.Settings settings) {
+    public static Item register(Block block, BiFunction<Block, Item.Properties, Item> factory, Item.Properties settings) {
         return register(
-                keyOf(Registries.BLOCK.getKey(block).get()), itemSettings -> factory.apply(block, itemSettings), settings
+                keyOf(BuiltInRegistries.BLOCK.getResourceKey(block).get()), itemSettings -> factory.apply(block, itemSettings), settings
         );
     }
 
-    private static RegistryKey<Item> keyOf(RegistryKey<Block> blockKey) {
-        return RegistryKey.of(RegistryKeys.ITEM, blockKey.getValue());
+    private static ResourceKey<Item> keyOf(ResourceKey<Block> blockKey) {
+        return ResourceKey.create(Registries.ITEM, blockKey.location());
     }
 
-    public static Item register(RegistryKey<Item> key, Function<Item.Settings, Item> factory, Item.Settings settings) {
+    public static Item register(ResourceKey<Item> key, Function<Item.Properties, Item> factory, Item.Properties settings) {
         Item item = factory.apply(settings);
         if (item instanceof BlockItem blockItem) {
-            blockItem.appendBlocks(Item.BLOCK_ITEMS, item);
+            blockItem.registerBlocks(Item.BY_BLOCK, item);
         }
 
-        return Registry.register(Registries.ITEM, key, item);
+        return Registry.register(BuiltInRegistries.ITEM, key, item);
     }
 }

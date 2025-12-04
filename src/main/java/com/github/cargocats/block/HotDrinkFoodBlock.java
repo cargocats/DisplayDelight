@@ -1,20 +1,20 @@
 package com.github.cargocats.block;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class HotDrinkFoodBlock extends DrinkFoodBlock {
-    public HotDrinkFoodBlock(Identifier foodItemId, Settings settings) {
+    public HotDrinkFoodBlock(ResourceLocation foodItemId, Properties settings) {
         super(foodItemId, settings);
     }
 
     @Override
-    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        super.randomDisplayTick(state, world, pos, random);
+    public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
+        super.animateTick(state, world, pos, random);
 
         if (random.nextFloat() < 0.25f) {
             double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.3D - 0.15D);

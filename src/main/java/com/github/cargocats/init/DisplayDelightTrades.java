@@ -2,21 +2,21 @@ package com.github.cargocats.init;
 
 
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.minecraft.block.Block;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.predicate.ComponentPredicate;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradeOffers;
-import net.minecraft.village.TradedItem;
+import net.minecraft.core.component.DataComponentPredicate;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.ItemCost;
+import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
 public class DisplayDelightTrades {
-    public static abstract class DisplayFoodItemFactory implements TradeOffers.Factory {
+    public static abstract class DisplayFoodItemFactory implements VillagerTrades.ItemListing {
         protected final int price;
         protected final int maxTrades;
         protected final int xp;
@@ -29,15 +29,15 @@ public class DisplayDelightTrades {
             this.priceMultiplier = priceMultiplier;
         }
 
-        public abstract ItemStack ForSaleItem(Entity entity, Random randomSource);
+        public abstract ItemStack ForSaleItem(Entity entity, RandomSource randomSource);
 
         @Override
-        public @Nullable TradeOffer create(Entity entity, Random random) {
+        public @Nullable MerchantOffer getOffer(Entity entity, RandomSource random) {
             ItemStack forSale = ForSaleItem(entity, random);
             ItemStack toBuy = new ItemStack(Items.EMERALD, this.price);
-            TradedItem tradedItem = new TradedItem(toBuy.getRegistryEntry(), toBuy.getCount(), ComponentPredicate.EMPTY);
+            ItemCost tradedItem = new ItemCost(toBuy.getItemHolder(), toBuy.getCount(), DataComponentPredicate.EMPTY);
 
-            return new TradeOffer(tradedItem, Optional.empty(), forSale, this.maxTrades, this.xp, this.priceMultiplier);
+            return new MerchantOffer(tradedItem, Optional.empty(), forSale, this.maxTrades, this.xp, this.priceMultiplier);
         }
     }
 
@@ -47,7 +47,7 @@ public class DisplayDelightTrades {
         }
 
         @Override
-        public ItemStack ForSaleItem(Entity entity, Random random) {
+        public ItemStack ForSaleItem(Entity entity, RandomSource random) {
             Block randomBlock = DisplayDelightBlocks.DISPLAYABLE_BLOCKS.get(random.nextInt(DisplayDelightBlocks.DISPLAYABLE_BLOCKS.size()));
             return new ItemStack(randomBlock.asItem());
         }
@@ -59,7 +59,7 @@ public class DisplayDelightTrades {
         }
 
         @Override
-        public ItemStack ForSaleItem(Entity entity, Random random) {
+        public ItemStack ForSaleItem(Entity entity, RandomSource random) {
             Block randomBlock = DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS.get(random.nextInt(DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS.size()));
             return new ItemStack(randomBlock.asItem());
         }
@@ -71,7 +71,7 @@ public class DisplayDelightTrades {
         }
 
         @Override
-        public ItemStack ForSaleItem(Entity entity, Random random) {
+        public ItemStack ForSaleItem(Entity entity, RandomSource random) {
             Block randomBlock = DisplayDelightBlocks.PLATEABLE_BLOCKS.get(random.nextInt(DisplayDelightBlocks.PLATEABLE_BLOCKS.size()));
             return new ItemStack(randomBlock.asItem());
         }

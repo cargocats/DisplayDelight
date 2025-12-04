@@ -1,387 +1,387 @@
 {
   "values": [
     {
-      "id": "farmersdelight:glow_berry_custard",
+      "id": "#farmersdelight:glow_berry_custard",
       "required": false
     },
     {
-      "id": "farmersdelight:fruit_salad",
+      "id": "#farmersdelight:fruit_salad",
       "required": false
     },
     {
-      "id": "farmersdelight:cooked_rice",
+      "id": "#farmersdelight:cooked_rice",
       "required": false
     },
     {
-      "id": "farmersdelight:mixed_salad",
+      "id": "#farmersdelight:mixed_salad",
       "required": false
     },
     {
-      "id": "farmersdelight:beef_stew",
+      "id": "#farmersdelight:beef_stew",
       "required": false
     },
     {
-      "id": "farmersdelight:chicken_soup",
+      "id": "#farmersdelight:chicken_soup",
       "required": false
     },
     {
-      "id": "farmersdelight:vegetable_soup",
+      "id": "#farmersdelight:vegetable_soup",
       "required": false
     },
     {
-      "id": "farmersdelight:fish_stew",
+      "id": "#farmersdelight:fish_stew",
       "required": false
     },
     {
-      "id": "farmersdelight:fried_rice",
+      "id": "#farmersdelight:fried_rice",
       "required": false
     },
     {
-      "id": "farmersdelight:pumpkin_soup",
+      "id": "#farmersdelight:pumpkin_soup",
       "required": false
     },
     {
-      "id": "farmersdelight:baked_cod_stew",
+      "id": "#farmersdelight:baked_cod_stew",
       "required": false
     },
     {
-      "id": "farmersdelight:noodle_soup",
+      "id": "#farmersdelight:noodle_soup",
       "required": false
     },
     {
-      "id": "farmersdelight:bone_broth",
+      "id": "#farmersdelight:bone_broth",
       "required": false
     },
     {
-      "id": "farmersdelight:bacon_and_eggs",
+      "id": "#farmersdelight:bacon_and_eggs",
       "required": false
     },
     {
-      "id": "farmersdelight:pasta_with_meatballs",
+      "id": "#farmersdelight:pasta_with_meatballs",
       "required": false
     },
     {
-      "id": "farmersdelight:pasta_with_mutton_chop",
+      "id": "#farmersdelight:pasta_with_mutton_chop",
       "required": false
     },
     {
-      "id": "farmersdelight:roasted_mutton_chops",
+      "id": "#farmersdelight:roasted_mutton_chops",
       "required": false
     },
     {
-      "id": "farmersdelight:steak_and_potatoes",
+      "id": "#farmersdelight:steak_and_potatoes",
       "required": false
     },
     {
-      "id": "farmersdelight:vegetable_noodles",
+      "id": "#farmersdelight:vegetable_noodles",
       "required": false
     },
     {
-      "id": "farmersdelight:ratatouille",
+      "id": "#farmersdelight:ratatouille",
       "required": false
     },
     {
-      "id": "farmersdelight:squid_ink_pasta",
+      "id": "#farmersdelight:squid_ink_pasta",
       "required": false
     },
     {
-      "id": "farmersdelight:grilled_salmon",
+      "id": "#farmersdelight:grilled_salmon",
       "required": false
     },
     {
-      "id": "farmersdelight:mushroom_rice",
+      "id": "#farmersdelight:mushroom_rice",
       "required": false
     },
     {
-      "id": "farmersdelight:roast_chicken",
+      "id": "#farmersdelight:roast_chicken",
       "required": false
     },
     {
-      "id": "farmersdelight:stuffed_pumpkin",
+      "id": "#farmersdelight:stuffed_pumpkin",
       "required": false
     },
     {
-      "id": "farmersdelight:honey_glazed_ham",
+      "id": "#farmersdelight:honey_glazed_ham",
       "required": false
     },
     {
-      "id": "farmersdelight:shepherds_pie",
+      "id": "#farmersdelight:shepherds_pie",
       "required": false
     },
     {
-      "id": "farmersdelight:apple_cider",
+      "id": "#farmersdelight:apple_cider",
       "required": false
     },
     {
-      "id": "farmersdelight:melon_juice",
+      "id": "#farmersdelight:melon_juice",
       "required": false
     },
     {
-      "id": "farmersdelight:hot_cocoa",
+      "id": "#farmersdelight:hot_cocoa",
       "required": false
     },
     {
-      "id": "oceansdelight:bowl_of_guardian_soup",
+      "id": "#oceansdelight:bowl_of_guardian_soup",
       "required": false
     },
     {
-      "id": "oceansdelight:braised_sea_pickle",
+      "id": "#oceansdelight:braised_sea_pickle",
       "required": false
     },
     {
-      "id": "oceansdelight:seagrass_salad",
+      "id": "#oceansdelight:seagrass_salad",
       "required": false
     },
     {
-      "id": "oceansdelight:squid_rings",
+      "id": "#oceansdelight:squid_rings",
       "required": false
     },
     {
-      "id": "pineapple_delight:pineapple_fried_rice",
+      "id": "#pineapple_delight:pineapple_fried_rice",
       "required": false
     },
     {
-      "id": "pineapple_delight:pineapple_ice_cream",
+      "id": "#pineapple_delight:pineapple_ice_cream",
       "required": false
     },
     {
-      "id": "pineapple_delight:pineapple_milk_shake",
+      "id": "#pineapple_delight:pineapple_milk_shake",
       "required": false
     },
     {
-      "id": "pineapple_delight:pineapple_juice",
+      "id": "#pineapple_delight:pineapple_juice",
       "required": false
     },
     {
-      "id": "corndelight:nachos_bowl",
+      "id": "#corndelight:nachos_bowl",
       "required": false
     },
     {
-      "id": "corndelight:creamy_corn_drink",
+      "id": "#corndelight:creamy_corn_drink",
       "required": false
     },
     {
-      "id": "corndelight:cornbread_stuffing",
+      "id": "#corndelight:cornbread_stuffing",
       "required": false
     },
     {
-      "id": "corndelight:corn_soup",
+      "id": "#corndelight:corn_soup",
       "required": false
     },
     {
-      "id": "corndelight:creamed_corn",
+      "id": "#corndelight:creamed_corn",
       "required": false
     },
     {
-      "id": "expandeddelight:asparagus_soup",
+      "id": "#expandeddelight:asparagus_soup",
       "required": false
     },
     {
-      "id": "expandeddelight:asparagus_soup_creamy",
+      "id": "#expandeddelight:asparagus_soup_creamy",
       "required": false
     },
     {
-      "id": "expandeddelight:asparagus_and_bacon_cheesy",
+      "id": "#expandeddelight:asparagus_and_bacon_cheesy",
       "required": false
     },
     {
-      "id": "expandeddelight:peperonata",
+      "id": "#expandeddelight:peperonata",
       "required": false
     },
     {
-      "id": "expandeddelight:peanut_honey_soup",
+      "id": "#expandeddelight:peanut_honey_soup",
       "required": false
     },
     {
-      "id": "expandeddelight:mac_and_cheese",
+      "id": "#expandeddelight:mac_and_cheese",
       "required": false
     },
     {
-      "id": "expandeddelight:peanut_salad",
+      "id": "#expandeddelight:peanut_salad",
       "required": false
     },
     {
-      "id": "expandeddelight:sweet_potato_salad",
+      "id": "#expandeddelight:sweet_potato_salad",
       "required": false
     },
     {
-      "id": "expandeddelight:cinnamon_rice",
+      "id": "#expandeddelight:cinnamon_rice",
       "required": false
     },
     {
-      "id": "expandeddelight:cinnamon_apples",
+      "id": "#expandeddelight:cinnamon_apples",
       "required": false
     },
     {
-      "id": "expandeddelight:apple_juice",
+      "id": "#expandeddelight:apple_juice",
       "required": false
     },
     {
-      "id": "expandeddelight:sweet_berry_juice",
+      "id": "#expandeddelight:sweet_berry_juice",
       "required": false
     },
     {
-      "id": "expandeddelight:glow_berry_juice",
+      "id": "#expandeddelight:glow_berry_juice",
       "required": false
     },
     {
-      "id": "delightful:matcha_ice_cream",
+      "id": "#delightful:matcha_ice_cream",
       "required": false
     },
     {
-      "id": "delightful:matcha_milkshake",
+      "id": "#delightful:matcha_milkshake",
       "required": false
     },
     {
-      "id": "delightful:salmonberry_ice_cream",
+      "id": "#delightful:salmonberry_ice_cream",
       "required": false
     },
     {
-      "id": "delightful:salmonberry_milkshake",
+      "id": "#delightful:salmonberry_milkshake",
       "required": false
     },
     {
-      "id": "delightful:matcha_latte",
+      "id": "#delightful:matcha_latte",
       "required": false
     },
     {
-      "id": "delightful:ender_nectar",
+      "id": "#delightful:ender_nectar",
       "required": false
     },
     {
-      "id": "delightful:berry_matcha_latte",
+      "id": "#delightful:berry_matcha_latte",
       "required": false
     },
     {
-      "id": "delightful:cactus_chili",
+      "id": "#delightful:cactus_chili",
       "required": false
     },
     {
-      "id": "delightful:field_salad",
+      "id": "#delightful:field_salad",
       "required": false
     },
     {
-      "id": "delightful:stuffed_cantaloupe",
+      "id": "#delightful:stuffed_cantaloupe",
       "required": false
     },
     {
-      "id": "delightful:sinigang",
+      "id": "#delightful:sinigang",
       "required": false
     },
     {
-      "id": "delightful:cactus_soup",
+      "id": "#delightful:cactus_soup",
       "required": false
     },
     {
-      "id": "alexdelight:maggot_salad",
+      "id": "#alexdelight:maggot_salad",
       "required": false
     },
     {
-      "id": "alexdelight:kangaroo_stew",
+      "id": "#alexdelight:kangaroo_stew",
       "required": false
     },
     {
-      "id": "alexdelight:acacia_blossom_soup",
+      "id": "#alexdelight:acacia_blossom_soup",
       "required": false
     },
     {
-      "id": "alexdelight:lobster_pasta",
+      "id": "#alexdelight:lobster_pasta",
       "required": false
     },
     {
-      "id": "alexdelight:kangaroo_pasta",
+      "id": "#alexdelight:kangaroo_pasta",
       "required": false
     },
     {
-      "id": "culturaldelights:hearty_salad",
+      "id": "#culturaldelights:hearty_salad",
       "required": false
     },
     {
-      "id": "culturaldelights:creamed_corn",
+      "id": "#culturaldelights:creamed_corn",
       "required": false
     },
     {
-      "id": "culturaldelights:spicy_curry",
+      "id": "#culturaldelights:spicy_curry",
       "required": false
     },
     {
-      "id": "culturaldelights:fried_eggplant_pasta",
+      "id": "#culturaldelights:fried_eggplant_pasta",
       "required": false
     },
     {
-      "id": "largemeals:pufferfish_broth",
+      "id": "#largemeals:pufferfish_broth",
       "required": false
     },
     {
-      "id": "largemeals:potato_soup",
+      "id": "#largemeals:potato_soup",
       "required": false
     },
     {
-      "id": "largemeals:red_soup",
+      "id": "#largemeals:red_soup",
       "required": false
     },
     {
-      "id": "largemeals:tomato_egg_soup",
+      "id": "#largemeals:tomato_egg_soup",
       "required": false
     },
     {
-      "id": "largemeals:cod_deluxe",
+      "id": "#largemeals:cod_deluxe",
       "required": false
     },
     {
-      "id": "largemeals:hearty_lunch",
+      "id": "#largemeals:hearty_lunch",
       "required": false
     },
     {
-      "id": "largemeals:chicken_curry",
+      "id": "#largemeals:chicken_curry",
       "required": false
     },
     {
-      "id": "largemeals:pasta_with_mushroom_sauce",
+      "id": "#largemeals:pasta_with_mushroom_sauce",
       "required": false
     },
     {
-      "id": "largemeals:mushroom_pot_pie",
+      "id": "#largemeals:mushroom_pot_pie",
       "required": false
     },
     {
-      "id": "largemeals:omurice",
+      "id": "#largemeals:omurice",
       "required": false
     },
     {
-      "id": "largemeals:roasted_mutton_rack",
+      "id": "#largemeals:roasted_mutton_rack",
       "required": false
     },
     {
-      "id": "largemeals:rice_pudding",
+      "id": "#largemeals:rice_pudding",
       "required": false
     },
     {
-      "id": "largemeals:sweet_berry_custard",
+      "id": "#largemeals:sweet_berry_custard",
       "required": false
     },
     {
-      "id": "festive_delight:festive_chicken",
+      "id": "#festive_delight:festive_chicken",
       "required": false
     },
     {
-      "id": "festive_delight:christmas_tea",
+      "id": "#festive_delight:christmas_tea",
       "required": false
     },
     {
-      "id": "festive_delight:salmon_verrines",
+      "id": "#festive_delight:salmon_verrines",
       "required": false
     },
     {
-      "id": "minecraft:mushroom_stew",
+      "id": "#minecraft:mushroom_stew",
       "required": false
     },
     {
-      "id": "minecraft:rabbit_stew",
+      "id": "#minecraft:rabbit_stew",
       "required": false
     },
     {
-      "id": "minecraft:beetroot_soup",
+      "id": "#minecraft:beetroot_soup",
       "required": false
     }
   ]

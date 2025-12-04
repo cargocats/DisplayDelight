@@ -3,19 +3,18 @@ package com.github.cargocats.init;
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.block.*;
 import com.github.cargocats.util.DisplayDelightAssociations;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
 
 public class DisplayDelightBlocks {
     public static final ArrayList<Block> DISPLAYABLE_BLOCKS = new ArrayList<>();
@@ -53,7 +52,7 @@ public class DisplayDelightBlocks {
         ));
     }
 
-    public static Block createFoodBlock(String name, Identifier foodItemId) {
+    public static Block createFoodBlock(String name, ResourceLocation foodItemId) {
         return register(
                 name,
                 settings -> new FoodBlock(foodItemId, settings),
@@ -61,7 +60,7 @@ public class DisplayDelightBlocks {
         );
     }
 
-    public static Block createWideFoodBlock(String name, Identifier foodItemId) {
+    public static Block createWideFoodBlock(String name, ResourceLocation foodItemId) {
         return register(
                 name,
                 settings -> new WideFoodBlock(foodItemId, settings),
@@ -69,21 +68,21 @@ public class DisplayDelightBlocks {
         );
     }
 
-    public static Block createDrinkFoodBlock(String name, Identifier foodItemId) {
+    public static Block createDrinkFoodBlock(String name, ResourceLocation foodItemId) {
         return register(
                 name,
                 settings -> new DrinkFoodBlock(foodItemId, settings),
                 baseBlockSettings()
-                        .sounds(BlockSoundGroup.GLASS)
+                        .sound(SoundType.GLASS)
         );
     }
 
-    public static Block createHotDrinkFoodBlock(String name, Identifier foodItemId) {
+    public static Block createHotDrinkFoodBlock(String name, ResourceLocation foodItemId) {
         return register(
                 name,
                 settings -> new HotDrinkFoodBlock(foodItemId, settings),
                 baseBlockSettings()
-                        .sounds(BlockSoundGroup.GLASS)
+                        .sound(SoundType.GLASS)
         );
     }
 
@@ -103,7 +102,7 @@ public class DisplayDelightBlocks {
         return createWideFoodBlock(name, DisplayDelightAssociations.getId(name));
     }
 
-    public static Block createSmallPlatedBlock(String name, Identifier foodItemId) {
+    public static Block createSmallPlatedBlock(String name, ResourceLocation foodItemId) {
         return register(
                 name,
                 settings -> new SmallPlatedFoodBlock(foodItemId, settings),
@@ -115,7 +114,7 @@ public class DisplayDelightBlocks {
         return createSmallPlatedBlock(name, DisplayDelightAssociations.getId(name));
     }
 
-    public static Block createStackablePlatedBlock(String name, Identifier foodItemId, int maxStacks) {
+    public static Block createStackablePlatedBlock(String name, ResourceLocation foodItemId, int maxStacks) {
         return register(
                 name,
                 settings -> new PlatedFoodBlock(foodItemId, maxStacks, settings),
@@ -131,25 +130,25 @@ public class DisplayDelightBlocks {
         return createStackablePlatedBlock(name, 1);
     }
 
-    public static AbstractBlock.Settings baseBlockSettings() {
-        return AbstractBlock.Settings.create()
-                .nonOpaque()
-                .noBlockBreakParticles()
-                .breakInstantly()
-                .pistonBehavior(PistonBehavior.DESTROY)
-                .sounds(BlockSoundGroup.WOOD);
+    public static BlockBehaviour.Properties baseBlockSettings() {
+        return BlockBehaviour.Properties.of()
+                .noOcclusion()
+                .noTerrainParticles()
+                .instabreak()
+                .pushReaction(PushReaction.DESTROY)
+                .sound(SoundType.WOOD);
     }
 
-    private static Block register(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+    private static Block register(String id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
         return register(keyOf(id), factory, settings);
     }
 
-    private static RegistryKey<Block> keyOf(String id) {
-        return RegistryKey.of(RegistryKeys.BLOCK, DisplayDelight.id(id));
+    private static ResourceKey<Block> keyOf(String id) {
+        return ResourceKey.create(Registries.BLOCK, DisplayDelight.id(id));
     }
 
-    public static Block register(RegistryKey<Block> key, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+    public static Block register(ResourceKey<Block> key, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
         Block block = factory.apply(settings);
-        return Registry.register(Registries.BLOCK, key, block);
+        return Registry.register(BuiltInRegistries.BLOCK, key, block);
     }
 }

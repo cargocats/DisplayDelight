@@ -6,38 +6,38 @@ import com.github.cargocats.init.DisplayDelightBlocks;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Block;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.TagBuilder;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagBuilder;
+import net.minecraft.world.level.block.Block;
 
 import java.util.concurrent.CompletableFuture;
 
 public class DDItemTagsProvider extends FabricTagProvider.ItemTagProvider {
-    public DDItemTagsProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-        super(output, registriesFuture);
+    public DDItemTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
+        super(output, completableFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        TagBuilder displayableTagBuilder = getTagBuilder(DisplayDelight.DISPLAYABLE);
-        TagBuilder plateDisplayableTagBuilder = getTagBuilder(DisplayDelight.PLATE_DISPLAYABLE);
-        TagBuilder smallPlateDisplayableTagBuilder = getTagBuilder(DisplayDelight.SMALL_PLATE_DISPLAYABLE);
+    protected void addTags(HolderLookup.Provider provider) {
+        TagBuilder displayableTagBuilder = getOrCreateRawBuilder(DisplayDelight.DISPLAYABLE);
+        TagBuilder plateDisplayableTagBuilder = getOrCreateRawBuilder(DisplayDelight.PLATE_DISPLAYABLE);
+        TagBuilder smallPlateDisplayableTagBuilder = getOrCreateRawBuilder(DisplayDelight.SMALL_PLATE_DISPLAYABLE);
 
         for (Block block: DisplayDelightBlocks.DISPLAYABLE_BLOCKS) {
-            Identifier translatedId = DisplayDelightAssociations.getId(Registries.BLOCK.getId(block).getPath());
-            displayableTagBuilder.addOptional(translatedId);
+            ResourceLocation translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
+            displayableTagBuilder.addOptionalTag(translatedId);
         }
 
         for (Block block: DisplayDelightBlocks.PLATEABLE_BLOCKS) {
-            Identifier translatedId = DisplayDelightAssociations.getId(Registries.BLOCK.getId(block).getPath());
-            plateDisplayableTagBuilder.addOptional(translatedId);
+            ResourceLocation translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
+            plateDisplayableTagBuilder.addOptionalTag(translatedId);
         }
 
         for (Block block: DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS) {
-            Identifier translatedId = DisplayDelightAssociations.getId(Registries.BLOCK.getId(block).getPath());
-            smallPlateDisplayableTagBuilder.addOptional(translatedId);
+            ResourceLocation translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
+            smallPlateDisplayableTagBuilder.addOptionalTag(translatedId);
         }
     }
 }
