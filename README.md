@@ -9,7 +9,8 @@ Currently, the mod only supports Minecraft version **1.21.1**
     * Ocean Delight
     * Pineapple Delight
     * Corn Delight
-      The following have their respective blocks added, but there is no Fabric mod support.
+  
+* The following have their respective blocks added, but there is no Fabric mod support:
     * Delightful
     * Expanded Delight
     * Cultural Delights
