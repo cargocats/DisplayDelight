@@ -85,6 +85,14 @@ public class DisplayDelightAssociations {
         put("od_", "oceansdelight");
         put("pd_", "pineapple_delight");
         put("cd_", "corndelight");
+
+        // No fabric port as of 1.21.1
+        put("ed_", "expandeddelight");
+        put("df_", "delightful");
+        put("ad_", "alexdelight");
+        put("ctd_", "culturaldelights");
+        put("lm_", "largemeals");
+        put("fd_", "festive_delight");
     }};
 
     public static String getNamespace(String prefix) {

@@ -78,8 +78,21 @@ public class DisplayDelightBlocks {
         );
     }
 
+    public static Block createHotDrinkFoodBlock(String name, Identifier foodItemId) {
+        return register(
+                name,
+                settings -> new HotDrinkFoodBlock(foodItemId, settings),
+                baseBlockSettings()
+                        .sounds(BlockSoundGroup.GLASS)
+        );
+    }
+
     public static Block createDrinkFoodBlock(String name) {
         return createDrinkFoodBlock(name, DisplayDelightAssociations.getId(name));
+    }
+
+    public static Block createHotDrinkFoodBlock(String name) {
+        return createHotDrinkFoodBlock(name, DisplayDelightAssociations.getId(name));
     }
 
     public static Block createFoodBlock(String name) {

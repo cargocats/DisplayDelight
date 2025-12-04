@@ -1,10 +1,7 @@
 package com.github.cargocats;
 
 import com.github.cargocats.init.*;
-import com.github.cargocats.init.compat.CornDelight;
-import com.github.cargocats.init.compat.FarmersDelight;
-import com.github.cargocats.init.compat.OceansDelight;
-import com.github.cargocats.init.compat.PineappleDelight;
+import com.github.cargocats.init.compat.*;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.item.Item;
@@ -37,10 +34,19 @@ public class DisplayDelight implements ModInitializer {
 	}
 
 	private void extraneousModBlocks() {
+        // Have fabric ports as of 1.21.1
 		FarmersDelight.init();
 		OceansDelight.init();
 		PineappleDelight.init();
 		CornDelight.init();
+
+        // No fabric ports as of 1.21.1
+        ExpandedDelight.init();
+        Delightful.init();
+        AlexDelight.init();
+        CulturalDelight.init();
+        LargeMeals.init();
+        FestiveDelight.init();
 	}
 
 	public static Identifier id(String path) {

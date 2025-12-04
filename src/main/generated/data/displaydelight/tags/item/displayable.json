@@ -173,6 +173,206 @@
       "required": false
     },
     {
+      "id": "expandeddelight:asparagus_soup",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:asparagus_soup_creamy",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:asparagus_and_bacon_cheesy",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:peperonata",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:peanut_honey_soup",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:mac_and_cheese",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:peanut_salad",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:sweet_potato_salad",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:cinnamon_rice",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:cinnamon_apples",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:apple_juice",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:sweet_berry_juice",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:glow_berry_juice",
+      "required": false
+    },
+    {
+      "id": "delightful:matcha_ice_cream",
+      "required": false
+    },
+    {
+      "id": "delightful:matcha_milkshake",
+      "required": false
+    },
+    {
+      "id": "delightful:salmonberry_ice_cream",
+      "required": false
+    },
+    {
+      "id": "delightful:salmonberry_milkshake",
+      "required": false
+    },
+    {
+      "id": "delightful:matcha_latte",
+      "required": false
+    },
+    {
+      "id": "delightful:ender_nectar",
+      "required": false
+    },
+    {
+      "id": "delightful:berry_matcha_latte",
+      "required": false
+    },
+    {
+      "id": "delightful:cactus_chili",
+      "required": false
+    },
+    {
+      "id": "delightful:field_salad",
+      "required": false
+    },
+    {
+      "id": "delightful:stuffed_cantaloupe",
+      "required": false
+    },
+    {
+      "id": "delightful:sinigang",
+      "required": false
+    },
+    {
+      "id": "delightful:cactus_soup",
+      "required": false
+    },
+    {
+      "id": "alexdelight:maggot_salad",
+      "required": false
+    },
+    {
+      "id": "alexdelight:kangaroo_stew",
+      "required": false
+    },
+    {
+      "id": "alexdelight:acacia_blossom_soup",
+      "required": false
+    },
+    {
+      "id": "alexdelight:lobster_pasta",
+      "required": false
+    },
+    {
+      "id": "alexdelight:kangaroo_pasta",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:hearty_salad",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:creamed_corn",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:spicy_curry",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:fried_eggplant_pasta",
+      "required": false
+    },
+    {
+      "id": "largemeals:pufferfish_broth",
+      "required": false
+    },
+    {
+      "id": "largemeals:potato_soup",
+      "required": false
+    },
+    {
+      "id": "largemeals:red_soup",
+      "required": false
+    },
+    {
+      "id": "largemeals:tomato_egg_soup",
+      "required": false
+    },
+    {
+      "id": "largemeals:cod_deluxe",
+      "required": false
+    },
+    {
+      "id": "largemeals:hearty_lunch",
+      "required": false
+    },
+    {
+      "id": "largemeals:chicken_curry",
+      "required": false
+    },
+    {
+      "id": "largemeals:pasta_with_mushroom_sauce",
+      "required": false
+    },
+    {
+      "id": "largemeals:mushroom_pot_pie",
+      "required": false
+    },
+    {
+      "id": "largemeals:omurice",
+      "required": false
+    },
+    {
+      "id": "largemeals:roasted_mutton_rack",
+      "required": false
+    },
+    {
+      "id": "largemeals:rice_pudding",
+      "required": false
+    },
+    {
+      "id": "largemeals:sweet_berry_custard",
+      "required": false
+    },
+    {
+      "id": "festive_delight:festive_chicken",
+      "required": false
+    },
+    {
+      "id": "festive_delight:christmas_tea",
+      "required": false
+    },
+    {
+      "id": "festive_delight:salmon_verrines",
+      "required": false
+    },
+    {
       "id": "minecraft:mushroom_stew",
       "required": false
     },
