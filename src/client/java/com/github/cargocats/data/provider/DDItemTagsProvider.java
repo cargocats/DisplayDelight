@@ -1,6 +1,5 @@
 package com.github.cargocats.data.provider;
 
-
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import com.github.cargocats.util.DisplayDelightAssociations;

@@ -1,25 +1,21 @@
 package com.github.cargocats.data.provider;
 
+import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.block.PlatedFoodBlock;
 import com.github.cargocats.init.DisplayDelightBlocks;
+import com.mojang.math.Quadrant;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
-/*
+import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.renderer.block.model.Variant;
-import net.minecraft.data.models.BlockModelGenerators;
-import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.blockstates.Variant;
-import net.minecraft.data.models.blockstates.VariantProperties;
-import net.minecraft.data.models.model.ModelLocationUtils;
-*/
-import net.minecraft.util.random.WeightedList;
+import net.minecraft.client.renderer.block.model.VariantMutator;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.jspecify.annotations.NonNull;
 
 public class DDModelProvider extends FabricModelProvider {
@@ -37,22 +33,31 @@ public class DDModelProvider extends FabricModelProvider {
             blockStateModelGenerator.createNonTemplateHorizontalBlock(block);
         }
 
+        VariantMutator Y_ROT_90 = VariantMutator.Y_ROT.withValue(Quadrant.R90);
+        VariantMutator Y_ROT_180 = VariantMutator.Y_ROT.withValue(Quadrant.R180);
+        VariantMutator Y_ROT_270 = VariantMutator.Y_ROT.withValue(Quadrant.R270);
+        VariantMutator NOP = variant -> variant;
+
+        PropertyDispatch<VariantMutator> ROTATION_HORIZONTAL_FACING = PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
+                .select(Direction.EAST, Y_ROT_90)
+                .select(Direction.SOUTH, Y_ROT_180)
+                .select(Direction.WEST, Y_ROT_270)
+                .select(Direction.NORTH, NOP);
+        // TODO: Fix small and normal empty plate blocks being added
         for (Block block : DisplayDelightBlocks.PLATEABLE_BLOCKS) {
             if (!(block instanceof PlatedFoodBlock plated)) continue;
 
             var supplier = MultiVariantGenerator.dispatch(block);
-            PropertyDispatch.C1<MultiVariant, Integer> variantMap = PropertyDispatch.C1.initial(PlatedFoodBlock.STACKS);
-/*
+            var variantMap = PropertyDispatch.C1.initial(PlatedFoodBlock.STACKS);
+
             for (int i = 1; i <= 6; i++) {
-                variantMap.select(1, new MultiVariant(WeightedList.<Variant>builder()
-                        .add(new Variant())
-                        .build()));
-                variantMap.select(i, Variant..variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(block).withSuffix("_" + Math.min(i, plated.getMaxStacks()))));
+                variantMap.select(i, BlockModelGenerators.variant(
+                        new Variant(ModelLocationUtils.getModelLocation(block).withSuffix("_" + Math.min(i, plated.getMaxStacks())))
+                ));
             }
 
-            blockStateModelGenerator.blockStateOutput.accept(supplier.with(variantMap).with(BlockModelGenerators.()));
-            blockStateModelGenerator.createFlatItemModel
-            blockStateModelGenerator.delegateItemModel(block, ModelLocationUtils.getModelLocation(block).withSuffix("_" + plated.getMaxStacks())); */
+            blockStateModelGenerator.blockStateOutput.accept(supplier.with(variantMap).with(ROTATION_HORIZONTAL_FACING));
+            //blockStateModelGenerator.delegateItemModel(block, ModelLocationUtils.getModelLocation(block).withSuffix("_" + plated.getMaxStacks())); */
         }
 
         blockStateModelGenerator.createNonTemplateHorizontalBlock(DisplayDelightBlocks.SMALL_EMPTY_PLATE);

@@ -148,7 +148,7 @@ public class DisplayDelightBlocks {
     }
 
     public static Block register(ResourceKey<Block> key, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
-        Block block = factory.apply(settings);
+        Block block = factory.apply(settings.setId(key));
         return Registry.register(BuiltInRegistries.BLOCK, key, block);
     }
 }

@@ -4,17 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.UnaryOperator;
+
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 
 public class DisplayDelightItems {
-    public static final Item SMALL_EMPTY_PLATE = register(DisplayDelightBlocks.SMALL_EMPTY_PLATE);
-    public static final Item EMPTY_PLATE = register(DisplayDelightBlocks.EMPTY_PLATE);
+    public static final Item SMALL_EMPTY_PLATE = registerBlock(DisplayDelightBlocks.SMALL_EMPTY_PLATE);
+    public static final Item EMPTY_PLATE = registerBlock(DisplayDelightBlocks.EMPTY_PLATE);
 
     public static final List<Item> BLOCK_ITEMS = new ArrayList<>();
 
@@ -25,33 +28,33 @@ public class DisplayDelightItems {
     }
 
     private static void registerFoodBlockItem(Block block) {
-        BLOCK_ITEMS.add(register(block));
+        BLOCK_ITEMS.add(registerBlock(block));
     }
 
-    public static Item register(Block block) {
-        return register(block, BlockItem::new);
+    public static Item registerBlock(Block block) {
+        return registerBlock(block, BlockItem::new);
     }
 
-    public static Item register(Block block, BiFunction<Block, Item.Properties, Item> factory) {
-        return register(block, factory, new Item.Properties());
+    private static ResourceKey<Item> blockIdToItemId(ResourceKey<Block> resourceKey) {
+        return ResourceKey.create(Registries.ITEM, resourceKey.identifier());
     }
 
-    public static Item register(Block block, BiFunction<Block, Item.Properties, Item> factory, Item.Properties settings) {
-        return register(
-                keyOf(BuiltInRegistries.BLOCK.getResourceKey(block).get()), itemSettings -> factory.apply(block, itemSettings), settings
+    public static Item registerBlock(Block block, BiFunction<Block, Item.Properties, Item> biFunction) {
+        return registerBlock(block, biFunction, new Item.Properties());
+    }
+
+    public static Item registerBlock(Block block, BiFunction<Block, Item.Properties, Item> biFunction, Item.Properties properties) {
+        return registerItem(
+                blockIdToItemId(block.builtInRegistryHolder().key()), propertiesx -> biFunction.apply(block, propertiesx), properties.useBlockDescriptionPrefix()
         );
     }
 
-    private static ResourceKey<Item> keyOf(ResourceKey<Block> blockKey) {
-        return ResourceKey.create(Registries.ITEM, blockKey.registry());
-    }
-
-    public static Item register(ResourceKey<Item> key, Function<Item.Properties, Item> factory, Item.Properties settings) {
-        Item item = factory.apply(settings);
+    public static Item registerItem(ResourceKey<Item> resourceKey, Function<Item.Properties, Item> function, Item.Properties properties) {
+        Item item = function.apply(properties.setId(resourceKey));
         if (item instanceof BlockItem blockItem) {
             blockItem.registerBlocks(Item.BY_BLOCK, item);
         }
 
-        return Registry.register(BuiltInRegistries.ITEM, key, item);
+        return Registry.register(BuiltInRegistries.ITEM, resourceKey, item);
     }
 }
