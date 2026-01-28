@@ -8,9 +8,10 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagBuilder;
 import net.minecraft.world.level.block.Block;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,23 +21,23 @@ public class DDItemTagsProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider) {
+    protected void addTags(HolderLookup.@NonNull Provider provider) {
         TagBuilder displayableTagBuilder = getOrCreateRawBuilder(DisplayDelight.DISPLAYABLE);
         TagBuilder plateDisplayableTagBuilder = getOrCreateRawBuilder(DisplayDelight.PLATE_DISPLAYABLE);
         TagBuilder smallPlateDisplayableTagBuilder = getOrCreateRawBuilder(DisplayDelight.SMALL_PLATE_DISPLAYABLE);
 
         for (Block block: DisplayDelightBlocks.DISPLAYABLE_BLOCKS) {
-            ResourceLocation translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
+            Identifier translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
             displayableTagBuilder.addOptionalTag(translatedId);
         }
 
         for (Block block: DisplayDelightBlocks.PLATEABLE_BLOCKS) {
-            ResourceLocation translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
+            Identifier translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
             plateDisplayableTagBuilder.addOptionalTag(translatedId);
         }
 
         for (Block block: DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS) {
-            ResourceLocation translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
+            Identifier translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
             smallPlateDisplayableTagBuilder.addOptionalTag(translatedId);
         }
     }

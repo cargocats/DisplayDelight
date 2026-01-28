@@ -5,7 +5,7 @@ import com.github.cargocats.init.compat.*;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import org.slf4j.Logger;
@@ -49,7 +49,7 @@ public class DisplayDelight implements ModInitializer {
         FestiveDelight.init();
 	}
 
-	public static ResourceLocation id(String path) {
-		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+	public static Identifier id(String path) {
+		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 	}
 }

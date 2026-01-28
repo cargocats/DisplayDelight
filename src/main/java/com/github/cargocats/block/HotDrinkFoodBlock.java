@@ -2,18 +2,19 @@ package com.github.cargocats.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jspecify.annotations.NonNull;
 
 public class HotDrinkFoodBlock extends DrinkFoodBlock {
-    public HotDrinkFoodBlock(ResourceLocation foodItemId, Properties settings) {
+    public HotDrinkFoodBlock(Identifier foodItemId, Properties settings) {
         super(foodItemId, settings);
     }
 
     @Override
-    public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
+    public void animateTick(@NonNull BlockState state, @NonNull Level world, @NonNull BlockPos pos, @NonNull RandomSource random) {
         super.animateTick(state, world, pos, random);
 
         if (random.nextFloat() < 0.25f) {

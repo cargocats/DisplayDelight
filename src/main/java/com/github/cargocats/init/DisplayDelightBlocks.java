@@ -9,8 +9,8 @@ import java.util.function.Function;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -52,7 +52,7 @@ public class DisplayDelightBlocks {
         ));
     }
 
-    public static Block createFoodBlock(String name, ResourceLocation foodItemId) {
+    public static Block createFoodBlock(String name, Identifier foodItemId) {
         return register(
                 name,
                 settings -> new FoodBlock(foodItemId, settings),
@@ -60,7 +60,7 @@ public class DisplayDelightBlocks {
         );
     }
 
-    public static Block createWideFoodBlock(String name, ResourceLocation foodItemId) {
+    public static Block createWideFoodBlock(String name, Identifier foodItemId) {
         return register(
                 name,
                 settings -> new WideFoodBlock(foodItemId, settings),
@@ -68,7 +68,7 @@ public class DisplayDelightBlocks {
         );
     }
 
-    public static Block createDrinkFoodBlock(String name, ResourceLocation foodItemId) {
+    public static Block createDrinkFoodBlock(String name, Identifier foodItemId) {
         return register(
                 name,
                 settings -> new DrinkFoodBlock(foodItemId, settings),
@@ -77,7 +77,7 @@ public class DisplayDelightBlocks {
         );
     }
 
-    public static Block createHotDrinkFoodBlock(String name, ResourceLocation foodItemId) {
+    public static Block createHotDrinkFoodBlock(String name, Identifier foodItemId) {
         return register(
                 name,
                 settings -> new HotDrinkFoodBlock(foodItemId, settings),
@@ -102,7 +102,7 @@ public class DisplayDelightBlocks {
         return createWideFoodBlock(name, DisplayDelightAssociations.getId(name));
     }
 
-    public static Block createSmallPlatedBlock(String name, ResourceLocation foodItemId) {
+    public static Block createSmallPlatedBlock(String name, Identifier foodItemId) {
         return register(
                 name,
                 settings -> new SmallPlatedFoodBlock(foodItemId, settings),
@@ -114,7 +114,7 @@ public class DisplayDelightBlocks {
         return createSmallPlatedBlock(name, DisplayDelightAssociations.getId(name));
     }
 
-    public static Block createStackablePlatedBlock(String name, ResourceLocation foodItemId, int maxStacks) {
+    public static Block createStackablePlatedBlock(String name, Identifier foodItemId, int maxStacks) {
         return register(
                 name,
                 settings -> new PlatedFoodBlock(foodItemId, maxStacks, settings),

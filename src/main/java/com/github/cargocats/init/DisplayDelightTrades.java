@@ -1,22 +1,25 @@
 package com.github.cargocats.init;
 
 
+import com.github.cargocats.DisplayDelight;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.minecraft.core.component.DataComponentPredicate;
+import net.minecraft.core.component.DataComponentExactPredicate;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.Block;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.entity.npc.villager.VillagerTrades.ItemListing;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Optional;
 
 public class DisplayDelightTrades {
-    public static abstract class DisplayFoodItemFactory implements VillagerTrades.ItemListing {
+    public static abstract class DisplayFoodItemFactory implements ItemListing {
         protected final int price;
         protected final int maxTrades;
         protected final int xp;
@@ -32,10 +35,10 @@ public class DisplayDelightTrades {
         public abstract ItemStack ForSaleItem(Entity entity, RandomSource randomSource);
 
         @Override
-        public @Nullable MerchantOffer getOffer(Entity entity, RandomSource random) {
-            ItemStack forSale = ForSaleItem(entity, random);
+        public @Nullable MerchantOffer getOffer(@NonNull ServerLevel serverLevel, @NonNull Entity entity, @NonNull RandomSource randomSource) {
+            ItemStack forSale = ForSaleItem(entity, randomSource);
             ItemStack toBuy = new ItemStack(Items.EMERALD, this.price);
-            ItemCost tradedItem = new ItemCost(toBuy.getItemHolder(), toBuy.getCount(), DataComponentPredicate.EMPTY);
+            ItemCost tradedItem = new ItemCost(toBuy.getItemHolder(), toBuy.getCount(), DataComponentExactPredicate.EMPTY);
 
             return new MerchantOffer(tradedItem, Optional.empty(), forSale, this.maxTrades, this.xp, this.priceMultiplier);
         }
@@ -78,12 +81,13 @@ public class DisplayDelightTrades {
     }
 
     public static void init() {
-        TradeOfferHelper.registerWanderingTraderOffers(1, (factories) -> {
-            factories.add(new DisplayDelightTrades.FoodItemFactory(2, 4, 24, 0.05f));
-            factories.add(new DisplayDelightTrades.FoodItemFactory(2, 4, 24, 0.05f));
-            factories.add(new DisplayDelightTrades.PlatedFoodItemFactory(2, 4, 24, 0.05F));
-            factories.add(new DisplayDelightTrades.PlatedFoodItemFactory(2, 4, 24, 0.05F));
-            factories.add(new DisplayDelightTrades.SmallPlatedFoodItemFactory(1, 4, 12, 0.05F));
-        });
+        TradeOfferHelper.registerWanderingTraderOffers(factory -> factory.addAll(
+                DisplayDelight.id("display_delight"),
+                new DisplayDelightTrades.FoodItemFactory(2, 4, 24, 0.05f),
+                new DisplayDelightTrades.FoodItemFactory(2, 4, 24, 0.05f),
+                new DisplayDelightTrades.PlatedFoodItemFactory(2, 4, 24, 0.05F),
+                new DisplayDelightTrades.PlatedFoodItemFactory(2, 4, 24, 0.05F),
+                new DisplayDelightTrades.SmallPlatedFoodItemFactory(2, 4, 24, 0.05F)
+        ));
     }
 }

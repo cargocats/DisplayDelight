@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 public class DisplayDelightEvents {
     public static void init() {
         UseBlockCallback.EVENT.register((playerEntity, world, hand, blockHitResult) -> {
-            if (playerEntity.isSpectator() || world.isClientSide) return InteractionResult.PASS;
+            if (playerEntity.isSpectator() || world.isClientSide()) return InteractionResult.PASS;
 
             ItemStack itemStackInHand = playerEntity.getItemInHand(hand);
             boolean success = false;

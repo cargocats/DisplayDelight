@@ -1,7 +1,7 @@
 package com.github.cargocats.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -10,19 +10,20 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 public class PlatedFoodBlock extends FoodBlock implements StackablePlate {
     public static final IntegerProperty STACKS = IntegerProperty.create("stacks", 1, 6);
     private final int maxStacks;
 
-    public PlatedFoodBlock(ResourceLocation foodItemId, int maxStacks, Properties settings) {
+    public PlatedFoodBlock(Identifier foodItemId, int maxStacks, Properties settings) {
         super(foodItemId, settings);
         this.registerDefaultState(this.defaultBlockState().setValue(STACKS, maxStacks));
         this.maxStacks = maxStacks;
     }
 
     @Override
-    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    protected @NotNull VoxelShape getShape(@NonNull BlockState state, @NonNull BlockGetter world, @NonNull BlockPos pos, @NonNull CollisionContext context) {
         return box(1, 0, 1, 15, 6, 15);
     }
 
@@ -48,7 +49,7 @@ public class PlatedFoodBlock extends FoodBlock implements StackablePlate {
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.@NonNull Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
         builder.add(STACKS);
     }

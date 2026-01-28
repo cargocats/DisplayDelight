@@ -43,7 +43,7 @@ public class DisplayDelightItems {
     }
 
     private static ResourceKey<Item> keyOf(ResourceKey<Block> blockKey) {
-        return ResourceKey.create(Registries.ITEM, blockKey.location());
+        return ResourceKey.create(Registries.ITEM, blockKey.registry());
     }
 
     public static Item register(ResourceKey<Item> key, Function<Item.Properties, Item> factory, Item.Properties settings) {
