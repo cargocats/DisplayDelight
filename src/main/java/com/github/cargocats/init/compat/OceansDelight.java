@@ -16,25 +16,10 @@ public class OceansDelight {
     public static final Block OD_HONEY_FRIED_KELP = DisplayDelightBlocks.createPlatedBlock("od_plated_honey_fried_kelp");
     public static final Block OD_COOKED_STUFFED_COD = DisplayDelightBlocks.createStackablePlatedBlock("od_plated_cooked_stuffed_cod", 2);
 
-    public static final ArrayList<Block> displayableBlocks = new ArrayList<>(List.of(
-            OD_BOWL_OF_GUARDIAN_SOUP,
-            OD_BRAISED_SEA_PICKLE,
-            OD_SEAGRASS_SALAD,
-            OD_SQUID_RINGS
-    ));
-
-    public static final ArrayList<Block> plateableBlocks = new ArrayList<>(List.of(
-            OD_BACKED_TENTACLE_ON_A_STICK,
-            OD_ELDER_GUARDIAN_ROLL,
-            OD_FUGU_ROLL,
-            OD_HONEY_FRIED_KELP,
-            OD_COOKED_STUFFED_COD
-    ));
+    public static final Block OD_SMALL_ELDER_GUARDIAN_ROLL = DisplayDelightBlocks.createSmallPlatedBlock("od_small_plated_elder_guardian_roll");
+    public static final Block OD_SMALL_FUGU_ROLL = DisplayDelightBlocks.createSmallPlatedBlock("od_small_plated_fugu_roll");
 
     public static void init() {
-        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.addAll(displayableBlocks);
-        DisplayDelightBlocks.PLATEABLE_BLOCKS.addAll(plateableBlocks);
-
         DisplayDelight.LOG.info("Initialized Oceans Delight compatibility");
     }
 }

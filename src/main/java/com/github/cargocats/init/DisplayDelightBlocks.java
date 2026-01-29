@@ -2,6 +2,10 @@ package com.github.cargocats.init;
 
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.block.*;
+import com.github.cargocats.block.fiery.FieryFoodBlock;
+import com.github.cargocats.block.fiery.FieryPlatedFoodBlock;
+import com.github.cargocats.block.fiery.FierySmallPlatedFoodBlock;
+import com.github.cargocats.block.fiery.FieryWideFoodBlock;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -41,16 +45,7 @@ public class DisplayDelightBlocks {
     public static final Block PLATED_PUMPKIN_PIE = createPlatedBlock("vna_plated_pumpkin_pie");
 
     public static void init() {
-        DISPLAYABLE_BLOCKS.addAll(List.of(
-                MUSHROOM_STEW,
-                RABBIT_STEW,
-                BEETROOT_STEW
-        ));
-
-        PLATEABLE_BLOCKS.addAll(List.of(
-                PLATED_COOKIE,
-                PLATED_PUMPKIN_PIE
-        ));
+        DisplayDelight.LOG.info("Initialized Display Delight Blocks");
     }
 
     public static Block createFoodBlock(String name, ResourceLocation foodItemId) {
@@ -87,20 +82,53 @@ public class DisplayDelightBlocks {
         );
     }
 
+    public static Block createFieryFoodBlock(String name, ResourceLocation foodItemId) {
+        return register(
+                name,
+                settings -> new FieryFoodBlock(foodItemId, settings),
+                baseBlockSettings()
+        );
+    }
+
+    public static Block createFieryWideFoodBlock(String name, ResourceLocation foodItemId) {
+        return register(
+                name,
+                settings -> new FieryWideFoodBlock(foodItemId, settings),
+                baseBlockSettings()
+        );
+    }
+
     public static Block createDrinkFoodBlock(String name) {
-        return createDrinkFoodBlock(name, DisplayDelightAssociations.getId(name));
+        Block block = createDrinkFoodBlock(name, DisplayDelightAssociations.getId(name));
+        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.add(block);
+
+        return block;
     }
 
     public static Block createHotDrinkFoodBlock(String name) {
-        return createHotDrinkFoodBlock(name, DisplayDelightAssociations.getId(name));
+        Block block = createHotDrinkFoodBlock(name, DisplayDelightAssociations.getId(name));
+        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.add(block);
+
+        return block;
     }
 
     public static Block createFoodBlock(String name) {
         return createFoodBlock(name, DisplayDelightAssociations.getId(name));
     }
 
+    public static Block createFieryFoodBlock(String name) {
+        return createFieryFoodBlock(name, DisplayDelightAssociations.getId(name));
+    }
+
+    public static Block createFieryWideFoodBlock(String name) {
+        return createFieryWideFoodBlock(name, DisplayDelightAssociations.getId(name));
+    }
+
     public static Block createWideFoodBlock(String name) {
-        return createWideFoodBlock(name, DisplayDelightAssociations.getId(name));
+        Block block = createWideFoodBlock(name, DisplayDelightAssociations.getId(name));
+        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.add(block);
+
+        return block;
     }
 
     public static Block createSmallPlatedBlock(String name, ResourceLocation foodItemId) {
@@ -111,8 +139,26 @@ public class DisplayDelightBlocks {
         );
     }
 
+    public static Block createFierySmallPlatedBlock(String name, ResourceLocation foodItemId) {
+        return register(
+                name,
+                settings -> new FierySmallPlatedFoodBlock(foodItemId, settings),
+                baseBlockSettings()
+        );
+    }
+
     public static Block createSmallPlatedBlock(String name) {
-        return createSmallPlatedBlock(name, DisplayDelightAssociations.getId(name));
+        Block block = createSmallPlatedBlock(name, DisplayDelightAssociations.getId(name));
+        DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS.add(block);
+
+        return block;
+    }
+
+    public static Block createFierySmallPlatedBlock(String name) {
+        Block block = createFierySmallPlatedBlock(name, DisplayDelightAssociations.getId(name));
+        DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS.add(block);
+
+        return block;
     }
 
     public static Block createStackablePlatedBlock(String name, ResourceLocation foodItemId, int maxStacks) {
@@ -123,8 +169,26 @@ public class DisplayDelightBlocks {
         );
     }
 
+    public static Block createFieryStackablePlatedBlock(String name, ResourceLocation foodItemId, int maxStacks) {
+        return register(
+                name,
+                settings -> new FieryPlatedFoodBlock(foodItemId, maxStacks, settings),
+                baseBlockSettings()
+        );
+    }
+
     public static Block createStackablePlatedBlock(String name, int maxStacks) {
-        return createStackablePlatedBlock(name, DisplayDelightAssociations.getId(name), maxStacks);
+        Block block = createStackablePlatedBlock(name, DisplayDelightAssociations.getId(name), maxStacks);
+        DisplayDelightBlocks.PLATEABLE_BLOCKS.add(block);
+
+        return block;
+    }
+
+    public static Block createFieryStackablePlatedBlock(String name, int maxStacks) {
+        Block block = createFieryStackablePlatedBlock(name, DisplayDelightAssociations.getId(name), maxStacks);
+        DisplayDelightBlocks.PLATEABLE_BLOCKS.add(block);
+
+        return block;
     }
 
     public static Block createPlatedBlock(String name) {

@@ -39,6 +39,9 @@ public class DisplayDelight implements ModInitializer {
 		OceansDelight.init();
 		PineappleDelight.init();
 		CornDelight.init();
+		EndsDelight.init();
+		MyNethersDelight.init();
+		NethersDelight.init();
 
         // No fabric ports as of 1.21.1
         ExpandedDelight.init();
@@ -47,6 +50,10 @@ public class DisplayDelight implements ModInitializer {
         CulturalDelight.init();
         LargeMeals.init();
         FestiveDelight.init();
+		EnderDelight.init();
+		AquacultureDelight.init();
+		BrewinAndChewin.init();
+		CrabbersDelight.init();
 	}
 
 	public static ResourceLocation id(String path) {
