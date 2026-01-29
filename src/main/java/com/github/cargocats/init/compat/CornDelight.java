@@ -2,9 +2,10 @@ package com.github.cargocats.init.compat;
 
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
+import net.minecraft.world.level.block.Block;
+
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.world.level.block.Block;
 
 public class CornDelight {
     public static final Block CD_NACHOS_BOWL = DisplayDelightBlocks.createFoodBlock("cd_nachos_bowl");

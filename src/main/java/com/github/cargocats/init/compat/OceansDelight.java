@@ -2,9 +2,10 @@ package com.github.cargocats.init.compat;
 
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
+import net.minecraft.world.level.block.Block;
+
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.world.level.block.Block;
 
 public class OceansDelight {
     public static final Block OD_BOWL_OF_GUARDIAN_SOUP = DisplayDelightBlocks.createFoodBlock("od_bowl_of_guardian_soup");

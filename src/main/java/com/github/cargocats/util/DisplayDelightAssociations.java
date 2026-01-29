@@ -1,14 +1,15 @@
 package com.github.cargocats.util;
 
 import com.github.cargocats.DisplayDelight;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class DisplayDelightAssociations {
     public static final ConcurrentHashMap<ResourceLocation, Block> BLOCK_CACHE = new ConcurrentHashMap<>();

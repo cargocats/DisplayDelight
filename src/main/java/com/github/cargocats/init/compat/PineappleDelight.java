@@ -2,9 +2,10 @@ package com.github.cargocats.init.compat;
 
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
+import net.minecraft.world.level.block.Block;
+
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.world.level.block.Block;
 
 public class PineappleDelight {
     public static final Block PD_PINEAPPLE_FRIED_RICE = DisplayDelightBlocks.createFoodBlock("pd_pineapple_fried_rice");

@@ -1,3 +1,6 @@
 {
-  "parent": "displaydelight:block/food_plate"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "displaydelight:item/food_plate"
+  }
 }

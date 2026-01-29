@@ -5,7 +5,6 @@ import com.github.cargocats.block.FoodBlock;
 import com.github.cargocats.block.PlatedFoodBlock;
 import com.github.cargocats.block.SmallPlatedFoodBlock;
 import com.github.cargocats.init.DisplayDelightBlocks;
-import java.util.Set;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -21,6 +20,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+
+import java.util.Set;
 
 public class InteractionManager {
     public static boolean tryPlaceItem(Player player, ServerLevel world, InteractionHand hand, BlockHitResult blockHitResult) {

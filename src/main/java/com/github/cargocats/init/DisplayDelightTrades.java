@@ -1,6 +1,5 @@
 package com.github.cargocats.init;
 
-
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.core.component.DataComponentPredicate;
 import net.minecraft.util.RandomSource;

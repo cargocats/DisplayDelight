@@ -2,9 +2,9 @@ package com.github.cargocats.data.provider;
 
 import com.github.cargocats.block.PlatedFoodBlock;
 import com.github.cargocats.init.DisplayDelightBlocks;
+import com.github.cargocats.init.DisplayDelightItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
 import net.minecraft.data.models.blockstates.MultiVariantGenerator;
@@ -12,6 +12,7 @@ import net.minecraft.data.models.blockstates.PropertyDispatch;
 import net.minecraft.data.models.blockstates.Variant;
 import net.minecraft.data.models.blockstates.VariantProperties;
 import net.minecraft.data.models.model.ModelLocationUtils;
+import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.world.level.block.Block;
 
 public class DDModelProvider extends FabricModelProvider {
@@ -50,6 +51,7 @@ public class DDModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
-
+        itemModelGenerators.generateFlatItem(DisplayDelightItems.SMALL_EMPTY_PLATE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(DisplayDelightItems.EMPTY_PLATE, ModelTemplates.FLAT_ITEM);
     }
 }
