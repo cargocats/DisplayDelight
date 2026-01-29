@@ -21,7 +21,7 @@ public class HotDrinkFoodBlock extends DrinkFoodBlock {
             double y = (double) pos.getY() + 0.6D;
             double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.3D - 0.15D);
 
-            world.addParticle(ParticleTypes.WHITE_SMOKE, x, y, z, 0.0d, 0.0d, 0.0d);
+            world.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0d, 0.0d, 0.0d);
         }
     }
 }

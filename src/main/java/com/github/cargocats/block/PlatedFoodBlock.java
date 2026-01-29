@@ -22,7 +22,7 @@ public class PlatedFoodBlock extends FoodBlock implements StackablePlate {
     }
 
     @Override
-    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return box(1, 0, 1, 15, 6, 15);
     }
 

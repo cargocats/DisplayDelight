@@ -55,7 +55,7 @@ public class DisplayDelightAssociations {
         Item cached = ITEM_CACHE.get(foodItemId);
         if (cached != null) return cached;
 
-        ResourceLocation translatedId = ResourceLocation.fromNamespaceAndPath(foodItemId.getNamespace(), removeFirstPrefix(foodItemId.getPath()));
+        ResourceLocation translatedId = new ResourceLocation(foodItemId.getNamespace(), removeFirstPrefix(foodItemId.getPath()));
         Optional<Item> optItem = BuiltInRegistries.ITEM.getOptional(translatedId);
         Item foodItem = optItem.orElse(Items.AIR);
 
@@ -68,7 +68,7 @@ public class DisplayDelightAssociations {
     }
 
     public static ResourceLocation getId(String name) {
-        return ResourceLocation.fromNamespaceAndPath(getLongNamespace(getPrefix(name)), removeFirstPrefix(name));
+        return new ResourceLocation(getLongNamespace(getPrefix(name)), removeFirstPrefix(name));
     }
 
     private static String removeFirstPrefix(String path) {

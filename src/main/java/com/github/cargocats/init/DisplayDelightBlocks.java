@@ -134,7 +134,7 @@ public class DisplayDelightBlocks {
     public static BlockBehaviour.Properties baseBlockSettings() {
         return BlockBehaviour.Properties.of()
                 .noOcclusion()
-                .noTerrainParticles()
+                .noParticlesOnBreak()
                 .instabreak()
                 .pushReaction(PushReaction.DESTROY)
                 .sound(SoundType.WOOD);

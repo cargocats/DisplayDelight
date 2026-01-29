@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:oak_slab"
+            "items": [
+              "minecraft:oak_slab"
+            ]
           }
         ]
       },
@@ -20,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_oak_slab"
+      "has_oak_slab",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "displaydelight:small_food_plate"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

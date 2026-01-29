@@ -2,12 +2,9 @@ package com.github.cargocats.block;
 
 import com.github.cargocats.init.DisplayDelightItems;
 import com.github.cargocats.util.DisplayDelightAssociations;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -36,11 +33,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class FoodBlock extends HorizontalDirectionalBlock {
-    public static final MapCodec<FoodBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(
-                    ResourceLocation.CODEC.fieldOf("food_item_id").forGetter(block -> block.foodItemId), propertiesCodec()).apply(instance, FoodBlock::new)
-    );
-
     private final ResourceLocation foodItemId;
     public FoodBlock(ResourceLocation foodItemId, Properties settings) {
         super(settings);
@@ -49,23 +41,16 @@ public class FoodBlock extends HorizontalDirectionalBlock {
     }
 
     @Override
-    protected @NotNull MapCodec<? extends HorizontalDirectionalBlock> codec() { return CODEC; }
-
-    @Override
-    protected @NotNull List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
-        List<ItemStack> droppedStacks = super.getDrops(state, builder);
+    public List<ItemStack> getDrops(BlockState blockState, LootParams.Builder builder) {
+        List<ItemStack> droppedStacks = super.getDrops(blockState, builder);
 
         boolean usedSilktouch = false;
-
         ItemStack tool = builder.getParameter(LootContextParams.TOOL);
-        var enchantmentRegistry = builder.getLevel().registryAccess().registryOrThrow(Registries.ENCHANTMENT);
-        var silkTouchEntry = enchantmentRegistry.getHolder(Enchantments.SILK_TOUCH);
-
-        if (silkTouchEntry.isPresent() && EnchantmentHelper.getItemEnchantmentLevel(silkTouchEntry.get(), tool) > 0) {
+        if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, tool) > 0) {
             usedSilktouch = true;
         }
 
-        Block block = state.getBlock();
+        Block block = blockState.getBlock();
         Item foodItem = getFoodItem();
         boolean fallBack = false;
 
@@ -78,10 +63,10 @@ public class FoodBlock extends HorizontalDirectionalBlock {
         }
 
         if (block instanceof PlatedFoodBlock platedFoodBlock) {
-            if (usedSilktouch && platedFoodBlock.getStacks(state) >= platedFoodBlock.getMaxStacks()) {
+            if (usedSilktouch && platedFoodBlock.getStacks(blockState) >= platedFoodBlock.getMaxStacks()) {
                 droppedStacks.add(new ItemStack(block));
             } else {
-                droppedStacks.add(new ItemStack(foodItem, !fallBack ? platedFoodBlock.getStacks(state) : 1));
+                droppedStacks.add(new ItemStack(foodItem, !fallBack ? platedFoodBlock.getStacks(blockState) : 1));
                 if (!fallBack) droppedStacks.add(new ItemStack(DisplayDelightItems.EMPTY_PLATE));
             }
         } else if (block instanceof SmallPlatedFoodBlock) {
@@ -99,19 +84,19 @@ public class FoodBlock extends HorizontalDirectionalBlock {
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         return world.getBlockState(pos.below()).isFaceSturdy(world, pos.below(), Direction.UP, SupportType.CENTER);
     }
 
     @Override
-    protected void tick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
+    public void tick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
         if (!state.canSurvive(world, pos)) {
             world.destroyBlock(pos, true);
         }
     }
 
     @Override
-    protected @NotNull BlockState updateShape(
+    public @NotNull BlockState updateShape(
             BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos
     ) {
         if (!state.canSurvive(world, pos)) {
@@ -127,12 +112,12 @@ public class FoodBlock extends HorizontalDirectionalBlock {
     }
 
     @Override
-    public @NotNull ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState) {
         return new ItemStack(getFoodItem());
     }
 
     @Override
-    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return box(3, 0, 3, 13, 6, 13);
     }
 

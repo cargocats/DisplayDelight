@@ -1,18 +1,14 @@
 package com.github.cargocats.init;
 
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.minecraft.core.component.DataComponentPredicate;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Optional;
 
 public class DisplayDelightTrades {
     public static abstract class DisplayFoodItemFactory implements VillagerTrades.ItemListing {
@@ -34,9 +30,8 @@ public class DisplayDelightTrades {
         public @Nullable MerchantOffer getOffer(Entity entity, RandomSource random) {
             ItemStack forSale = ForSaleItem(entity, random);
             ItemStack toBuy = new ItemStack(Items.EMERALD, this.price);
-            ItemCost tradedItem = new ItemCost(toBuy.getItemHolder(), toBuy.getCount(), DataComponentPredicate.EMPTY);
 
-            return new MerchantOffer(tradedItem, Optional.empty(), forSale, this.maxTrades, this.xp, this.priceMultiplier);
+            return new MerchantOffer(toBuy, forSale, this.maxTrades, this.xp, this.priceMultiplier);
         }
     }
 

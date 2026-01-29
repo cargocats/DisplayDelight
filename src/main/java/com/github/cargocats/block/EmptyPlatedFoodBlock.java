@@ -6,13 +6,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.NotNull;
 
 public class EmptyPlatedFoodBlock extends PlatedFoodBlock {
     public EmptyPlatedFoodBlock(Properties settings) {
-        super(ResourceLocation.withDefaultNamespace("air"), 1, settings);
+        super(new ResourceLocation("air"), 1, settings);
     }
 
     @Override
@@ -21,7 +20,7 @@ public class EmptyPlatedFoodBlock extends PlatedFoodBlock {
     }
 
     @Override
-    public @NotNull ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState) {
         return new ItemStack(DisplayDelightItems.EMPTY_PLATE);
     }
 }

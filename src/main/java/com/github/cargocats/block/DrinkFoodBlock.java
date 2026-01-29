@@ -14,7 +14,7 @@ public class DrinkFoodBlock extends FoodBlock {
     }
 
     @Override
-    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return box(4, 0, 4, 12, 10, 12);
     }
 }
