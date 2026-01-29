@@ -22,25 +22,7 @@ public class LargeMeals {
     public static final Block LM_SWEET_BERRY_CUSTARD = DisplayDelightBlocks.createDrinkFoodBlock("lm_sweet_berry_custard");
     public static final Block LM_RICE_PUDDING = DisplayDelightBlocks.createFoodBlock("lm_rice_pudding");
 
-    public static final ArrayList<Block> displayableBlocks = new ArrayList<>(List.of(
-            LM_PUFFERFISH_BROTH,
-            LM_POTATO_SOUP,
-            LM_RED_SOUP,
-            LM_TOMATO_EGG_SOUP,
-            LM_COD_DELUXE,
-            LM_HEARTY_LUNCH,
-            LM_CHICKEN_CURRY,
-            LM_PASTA_WITH_MUSHROOM_SAUCE,
-            LM_MUSHROOM_POT_PIE,
-            LM_OMURICE,
-            LM_ROASTED_MUTTON_RACK,
-            LM_RICE_PUDDING,
-            LM_SWEET_BERRY_CUSTARD
-    ));
-
     public static void init() {
-        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.addAll(displayableBlocks);
-
         DisplayDelight.LOG.info("Initialized Large Meals compatibility");
     }
 }

@@ -85,11 +85,18 @@ public class DisplayDelightAssociations {
         put("od_", "oceansdelight");
         put("pd_", "pineapple_delight");
         put("cd_", "corndelight");
+        put("edd_", "ends_delight");
+        put("mnd_", "mynethersdelight");
+        put("nd_", "nethersdelight");
 
         // No fabric port as of 1.21.1
         put("ed_", "expandeddelight");
         put("df_", "delightful");
         put("ad_", "alexdelight");
+        put("acd_", "aquaculturedelight");
+        put("bnc_", "brewinandchewin");
+        put("crd_", "crabbersdelight");
+        put("erd_", "endersdelight");
         put("ctd_", "culturaldelights");
         put("lm_", "largemeals");
         put("fd_", "festive_delight");
