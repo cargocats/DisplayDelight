@@ -4,6 +4,7 @@
   "textures": {
     "4": "displaydelight:block/bowl2",
     "5": "displaydelight:block/lm_pufferfish_broth",
+    "missing": "displaydelight:block/lm_pufferfish_broth",
     "particle": "displaydelight:block/lm_pufferfish_broth"
   },
   "elements": [
