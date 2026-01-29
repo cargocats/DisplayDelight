@@ -23,7 +23,6 @@ public class DisplayDelightClient implements ClientModInitializer {
 		BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT, cutoutBlocks.toArray(new Block[0]));
 
 		ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, textList) -> {
-			DisplayDelight.LOG.info("The item stack is {}, is plate displayable? {}", itemStack, itemStack.is(DisplayDelight.PLATE_DISPLAYABLE));
 			if (itemStack.is(DisplayDelight.DISPLAYABLE)){
 				textList.add(Component.translatable("item.displaydelight.tooltip.displayable").withStyle(ChatFormatting.GRAY));
 			} else if (itemStack.is(DisplayDelight.SMALL_PLATE_DISPLAYABLE) && itemStack.is(DisplayDelight.PLATE_DISPLAYABLE)) {
