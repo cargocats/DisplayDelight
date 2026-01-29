@@ -3,11 +3,11 @@ package com.github.cargocats;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.Block;
-import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,7 @@ public class DisplayDelightClient implements ClientModInitializer {
 		BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT, cutoutBlocks.toArray(new Block[0]));
 
 		ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, textList) -> {
+			DisplayDelight.LOG.info("The item stack is {}, is plate displayable? {}", itemStack, itemStack.is(DisplayDelight.PLATE_DISPLAYABLE));
 			if (itemStack.is(DisplayDelight.DISPLAYABLE)){
 				textList.add(Component.translatable("item.displaydelight.tooltip.displayable").withStyle(ChatFormatting.GRAY));
 			} else if (itemStack.is(DisplayDelight.SMALL_PLATE_DISPLAYABLE) && itemStack.is(DisplayDelight.PLATE_DISPLAYABLE)) {

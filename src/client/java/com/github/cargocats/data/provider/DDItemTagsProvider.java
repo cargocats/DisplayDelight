@@ -27,17 +27,17 @@ public class DDItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 
         for (Block block: DisplayDelightBlocks.DISPLAYABLE_BLOCKS) {
             Identifier translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
-            displayableTagBuilder.addOptionalTag(translatedId);
+            displayableTagBuilder.addOptionalElement(translatedId);
         }
 
         for (Block block: DisplayDelightBlocks.PLATEABLE_BLOCKS) {
             Identifier translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
-            plateDisplayableTagBuilder.addOptionalTag(translatedId);
+            plateDisplayableTagBuilder.addOptionalElement(translatedId);
         }
 
         for (Block block: DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS) {
             Identifier translatedId = DisplayDelightAssociations.getId(BuiltInRegistries.BLOCK.getKey(block).getPath());
-            smallPlateDisplayableTagBuilder.addOptionalTag(translatedId);
+            smallPlateDisplayableTagBuilder.addOptionalElement(translatedId);
         }
     }
 }

@@ -57,8 +57,8 @@ public class FoodBlock extends HorizontalDirectionalBlock {
         List<ItemStack> droppedStacks = super.getDrops(state, builder);
 
         ItemStack tool = builder.getParameter(LootContextParams.TOOL);
-        var enchantmentRegistry = builder.getLevel().registryAccess().getOrThrow(Registries.ENCHANTMENT);
-        var silkTouchEntry = enchantmentRegistry.value().getOrThrow(Enchantments.SILK_TOUCH);
+        var enchantmentRegistry = builder.getLevel().registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
+        var silkTouchEntry = enchantmentRegistry.getOrThrow(Enchantments.SILK_TOUCH);
         boolean usedSilkTouch = silkTouchEntry.isBound() && EnchantmentHelper.getItemEnchantmentLevel(silkTouchEntry, tool) > 0;
 
         Block block = state.getBlock();

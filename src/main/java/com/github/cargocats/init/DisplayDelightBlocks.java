@@ -3,9 +3,6 @@ package com.github.cargocats.init;
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.block.*;
 import com.github.cargocats.util.DisplayDelightAssociations;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Function;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -15,6 +12,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
 
 public class DisplayDelightBlocks {
     public static final ArrayList<Block> DISPLAYABLE_BLOCKS = new ArrayList<>();

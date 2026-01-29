@@ -2,9 +2,10 @@ package com.github.cargocats.init.compat;
 
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
+import net.minecraft.world.level.block.Block;
+
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.world.level.block.Block;
 
 public class FestiveDelight {
     public static final Block FD_FESTIVE_CHICKEN = DisplayDelightBlocks.createFoodBlock("fd_festive_chicken");
