@@ -14,17 +14,11 @@ public class AlexDelight {
     public static final Block AD_LOBSTER_PASTA = DisplayDelightBlocks.createWideFoodBlock("ad_lobster_pasta");
     public static final Block AD_KANGAROO_PASTA = DisplayDelightBlocks.createWideFoodBlock("ad_kangaroo_pasta");
 
-    public static final ArrayList<Block> displayableBlocks = new ArrayList<>(List.of(
-            AD_MAGGOT_SALAD,
-            AD_KANGAROO_STEW,
-            AD_ACACIA_BLOSSOM_SOUP,
-            AD_LOBSTER_PASTA,
-            AD_KANGAROO_PASTA
-    ));
+    public static final Block AD_BUNFUNBUS_SANDWICH = DisplayDelightBlocks.createPlatedBlock("ad_plated_bunfungus_sandwich");
+    public static final Block AD_BISON_BURGER = DisplayDelightBlocks.createPlatedBlock("ad_plated_bison_burger");
+    public static final Block AD_GONGYLIDIA_BRUSCHETTA = DisplayDelightBlocks.createStackablePlatedBlock("ad_plated_gongylidia_bruschetta", 2);
 
     public static void init() {
-        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.addAll(displayableBlocks);
-
         DisplayDelight.LOG.info("Initialized Alex Delight compatibility");
     }
 }

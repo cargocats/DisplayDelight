@@ -21,26 +21,29 @@ public class ExpandedDelight {
     public static final Block ED_APPLE_JUICE = DisplayDelightBlocks.createDrinkFoodBlock("ed_apple_juice");
     public static final Block ED_SWEET_BERRY_JUICE = DisplayDelightBlocks.createDrinkFoodBlock("ed_sweet_berry_juice");
     public static final Block ED_GLOW_BERRY_JUICE = DisplayDelightBlocks.createDrinkFoodBlock("ed_glow_berry_juice");
+    public static final Block ED_CRANBERRY_JUICE = DisplayDelightBlocks.createDrinkFoodBlock("ed_cranberry_juice");
+    public static final Block ED_CRANBERRY_CHICKEN = DisplayDelightBlocks.createWideFoodBlock("ed_cranberry_chicken");
+    public static final Block ED_ASPARAGUS_MUSHROOM_PASTA = DisplayDelightBlocks.createWideFoodBlock("ed_asparagus_mushroom_pasta");
+    public static final Block ED_SWEET_POTATO_CASSEROLE = DisplayDelightBlocks.createWideFoodBlock("ed_sweet_potato_casserole");
 
-    public static final ArrayList<Block> displayableBlocks = new ArrayList<>(List.of(
-            ED_ASPARAGUS_SOUP,
-            ED_ASPARAGUS_SOUP_CREAMY,
-            ED_ASPARAGUS_AND_BACON_CHEESY,
-            ED_PEPERONATA,
-            ED_PEANUT_HONEY_SOUP,
-            ED_MAC_AND_CHEESE,
-            ED_PEANUT_SALAD,
-            ED_SWEET_POTTATO_SALAD,
-            ED_CINNAMON_RICE,
-            ED_CINNAMON_APPLES,
-            ED_APPLE_JUICE,
-            ED_SWEET_BERRY_JUICE,
-            ED_GLOW_BERRY_JUICE
-    ));
+    public static final Block ED_PEANUT_BUTTER_SANDWICH = DisplayDelightBlocks.createPlatedBlock("ed_plated_peanut_butter_sandwich");
+    public static final Block ED_PEANUT_BUTTER_AND_HONEY_SANDWICH = DisplayDelightBlocks.createPlatedBlock("ed_plated_peanut_butter_honey_sandwich");
+    public static final Block ED_GLOW_BERRY_JELLY_SANDWICH = DisplayDelightBlocks.createPlatedBlock("ed_plated_glow_berry_jelly_sandwich");
+    public static final Block ED_SWEET_BERRY_JELLY_SANDWICH = DisplayDelightBlocks.createPlatedBlock("ed_plated_sweet_berry_jelly_sandwich");
+    public static final Block ED_CHEESE_SANDWICH = DisplayDelightBlocks.createPlatedBlock("ed_plated_cheese_sandwich");
+    public static final Block ED_GRILLED_CHEESE = DisplayDelightBlocks.createPlatedBlock("ed_plated_grilled_cheese");
+
+    public static final Block ED_CHOCOLATE_COOKIE = DisplayDelightBlocks.createStackablePlatedBlock("ed_plated_chocolate_cookie", 4);
+    public static final Block ED_SUGAR_COOKIE = DisplayDelightBlocks.createStackablePlatedBlock("ed_plated_sugar_cookie", 4);
+    public static final Block ED_SNICKERDOODLE = DisplayDelightBlocks.createStackablePlatedBlock("ed_plated_snickerdoodle", 4);
+    public static final Block ED_SWEET_ROLL = DisplayDelightBlocks.createStackablePlatedBlock("ed_plated_sweet_roll", 4);
+    public static final Block ED_BERRY_SWEET_ROLL = DisplayDelightBlocks.createStackablePlatedBlock("ed_plated_berry_sweet_roll", 4);
+    public static final Block ED_GLOW_BERRY_SWEET_ROLL = DisplayDelightBlocks.createStackablePlatedBlock("ed_plated_glow_berry_sweet_roll", 4);
+
+    public static final Block ED_SMALL_PLATED_CRANBERRY_COBBLER_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("ed_small_plated_cranberry_cobbler_slice");
+    public static final Block ED_SMALL_PLATED_HONEYED_GOAT_CHEESE_TART_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("ed_small_plated_honeyed_goat_cheese_tart_slice");
 
     public static void init() {
-        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.addAll(displayableBlocks);
-
         DisplayDelight.LOG.info("Initialized Expanded Delight compatibility");
     }
 }
