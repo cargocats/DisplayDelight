@@ -1,9 +1,0 @@
-{
-  "render_type": "cutout",
-  "texture_size": [
-    16,
-    16
-  ],
-  "parent": "displaydelight:block/parent_bowl",
-  "elements": []
-}

@@ -7,7 +7,8 @@
     "2": "displaydelight:block/rock_soup",
     "4": "displaydelight:block/bowl2",
     "5": "displaydelight:block/mnd_magma_cake",
-    "particle": "displaydelight:block/rock_soup"
+    "particle": "displaydelight:block/rock_soup",
+    "missing": "displaydelight:block/rock_soup"
   },
   "elements": [
     {

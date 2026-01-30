@@ -8,7 +8,7 @@
   "textures": {
     "2": "displaydelight:block/ctd_chicken_roll",
     "bowl": "farmers3d/small_plate",
-    "particle": "farmers3d/sweet_berry_cheesecake_inner"
+    "particle": "displaydelight:block/ctd_chicken_roll"
   },
   "elements": [
     {

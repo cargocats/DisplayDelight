@@ -8,7 +8,8 @@
   ],
   "textures": {
     "4": "displaydelight:block/glass_bottle",
-    "6": "displaydelight:block/crd_coconut_milk"
+    "6": "displaydelight:block/crd_coconut_milk",
+    "particle": "displaydelight:block/glass_bottle"
   },
   "elements": [
     {

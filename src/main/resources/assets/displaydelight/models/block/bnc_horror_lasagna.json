@@ -11,7 +11,7 @@
     "1": "farmers3d/tray_bottom",
     "6": "displaydelight:block/bnc_lasagna",
     "tray_top": "farmers3d/tray_top",
-    "particle": "brewinandchewin:item/horror_lasagna"
+    "particle": "displaydelight:block/bnc_lasagna"
   },
   "elements": [
     {

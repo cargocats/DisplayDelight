@@ -7,7 +7,7 @@
     "3": "displaydelight:block/mnd_hotdog",
     "4": "farmers3d/tray_top",
     "5": "displaydelight:block/egg_sandwich",
-    "particle": "mynethersdelight:item/chilidog"
+    "particle": "displaydelight:block/mnd_hotdog"
   },
   "elements": [
     {
