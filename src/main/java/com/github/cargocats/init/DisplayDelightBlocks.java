@@ -18,7 +18,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Function;
 
 public class DisplayDelightBlocks {
@@ -113,15 +112,24 @@ public class DisplayDelightBlocks {
     }
 
     public static Block createFoodBlock(String name) {
-        return createFoodBlock(name, DisplayDelightAssociations.getId(name));
+        Block block = createFoodBlock(name, DisplayDelightAssociations.getId(name));
+        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.add(block);
+
+        return block;
     }
 
     public static Block createFieryFoodBlock(String name) {
-        return createFieryFoodBlock(name, DisplayDelightAssociations.getId(name));
+        Block block = createFieryFoodBlock(name, DisplayDelightAssociations.getId(name));
+        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.add(block);
+
+        return block;
     }
 
     public static Block createFieryWideFoodBlock(String name) {
-        return createFieryWideFoodBlock(name, DisplayDelightAssociations.getId(name));
+        Block block =  createFieryWideFoodBlock(name, DisplayDelightAssociations.getId(name));
+        DisplayDelightBlocks.DISPLAYABLE_BLOCKS.add(block);
+
+        return block;
     }
 
     public static Block createWideFoodBlock(String name) {

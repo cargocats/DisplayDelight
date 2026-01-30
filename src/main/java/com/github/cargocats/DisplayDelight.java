@@ -41,7 +41,8 @@ public class DisplayDelight implements ModInitializer {
 		CornDelight.init();
 		EndsDelight.init();
 		MyNethersDelight.init();
-		NethersDelight.init();
+		// No models exist yet
+		// NethersDelight.init();
 
         // No fabric ports as of 1.21.1
         ExpandedDelight.init();
