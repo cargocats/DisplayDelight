@@ -1,7 +1,0 @@
-{
-  "credit": "Made with Blockbench",
-  "parent": "displaydelight:block/vna_mushroom_stew",
-  "textures": {
-    "2": "displaydelight:block/beetroot_soup"
-  }
-}

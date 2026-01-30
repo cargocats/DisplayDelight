@@ -1,9 +1,0 @@
-{
-  "format_version": "1.9.0",
-  "credit": "Made with Blockbench",
-  "render_type": "cutout",
-  "parent": "displaydelight:block/apple_cider",
-  "textures": {
-    "6": "displaydelight:block/edd_chorus_fruit_milk_tea"
-  }
-}
