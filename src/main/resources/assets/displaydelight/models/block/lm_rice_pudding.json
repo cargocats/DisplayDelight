@@ -1,0 +1,7 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "displaydelight:block/cooked_rice",
+  "textures": {
+    "rice": "displaydelight:block/lm_rice_pudding"
+  }
+}

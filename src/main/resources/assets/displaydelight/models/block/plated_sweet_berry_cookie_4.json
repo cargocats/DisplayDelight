@@ -1,0 +1,7 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "displaydelight:block/vna_plated_cookie_4",
+  "textures": {
+    "4": "displaydelight:block/sweet_berry_cookie"
+  }
+}

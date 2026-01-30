@@ -1,0 +1,7 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "displaydelight:block/small_plated_salmon_roll",
+  "textures": {
+    "1": "displaydelight:block/acd_fried_perch_roll"
+  }
+}

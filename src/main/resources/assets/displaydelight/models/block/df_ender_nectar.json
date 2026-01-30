@@ -1,0 +1,8 @@
+{
+  "credit": "Made with Blockbench",
+  "render_type": "cutout",
+  "parent": "displaydelight:block/apple_cider",
+  "textures": {
+    "6": "displaydelight:block/df_ender_nectar"
+  }
+}

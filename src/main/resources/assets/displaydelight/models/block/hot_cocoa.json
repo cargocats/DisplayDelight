@@ -1,0 +1,10 @@
+{
+  "format_version": "1.9.0",
+  "credit": "Made with Blockbench",
+  "parent": "displaydelight:block/apple_cider",
+  "render_type": "cutout",
+  "textures": {
+    "6": "displaydelight:block/hot_cocoa",
+    "particle": "displaydelight:block/hot_cocoa"
+  }
+}
