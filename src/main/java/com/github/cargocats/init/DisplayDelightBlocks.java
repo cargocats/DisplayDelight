@@ -206,7 +206,6 @@ public class DisplayDelightBlocks {
     public static BlockBehaviour.Properties baseBlockSettings() {
         return BlockBehaviour.Properties.of()
                 .noOcclusion()
-                .noTerrainParticles()
                 .instabreak()
                 .pushReaction(PushReaction.DESTROY)
                 .sound(SoundType.WOOD);
