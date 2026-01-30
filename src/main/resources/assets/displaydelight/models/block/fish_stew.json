@@ -1,4 +1,5 @@
 {
+  "format_version": "1.21.6",
   "credit": "Made with Blockbench",
   "parent": "displaydelight:block/parent_bowl",
   "render_type": "cutout",
@@ -780,6 +781,18 @@
         0
       ]
     },
+    "firstperson_lefthand": {
+      "rotation": [
+        4,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        7,
+        0
+      ]
+    },
     "ground": {
       "translation": [
         0,
@@ -794,19 +807,19 @@
     },
     "gui": {
       "rotation": [
-        37,
-        44,
-        0
+        -153,
+        20,
+        -180
       ],
       "translation": [
-        0,
-        4,
+        0.25,
+        5.5,
         0
       ],
       "scale": [
-        1,
-        1,
-        1
+        1.3,
+        1.3,
+        1.3
       ]
     },
     "head": {
@@ -836,18 +849,6 @@
         2,
         2,
         2
-      ]
-    },
-    "firstperson_lefthand": {
-      "rotation": [
-        4,
-        0,
-        0
-      ],
-      "translation": [
-        0,
-        7,
-        0
       ]
     }
   },

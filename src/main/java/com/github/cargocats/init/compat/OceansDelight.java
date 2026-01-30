@@ -4,9 +4,6 @@ import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class OceansDelight {
     public static final Block OD_BOWL_OF_GUARDIAN_SOUP = DisplayDelightBlocks.createFoodBlock("od_bowl_of_guardian_soup");
     public static final Block OD_BRAISED_SEA_PICKLE = DisplayDelightBlocks.createFoodBlock("od_braised_sea_pickle");

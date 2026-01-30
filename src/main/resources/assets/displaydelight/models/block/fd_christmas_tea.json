@@ -1,4 +1,5 @@
 {
+  "format_version": "1.21.6",
   "credit": "Made with Blockbench",
   "render_type": "cutout",
   "texture_size": [
@@ -8,7 +9,7 @@
   "textures": {
     "2": "displaydelight:block/fd_christmas_tea",
     "4": "displaydelight:block/glass_bottle",
-    "particle": "block/glass"
+    "particle": "displaydelight:block/fd_christmas_tea"
   },
   "elements": [
     {
@@ -858,6 +859,314 @@
           "texture": "#2"
         }
       }
+    },
+    {
+      "from": [
+        2.5,
+        7.5,
+        7.5
+      ],
+      "to": [
+        5.5,
+        8.5,
+        8.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          4.5,
+          7.5,
+          7.5
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            7,
+            5,
+            8.5,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "east": {
+          "uv": [
+            7,
+            5,
+            7.5,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "south": {
+          "uv": [
+            7,
+            5,
+            8.5,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "west": {
+          "uv": [
+            7,
+            5,
+            7.5,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "up": {
+          "uv": [
+            7,
+            5,
+            8.5,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "down": {
+          "uv": [
+            7,
+            5,
+            8.5,
+            5.5
+          ],
+          "texture": "#4"
+        }
+      }
+    },
+    {
+      "from": [
+        1.5,
+        5.5,
+        7.5
+      ],
+      "to": [
+        2.5,
+        7.5,
+        8.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3.5,
+          5.5,
+          7.5
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            8.5,
+            5.5,
+            9,
+            6.5
+          ],
+          "texture": "#4"
+        },
+        "east": {
+          "uv": [
+            8.5,
+            5.5,
+            9,
+            6.5
+          ],
+          "texture": "#4"
+        },
+        "south": {
+          "uv": [
+            8.5,
+            5.5,
+            9,
+            6.5
+          ],
+          "texture": "#4"
+        },
+        "west": {
+          "uv": [
+            8.5,
+            5.5,
+            9,
+            6.5
+          ],
+          "texture": "#4"
+        },
+        "up": {
+          "uv": [
+            8.5,
+            5.5,
+            9,
+            6
+          ],
+          "texture": "#4"
+        },
+        "down": {
+          "uv": [
+            8.5,
+            5.5,
+            9,
+            6
+          ],
+          "texture": "#4"
+        }
+      }
+    },
+    {
+      "from": [
+        2.5,
+        4.5,
+        7.5
+      ],
+      "to": [
+        3.5,
+        5.5,
+        8.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          4.5,
+          4.5,
+          7.5
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "east": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "south": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "west": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "up": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "down": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        }
+      }
+    },
+    {
+      "from": [
+        3.5,
+        3.5,
+        7.5
+      ],
+      "to": [
+        4.5,
+        4.5,
+        8.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          5.5,
+          3.5,
+          7.5
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "east": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "south": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "west": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "up": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        },
+        "down": {
+          "uv": [
+            7.5,
+            5,
+            8,
+            5.5
+          ],
+          "texture": "#4"
+        }
+      }
     }
   ],
   "display": {
@@ -935,12 +1244,24 @@
       "rotation": [
         -150,
         20,
-        180
+        -180
       ],
       "translation": [
         0.75,
         2.5,
         0
+      ]
+    },
+    "head": {
+      "rotation": [
+        0,
+        0,
+        90
+      ],
+      "translation": [
+        0,
+        -4.25,
+        -7
       ]
     },
     "fixed": {
@@ -958,18 +1279,6 @@
         2,
         2,
         2
-      ]
-    },
-    "head": {
-      "rotation": [
-        0,
-        0,
-        90
-      ],
-      "translation": [
-        0,
-        -4.25,
-        -7
       ]
     }
   },
@@ -997,6 +1306,10 @@
       ]
     },
     11,
-    12
+    12,
+    13,
+    14,
+    15,
+    16
   ]
 }
