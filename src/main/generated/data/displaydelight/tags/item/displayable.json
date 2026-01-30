@@ -1,7 +1,67 @@
 {
   "values": [
     {
+      "id": "minecraft:mushroom_stew",
+      "required": false
+    },
+    {
+      "id": "minecraft:rabbit_stew",
+      "required": false
+    },
+    {
+      "id": "minecraft:beetroot_soup",
+      "required": false
+    },
+    {
       "id": "farmersdelight:glow_berry_custard",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fruit_salad",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cooked_rice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:mixed_salad",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:beef_stew",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:chicken_soup",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:vegetable_soup",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fish_stew",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fried_rice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:pumpkin_soup",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:baked_cod_stew",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:noodle_soup",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:bone_broth",
       "required": false
     },
     {
@@ -45,6 +105,22 @@
       "required": false
     },
     {
+      "id": "farmersdelight:roast_chicken",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:stuffed_pumpkin",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:honey_glazed_ham",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:shepherds_pie",
+      "required": false
+    },
+    {
       "id": "farmersdelight:apple_cider",
       "required": false
     },
@@ -54,6 +130,26 @@
     },
     {
       "id": "farmersdelight:hot_cocoa",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:bowl_of_guardian_soup",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:braised_sea_pickle",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:seagrass_salad",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:squid_rings",
+      "required": false
+    },
+    {
+      "id": "pineapple_delight:pineapple_fried_rice",
       "required": false
     },
     {
@@ -69,7 +165,39 @@
       "required": false
     },
     {
+      "id": "corndelight:nachos_bowl",
+      "required": false
+    },
+    {
       "id": "corndelight:creamy_corn_drink",
+      "required": false
+    },
+    {
+      "id": "corndelight:cornbread_stuffing",
+      "required": false
+    },
+    {
+      "id": "corndelight:corn_soup",
+      "required": false
+    },
+    {
+      "id": "corndelight:creamed_corn",
+      "required": false
+    },
+    {
+      "id": "ends_delight:dragon_breath_and_chorus_soup",
+      "required": false
+    },
+    {
+      "id": "ends_delight:shulker_soup",
+      "required": false
+    },
+    {
+      "id": "ends_delight:ender_noodle",
+      "required": false
+    },
+    {
+      "id": "ends_delight:enderman_gristle_stew",
       "required": false
     },
     {
@@ -78,6 +206,18 @@
     },
     {
       "id": "ends_delight:roasted_dragon_steak",
+      "required": false
+    },
+    {
+      "id": "ends_delight:end_mixed_salad",
+      "required": false
+    },
+    {
+      "id": "ends_delight:assorted_salad",
+      "required": false
+    },
+    {
+      "id": "ends_delight:ender_congee",
       "required": false
     },
     {
@@ -98,6 +238,58 @@
     },
     {
       "id": "ends_delight:chorus_flower_tea",
+      "required": false
+    },
+    {
+      "id": "ends_delight:grilled_shulker",
+      "required": false
+    },
+    {
+      "id": "ends_delight:dragon_meat_stew",
+      "required": false
+    },
+    {
+      "id": "ends_delight:steamed_dragon_egg",
+      "required": false
+    },
+    {
+      "id": "ends_delight:dragon_leg_with_sauce",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:sizzling_pudding",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:rock_soup",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:spicy_noodle_soup",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:strider_stew",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:ghast_salad",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:dried_ghast_with_milk",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:sausage_and_potatoes",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:spicy_hoglin_stew",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:egg_soup",
       "required": false
     },
     {
@@ -133,15 +325,47 @@
       "required": false
     },
     {
+      "id": "mynethersdelight:spicy_curry",
+      "required": false
+    },
+    {
       "id": "mynethersdelight:bleeding_tartar",
       "required": false
     },
     {
-      "id": "nethersdelight:warped_moldy_meat",
+      "id": "mynethersdelight:hot_wings",
       "required": false
     },
     {
-      "id": "nethersdelight:grilled_strider",
+      "id": "mynethersdelight:plate_of_ghasta_with_cream",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_stuffed_hoglin_snout",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_stuffed_hoglin_ham",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_stuffed_hoglin",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_cold_striderloaf",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_striderloaf",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:asparagus_soup",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:asparagus_soup_creamy",
       "required": false
     },
     {
@@ -150,6 +374,30 @@
     },
     {
       "id": "expandeddelight:peperonata",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:peanut_honey_soup",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:mac_and_cheese",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:peanut_salad",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:sweet_potato_salad",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:cinnamon_rice",
+      "required": false
+    },
+    {
+      "id": "expandeddelight:cinnamon_apples",
       "required": false
     },
     {
@@ -181,7 +429,15 @@
       "required": false
     },
     {
+      "id": "delightful:matcha_ice_cream",
+      "required": false
+    },
+    {
       "id": "delightful:matcha_milkshake",
+      "required": false
+    },
+    {
+      "id": "delightful:salmonberry_ice_cream",
       "required": false
     },
     {
@@ -201,6 +457,38 @@
       "required": false
     },
     {
+      "id": "delightful:cactus_chili",
+      "required": false
+    },
+    {
+      "id": "delightful:field_salad",
+      "required": false
+    },
+    {
+      "id": "delightful:stuffed_cantaloupe",
+      "required": false
+    },
+    {
+      "id": "delightful:sinigang",
+      "required": false
+    },
+    {
+      "id": "delightful:cactus_soup",
+      "required": false
+    },
+    {
+      "id": "alexdelight:maggot_salad",
+      "required": false
+    },
+    {
+      "id": "alexdelight:kangaroo_stew",
+      "required": false
+    },
+    {
+      "id": "alexdelight:acacia_blossom_soup",
+      "required": false
+    },
+    {
       "id": "alexdelight:lobster_pasta",
       "required": false
     },
@@ -209,7 +497,43 @@
       "required": false
     },
     {
+      "id": "culturaldelights:hearty_salad",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:creamed_corn",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:spicy_curry",
+      "required": false
+    },
+    {
       "id": "culturaldelights:fried_eggplant_pasta",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:poached_eggplants",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:eggplant_parmesan",
+      "required": false
+    },
+    {
+      "id": "largemeals:pufferfish_broth",
+      "required": false
+    },
+    {
+      "id": "largemeals:potato_soup",
+      "required": false
+    },
+    {
+      "id": "largemeals:red_soup",
+      "required": false
+    },
+    {
+      "id": "largemeals:tomato_egg_soup",
       "required": false
     },
     {
@@ -229,7 +553,27 @@
       "required": false
     },
     {
+      "id": "largemeals:omurice",
+      "required": false
+    },
+    {
+      "id": "largemeals:mushroom_pot_pie",
+      "required": false
+    },
+    {
+      "id": "largemeals:roasted_mutton_rack",
+      "required": false
+    },
+    {
       "id": "largemeals:sweet_berry_custard",
+      "required": false
+    },
+    {
+      "id": "largemeals:rice_pudding",
+      "required": false
+    },
+    {
+      "id": "festive_delight:festive_chicken",
       "required": false
     },
     {
@@ -242,6 +586,26 @@
     },
     {
       "id": "endersdelight:chorus_juice",
+      "required": false
+    },
+    {
+      "id": "endersdelight:amberveil_stew",
+      "required": false
+    },
+    {
+      "id": "endersdelight:amberveiled_curry",
+      "required": false
+    },
+    {
+      "id": "endersdelight:chorus_stew",
+      "required": false
+    },
+    {
+      "id": "endersdelight:twisted_cereal",
+      "required": false
+    },
+    {
+      "id": "endersdelight:endermite_stew",
       "required": false
     },
     {
@@ -262,6 +626,42 @@
     },
     {
       "id": "endersdelight:pearl_pasta",
+      "required": false
+    },
+    {
+      "id": "endersdelight:stuffed_shulker_bowl",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:poor_fisher_chowder",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:jellyfish_jelly",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:unusual_fish_soup",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:bass_stew",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:fish_chorba",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:fish_and_chips",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:halaszle",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:crispy_nori_kelp",
       "required": false
     },
     {
@@ -293,6 +693,10 @@
       "required": false
     },
     {
+      "id": "brewinandchewin:fiery_fondue",
+      "required": false
+    },
+    {
       "id": "brewinandchewin:scarlet_pierogi",
       "required": false
     },
@@ -302,6 +706,14 @@
     },
     {
       "id": "brewinandchewin:cheesy_pasta",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:creamy_onion_soup",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:vegetable_omelet",
       "required": false
     },
     {
@@ -322,6 +734,26 @@
     },
     {
       "id": "crabbersdelight:surf_and_turf",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:seafood_gumbo",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:shrimp_fried_rice",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:coral_crunch",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:clam_chowder",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:bisque",
       "required": false
     }
   ]
