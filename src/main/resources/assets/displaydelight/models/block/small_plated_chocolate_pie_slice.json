@@ -1,86 +1,17 @@
 {
+  "format_version": "1.9.0",
   "credit": "Made with Blockbench",
   "parent": "displaydelight:block/parent_bowl",
-  "texture_size": [
-    8,
-    8
-  ],
   "textures": {
+    "4": "displaydelight:block/chocolate_pie",
     "bowl": "farmers3d/small_plate",
-    "side_texture": "farmers3d/pie_side",
-    "inner_texture": "farmers3d/chocolate_pie_inner",
-    "top_texture": "farmers3d/chocolate_pie_top"
+    "side_texture": "farmers3d/pie_side"
   },
+  "texture_size": [
+    16,
+    16
+  ],
   "elements": [
-    {
-      "from": [
-        6,
-        1,
-        6
-      ],
-      "to": [
-        10,
-        4,
-        10
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "y",
-        "origin": [
-          7.75,
-          2.5,
-          7.75
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            8,
-            12,
-            2,
-            16
-          ],
-          "texture": "#inner_texture"
-        },
-        "east": {
-          "uv": [
-            2,
-            12,
-            8,
-            16
-          ],
-          "texture": "#inner_texture"
-        },
-        "south": {
-          "uv": [
-            2,
-            12,
-            8,
-            16
-          ],
-          "texture": "#side_texture"
-        },
-        "west": {
-          "uv": [
-            8,
-            12,
-            2,
-            16
-          ],
-          "texture": "#side_texture"
-        },
-        "up": {
-          "uv": [
-            8,
-            8,
-            2,
-            2
-          ],
-          "rotation": 90,
-          "texture": "#top_texture"
-        }
-      }
-    },
     {
       "from": [
         9,
@@ -104,48 +35,48 @@
       "faces": {
         "north": {
           "uv": [
-            6,
-            9,
-            8,
-            10
+            2,
+            10,
+            4,
+            11
           ],
-          "texture": "#inner_texture"
+          "texture": "#4"
         },
         "east": {
           "uv": [
+            4,
+            10,
             6,
-            8,
-            8,
-            9
+            11
           ],
-          "texture": "#inner_texture"
+          "texture": "#4"
         },
         "south": {
           "uv": [
-            8,
-            9,
-            10,
-            10
+            2,
+            11,
+            4,
+            12
           ],
-          "texture": "#inner_texture"
+          "texture": "#4"
         },
         "west": {
           "uv": [
+            4,
+            11,
             6,
-            7,
-            8,
-            8
+            12
           ],
-          "texture": "#inner_texture"
+          "texture": "#4"
         },
         "up": {
           "uv": [
-            6,
-            7,
-            8,
-            9
+            2,
+            12,
+            0,
+            10
           ],
-          "texture": "#inner_texture"
+          "texture": "#4"
         }
       }
     },
@@ -249,21 +180,21 @@
       "faces": {
         "north": {
           "uv": [
-            8,
-            12,
-            2,
-            16
+            0,
+            6,
+            6,
+            10
           ],
-          "texture": "#inner_texture"
+          "texture": "#4"
         },
         "east": {
           "uv": [
-            14,
+            6,
+            0,
             12,
-            8,
-            16
+            4
           ],
-          "texture": "#inner_texture"
+          "texture": "#4"
         },
         "south": {
           "uv": [
@@ -276,22 +207,22 @@
         },
         "west": {
           "uv": [
-            8,
-            12,
             2,
+            12,
+            8,
             16
           ],
           "texture": "#side_texture"
         },
         "up": {
           "uv": [
-            8,
-            8,
-            2,
-            2
+            6,
+            6,
+            0,
+            0
           ],
           "rotation": 90,
-          "texture": "#top_texture"
+          "texture": "#4"
         }
       }
     }
@@ -413,21 +344,5 @@
         2
       ]
     }
-  },
-  "groups": [
-    {
-      "name": "group",
-      "origin": [
-        8,
-        8,
-        8
-      ],
-      "color": 0,
-      "children": []
-    },
-    0,
-    1,
-    2,
-    3
-  ]
+  }
 }

@@ -1,4 +1,5 @@
 {
+  "format_version": "1.9.0",
   "credit": "Made with Blockbench",
   "parent": "displaydelight:block/parent_bowl",
   "texture_size": [
@@ -245,7 +246,7 @@
       ],
       "translation": [
         0,
-        7.25,
+        5,
         0
       ],
       "scale": [

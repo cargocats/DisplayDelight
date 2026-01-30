@@ -4,9 +4,6 @@ import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LargeMeals {
     public static final Block LM_PUFFERFISH_BROTH = DisplayDelightBlocks.createFoodBlock("lm_pufferfish_broth");
     public static final Block LM_POTATO_SOUP = DisplayDelightBlocks.createFoodBlock("lm_potato_soup");

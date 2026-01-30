@@ -4,9 +4,6 @@ import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CornDelight {
     public static final Block CD_NACHOS_BOWL = DisplayDelightBlocks.createFoodBlock("cd_nachos_bowl");
     public static final Block CD_CREAMY_COR_DRINK = DisplayDelightBlocks.createDrinkFoodBlock("cd_creamy_corn_drink");

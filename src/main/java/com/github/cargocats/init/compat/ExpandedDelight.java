@@ -4,9 +4,6 @@ import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ExpandedDelight {
     public static final Block ED_ASPARAGUS_SOUP = DisplayDelightBlocks.createFoodBlock("ed_asparagus_soup");
     public static final Block ED_ASPARAGUS_SOUP_CREAMY = DisplayDelightBlocks.createFoodBlock("ed_asparagus_soup_creamy");
