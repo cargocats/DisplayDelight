@@ -68,7 +68,7 @@ public class InteractionManager {
 
         // Early return for same food and plate
         if (!blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE) && smallPlatedFoodBlock.getFoodItem().equals(itemStack.getItem())) {
-            return true;
+            return false;
         }
 
         // Handle item swapping for non-empty plates
@@ -87,6 +87,7 @@ public class InteractionManager {
 
         SoundEvent sound = blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE) ? block.defaultBlockState().getSoundType().getPlaceSound() : SoundEvents.CHICKEN_EGG;
         world.playSound(null, blockPos, sound, blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE) ? SoundSource.BLOCKS : SoundSource.PLAYERS, 1.0F, 0.8F + (float) Math.random() * 0.2F);
+        player.swing(hand, true);
 
         return true;
     }
