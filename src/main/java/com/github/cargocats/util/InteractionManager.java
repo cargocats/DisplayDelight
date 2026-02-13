@@ -8,6 +8,7 @@ import com.github.cargocats.init.DisplayDelightBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -52,22 +53,40 @@ public class InteractionManager {
 
     public static boolean tryPlaceItemOnSmallPlate(Player player, ServerLevel world, InteractionHand hand, BlockHitResult blockHitResult) {
         ItemStack itemStack = player.getItemInHand(hand);
-        BlockPos clickedPos = blockHitResult.getBlockPos();
+        BlockPos blockPos = blockHitResult.getBlockPos();
 
-        if (!(world.getBlockState(clickedPos).getBlock() instanceof SmallPlatedFoodBlock)) return false;
+        if (!(world.getBlockState(blockPos).getBlock() instanceof SmallPlatedFoodBlock)) return false;
 
         Block block = DisplayDelightAssociations.getSmallPlateBlockForItem(itemStack.getItem());
-        BlockState blockState = world.getBlockState(clickedPos);
+        BlockState blockState = world.getBlockState(blockPos);
+        SmallPlatedFoodBlock smallPlatedFoodBlock = (SmallPlatedFoodBlock) blockState.getBlock();
 
         if (block.equals(Blocks.AIR) && !blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE)) {
             DisplayDelight.LOG.warn("Missing small plate block association for item {}", itemStack);
             return false;
         }
 
+        // Early return for same food and plate
+        if (!blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE) && smallPlatedFoodBlock.getFoodItem().equals(itemStack.getItem())) {
+            return true;
+        }
+
+        // Handle item swapping for non-empty plates
+        if (!blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE)) {
+            Item previousPlateItem = smallPlatedFoodBlock.getFoodItem();
+
+            if (!player.getInventory().hasAnyOf(Set.of(previousPlateItem))) {
+                player.setItemInHand(hand, new ItemStack(previousPlateItem));
+            } else {
+                player.getInventory().add(new ItemStack(previousPlateItem));
+            }
+        }
+
         itemStack.consume(1, player);
-        world.setBlock(clickedPos, block.defaultBlockState().setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING)), Block.UPDATE_ALL);
-        world.playSound(null, clickedPos, block.defaultBlockState().getSoundType().getPlaceSound(), SoundSource.BLOCKS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
-        player.swing(hand, true);
+        world.setBlock(blockPos, block.defaultBlockState().setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING)), Block.UPDATE_ALL);
+
+        SoundEvent sound = blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE) ? block.defaultBlockState().getSoundType().getPlaceSound() : SoundEvents.CHICKEN_EGG;
+        world.playSound(null, blockPos, sound, blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE) ? SoundSource.BLOCKS : SoundSource.PLAYERS, 1.0F, 0.8F + (float) Math.random() * 0.2F);
 
         return true;
     }
