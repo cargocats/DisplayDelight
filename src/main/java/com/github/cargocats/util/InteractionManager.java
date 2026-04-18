@@ -105,7 +105,7 @@ public class InteractionManager {
             return false;
         }
 
-        int count;
+        int count = 1;
         // Convert to the actual plate block
         if (blockState.is(DisplayDelightBlocks.EMPTY_PLATE)) {
             world.setBlock(blockPos, platedBlock.defaultBlockState().setValue(PlatedFoodBlock.STACKS, 1).setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING)), Block.UPDATE_ALL);
@@ -127,7 +127,7 @@ public class InteractionManager {
             }
         }
 
-        if (!player.isCreative()) itemStack.shrink(1);
+        if (!player.isCreative()) itemStack.shrink(count);
         world.playSound(null, blockPos, platedBlock.defaultBlockState().getSoundType().getPlaceSound(), SoundSource.BLOCKS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
         player.swing(hand, true);
 
