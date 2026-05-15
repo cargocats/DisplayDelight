@@ -1,0 +1,39 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "displaydelight:block/small_plated_pumpkin_pie_slice"
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/small_plated_pumpkin_pie_slice",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/small_plated_pumpkin_pie_slice",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/small_plated_pumpkin_pie_slice",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
+    }
+  ]
+}
