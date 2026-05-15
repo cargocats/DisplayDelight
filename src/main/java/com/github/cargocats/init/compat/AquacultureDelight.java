@@ -25,7 +25,7 @@ public class AquacultureDelight {
 
     public static final Block ACD_SMALL_PLATED_RAW_FISH_FILLET_ROLL = DisplayDelightBlocks.createSmallPlatedBlock("acd_small_plated_raw_fish_fillet_roll");
     public static final Block ACD_SMALL_PLATED_FRIED_PERCH_ROLL = DisplayDelightBlocks.createSmallPlatedBlock("acd_small_plated_fried_perch_roll");
-    
+
     public static void init() {
         DisplayDelight.LOG.info("Initialized Aquaculture Delight compatibility");
     }

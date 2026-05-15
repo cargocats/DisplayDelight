@@ -43,6 +43,7 @@ public class FoodBlock extends HorizontalDirectionalBlock {
     );
 
     private final Identifier foodItemId;
+
     public FoodBlock(Identifier foodItemId, Properties settings) {
         super(settings);
         this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
@@ -50,7 +51,9 @@ public class FoodBlock extends HorizontalDirectionalBlock {
     }
 
     @Override
-    protected @NotNull MapCodec<? extends HorizontalDirectionalBlock> codec() { return CODEC; }
+    protected @NotNull MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return CODEC;
+    }
 
     @Override
     protected @NotNull List<ItemStack> getDrops(@NonNull BlockState state, LootParams.@NonNull Builder builder) {

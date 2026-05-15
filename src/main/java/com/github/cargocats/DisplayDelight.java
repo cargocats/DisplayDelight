@@ -12,37 +12,37 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class DisplayDelight implements ModInitializer {
-	public static final String MOD_ID = "displaydelight";
-	public static final Logger LOG = LoggerFactory.getLogger(MOD_ID);
+    public static final String MOD_ID = "displaydelight";
+    public static final Logger LOG = LoggerFactory.getLogger(MOD_ID);
 
-	public static final TagKey<Item> DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("displayable"));
-	public static final TagKey<Item> PLATE_DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("plate_displayable"));
-	public static final TagKey<Item> SMALL_PLATE_DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("small_plate_displayable"));
+    public static final TagKey<Item> DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("displayable"));
+    public static final TagKey<Item> PLATE_DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("plate_displayable"));
+    public static final TagKey<Item> SMALL_PLATE_DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("small_plate_displayable"));
 
-	@Override
-	public void onInitialize() {
+    @Override
+    public void onInitialize() {
         DisplayDelightAssociations.init();
         extraneousModBlocks();
 
-		DisplayDelightBlocks.init();
-		DisplayDelightItems.init();
-		DisplayDelightEvents.init();
-		DisplayDelightItemGroup.init();
+        DisplayDelightBlocks.init();
+        DisplayDelightItems.init();
+        DisplayDelightEvents.init();
+        DisplayDelightItemGroup.init();
         DisplayDelightTrades.init();
 
-		LOG.info("Initialized Display Delight");
-	}
+        LOG.info("Initialized Display Delight");
+    }
 
-	private void extraneousModBlocks() {
+    private void extraneousModBlocks() {
         // Have fabric ports as of 1.21.1
-		FarmersDelight.init();
-		OceansDelight.init();
-		PineappleDelight.init();
-		CornDelight.init();
-		EndsDelight.init();
-		MyNethersDelight.init();
-		// No models exist yet
-		// NethersDelight.init();
+        FarmersDelight.init();
+        OceansDelight.init();
+        PineappleDelight.init();
+        CornDelight.init();
+        EndsDelight.init();
+        MyNethersDelight.init();
+        // No models exist yet
+        // NethersDelight.init();
 
         // No fabric ports as of 1.21.1
         ExpandedDelight.init();
@@ -51,13 +51,13 @@ public class DisplayDelight implements ModInitializer {
         CulturalDelight.init();
         LargeMeals.init();
         FestiveDelight.init();
-		EnderDelight.init();
-		AquacultureDelight.init();
-		BrewinAndChewin.init();
-		CrabbersDelight.init();
-	}
+        EnderDelight.init();
+        AquacultureDelight.init();
+        BrewinAndChewin.init();
+        CrabbersDelight.init();
+    }
 
-	public static Identifier id(String path) {
-		return Identifier.fromNamespaceAndPath(MOD_ID, path);
-	}
+    public static Identifier id(String path) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, path);
+    }
 }

@@ -15,7 +15,7 @@ public class DisplayDelightAssociations {
     public static final ConcurrentHashMap<Identifier, Block> BLOCK_CACHE = new ConcurrentHashMap<>();
     public static final ConcurrentHashMap<Identifier, Item> ITEM_CACHE = new ConcurrentHashMap<>();
     private static final ArrayList<String> allPrefixes = new ArrayList<>(List.of("small_plated_", "plated_"));
-    private static final String[] typePrefixes = new String[] {
+    private static final String[] typePrefixes = new String[]{
             "plated_", "small_plated_", ""
     };
 
@@ -103,7 +103,7 @@ public class DisplayDelightAssociations {
     }};
 
     public static String getNamespace(String prefix) {
-        for (String key: COMPAT_NAMESPACES.keySet()) {
+        for (String key : COMPAT_NAMESPACES.keySet()) {
             if (COMPAT_NAMESPACES.get(key).equals(prefix)) {
                 return key;
             }
@@ -112,7 +112,7 @@ public class DisplayDelightAssociations {
     }
 
     public static String getLongNamespace(String prefix) {
-        for (String key: COMPAT_NAMESPACES.keySet()) {
+        for (String key : COMPAT_NAMESPACES.keySet()) {
             if (prefix.startsWith(key)) {
                 return COMPAT_NAMESPACES.get(key);
             }
@@ -128,7 +128,7 @@ public class DisplayDelightAssociations {
     }
 
     public static void init() {
-        for (String compatNamespaces : COMPAT_NAMESPACES.keySet()){
+        for (String compatNamespaces : COMPAT_NAMESPACES.keySet()) {
             for (String typePrefix : typePrefixes) {
                 allPrefixes.add(compatNamespaces + typePrefix);
             }

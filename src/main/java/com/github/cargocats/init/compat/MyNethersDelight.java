@@ -33,19 +33,19 @@ public class MyNethersDelight {
     public static final Block MND_PLATE_OF_COLD_STRIDERLOAF = DisplayDelightBlocks.createFoodBlock("mnd_plate_of_cold_striderloaf");
     public static final Block MND_PLATE_OF_STRIDERLOAF = DisplayDelightBlocks.createFoodBlock("mnd_plate_of_striderloaf");
 
-    public static final Block MND_PLATED_STUFFED_PEPPER = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_stuffed_pepper",2);
-    public static final Block MND_PLATED_HOTDOG_WITH_MIXED_SALAD = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_hotdog_with_mixed_salad",2);
-    public static final Block MND_PLATED_HOTDOG_WITH_NETHER_SALAD = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_hotdog_with_nether_salad",2);
-    public static final Block MND_PLATED_CHILIDOG = DisplayDelightBlocks.createFieryStackablePlatedBlock("mnd_plated_chilidog",2);
+    public static final Block MND_PLATED_STUFFED_PEPPER = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_stuffed_pepper", 2);
+    public static final Block MND_PLATED_HOTDOG_WITH_MIXED_SALAD = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_hotdog_with_mixed_salad", 2);
+    public static final Block MND_PLATED_HOTDOG_WITH_NETHER_SALAD = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_hotdog_with_nether_salad", 2);
+    public static final Block MND_PLATED_CHILIDOG = DisplayDelightBlocks.createFieryStackablePlatedBlock("mnd_plated_chilidog", 2);
     public static final Block MND_PLATED_SPICY_COTTON = DisplayDelightBlocks.createPlatedBlock("mnd_plated_spicy_cotton");
-    public static final Block MND_PLATED_FRIES_GHASTA = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_fries_ghasta",2);
-    public static final Block MND_PLATED_SPICY_SKEWER = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_spicy_skewer",2);
-    public static final Block MND_PLATED_RED_LOIN_ON_A_STICK = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_red_loin_on_a_stick",3);
+    public static final Block MND_PLATED_FRIES_GHASTA = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_fries_ghasta", 2);
+    public static final Block MND_PLATED_SPICY_SKEWER = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_spicy_skewer", 2);
+    public static final Block MND_PLATED_RED_LOIN_ON_A_STICK = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_red_loin_on_a_stick", 3);
     public static final Block MND_PLATED_NETHER_BURGER = DisplayDelightBlocks.createPlatedBlock("mnd_plated_nether_burger");
-    public static final Block MND_PLATED_BACON_WRAPPED_SAUSAGE_STICK = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_bacon-wrapped_sausage_on_a_stick",2);
+    public static final Block MND_PLATED_BACON_WRAPPED_SAUSAGE_STICK = DisplayDelightBlocks.createStackablePlatedBlock("mnd_plated_bacon-wrapped_sausage_on_a_stick", 2);
 
     public static final Block MND_SMALL_PLATED_MAGMA_CAKE_SLICE = DisplayDelightBlocks.createFierySmallPlatedBlock("mnd_small_plated_magma_cake_slice");
-    
+
     public static void init() {
         DisplayDelight.LOG.info("Initialized My Nether's Delight compatibility");
     }

@@ -4,9 +4,6 @@ import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class AlexDelight {
     public static final Block AD_MAGGOT_SALAD = DisplayDelightBlocks.createFoodBlock("ad_maggot_salad");
     public static final Block AD_KANGAROO_STEW = DisplayDelightBlocks.createFoodBlock("ad_kangaroo_stew");

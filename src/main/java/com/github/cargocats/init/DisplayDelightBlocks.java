@@ -40,7 +40,7 @@ public class DisplayDelightBlocks {
     public static final Block RABBIT_STEW = createFoodBlock("vna_rabbit_stew");
     public static final Block BEETROOT_STEW = createFoodBlock("vna_beetroot_soup");
 
-    public static final Block PLATED_COOKIE = createStackablePlatedBlock("vna_plated_cookie",4);
+    public static final Block PLATED_COOKIE = createStackablePlatedBlock("vna_plated_cookie", 4);
     public static final Block PLATED_PUMPKIN_PIE = createPlatedBlock("vna_plated_pumpkin_pie");
 
     public static void init() {
@@ -126,7 +126,7 @@ public class DisplayDelightBlocks {
     }
 
     public static Block createFieryWideFoodBlock(String name) {
-        Block block =  createFieryWideFoodBlock(name, DisplayDelightAssociations.getId(name));
+        Block block = createFieryWideFoodBlock(name, DisplayDelightAssociations.getId(name));
         DisplayDelightBlocks.DISPLAYABLE_BLOCKS.add(block);
 
         return block;

@@ -18,11 +18,11 @@ public class CrabbersDelight {
 
     public static final Block CRD_FROG_LEG_KEBAB = DisplayDelightBlocks.createPlatedBlock("crd_plated_frog_leg_kebab");
     public static final Block CRD_SQUID_KEBAB = DisplayDelightBlocks.createPlatedBlock("crd_plated_squid_kebab");
-    public static final Block CRD_SHRIMP_SKEWER = DisplayDelightBlocks.createStackablePlatedBlock("crd_plated_shrimp_skewer",2);
+    public static final Block CRD_SHRIMP_SKEWER = DisplayDelightBlocks.createStackablePlatedBlock("crd_plated_shrimp_skewer", 2);
     public static final Block CRD_FISH_STICK = DisplayDelightBlocks.createPlatedBlock("crd_plated_fish_stick");
     public static final Block CRD_STUFFED_NAUTILUS_SHELL = DisplayDelightBlocks.createPlatedBlock("crd_plated_stuffed_nautilus_shell");
 
-    
+
     public static void init() {
         DisplayDelight.LOG.info("Initialized Crabber's Delight compatibility");
     }

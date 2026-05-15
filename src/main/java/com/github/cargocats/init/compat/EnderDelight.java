@@ -18,10 +18,10 @@ public class EnderDelight {
     public static final Block ERD_PEARL_PASTA = DisplayDelightBlocks.createWideFoodBlock("erd_pearl_pasta");
     public static final Block ERD_STUFFED_SHULKER_BOWL = DisplayDelightBlocks.createFoodBlock("erd_stuffed_shulker_bowl");
 
-    public static final Block ERD_PLATED_UNCANNY_COOKIES = DisplayDelightBlocks.createStackablePlatedBlock("erd_plated_uncanny_cookies",4);
-    public static final Block ERD_PLATED_CRISPY_SKEWER = DisplayDelightBlocks.createStackablePlatedBlock("erd_plated_crispy_skewer",3);
-    public static final Block ERD_PLATED_STRANGE_ECLAIR = DisplayDelightBlocks.createStackablePlatedBlock("erd_plated_strange_eclair",3);
-    public static final Block ERD_PLATED_CRAWLING_SANDWICH = DisplayDelightBlocks.createStackablePlatedBlock("erd_plated_crawling_sandwich",2);
+    public static final Block ERD_PLATED_UNCANNY_COOKIES = DisplayDelightBlocks.createStackablePlatedBlock("erd_plated_uncanny_cookies", 4);
+    public static final Block ERD_PLATED_CRISPY_SKEWER = DisplayDelightBlocks.createStackablePlatedBlock("erd_plated_crispy_skewer", 3);
+    public static final Block ERD_PLATED_STRANGE_ECLAIR = DisplayDelightBlocks.createStackablePlatedBlock("erd_plated_strange_eclair", 3);
+    public static final Block ERD_PLATED_CRAWLING_SANDWICH = DisplayDelightBlocks.createStackablePlatedBlock("erd_plated_crawling_sandwich", 2);
 
     public static final Block ERD_SMALL_PLATED_CHORUS_PIE_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("erd_small_plated_chorus_pie_slice");
 
