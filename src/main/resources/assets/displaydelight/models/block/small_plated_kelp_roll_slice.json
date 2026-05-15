@@ -1,9 +1,10 @@
 {
+  "format_version": "1.9.0",
   "credit": "Made with Blockbench",
   "parent": "displaydelight:block/parent_bowl",
   "texture_size": [
-    3,
-    16
+    8,
+    8
   ],
   "textures": {
     "2": "farmers3d/kelp_roll",
@@ -35,36 +36,36 @@
         "north": {
           "uv": [
             0,
-            12,
-            16,
-            15
+            3,
+            3,
+            6
           ],
           "texture": "#2"
         },
         "east": {
           "uv": [
             0,
-            12,
-            16,
-            15
+            5,
+            3,
+            8
           ],
           "texture": "#2"
         },
         "south": {
           "uv": [
             0,
-            12,
-            16,
-            15
+            3,
+            3,
+            6
           ],
           "texture": "#2"
         },
         "west": {
           "uv": [
             0,
-            12,
-            16,
-            15
+            5,
+            3,
+            8
           ],
           "texture": "#2"
         },
@@ -72,7 +73,7 @@
           "uv": [
             0,
             0,
-            16,
+            3,
             3
           ],
           "texture": "#2"
@@ -81,7 +82,7 @@
           "uv": [
             0,
             0,
-            16,
+            3,
             3
           ],
           "texture": "#2"

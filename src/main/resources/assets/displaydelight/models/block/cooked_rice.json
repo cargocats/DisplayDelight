@@ -4,8 +4,9 @@
   "parent": "displaydelight:block/bowl",
   "render_type": "cutout",
   "textures": {
-    "4": "displaydelight:block/bowl2",
-    "rice": "farmers3d/cooked_rice"
+    "1": "displaydelight:block/bowl2",
+    "rice": "displaydelight:block/cooked_rice",
+    "particle": "displaydelight:block/cooked_rice"
   },
   "elements": [
     {
@@ -34,17 +35,17 @@
           "uv": [
             0,
             0,
-            12,
-            2
+            6,
+            1
           ],
           "texture": "#rice"
         },
         "east": {
           "uv": [
-            6,
+            5,
             0,
-            8,
-            12
+            6,
+            6
           ],
           "rotation": 270,
           "texture": "#rice"
@@ -52,9 +53,9 @@
         "south": {
           "uv": [
             0,
-            10,
-            12,
-            12
+            5,
+            6,
+            6
           ],
           "texture": "#rice"
         },
@@ -62,8 +63,8 @@
           "uv": [
             0,
             0,
-            2,
-            12
+            1,
+            6
           ],
           "rotation": 270,
           "texture": "#rice"
@@ -72,8 +73,8 @@
           "uv": [
             0,
             0,
-            12,
-            12
+            6,
+            6
           ],
           "texture": "#rice"
         }
@@ -103,48 +104,48 @@
       "faces": {
         "north": {
           "uv": [
-            2,
-            2,
-            12,
-            4
+            0,
+            0,
+            5,
+            1
           ],
           "texture": "#rice"
         },
         "east": {
           "uv": [
-            10,
-            2,
-            12,
-            12
+            0,
+            1,
+            1,
+            6
           ],
           "rotation": 270,
           "texture": "#rice"
         },
         "south": {
           "uv": [
-            2,
-            10,
-            12,
-            12
+            0,
+            5,
+            5,
+            6
           ],
           "texture": "#rice"
         },
         "west": {
           "uv": [
-            2,
-            2,
-            4,
-            12
+            5,
+            0,
+            6,
+            5
           ],
           "rotation": 270,
           "texture": "#rice"
         },
         "up": {
           "uv": [
-            2,
-            2,
-            12,
-            12
+            1,
+            1,
+            6,
+            6
           ],
           "texture": "#rice"
         }
@@ -179,7 +180,7 @@
             12,
             7
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "east": {
           "uv": [
@@ -188,7 +189,7 @@
             12,
             7
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "south": {
           "uv": [
@@ -197,7 +198,7 @@
             6,
             9
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "west": {
           "uv": [
@@ -206,7 +207,7 @@
             12,
             7
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "down": {
           "uv": [
@@ -215,7 +216,7 @@
             0,
             6
           ],
-          "texture": "#4",
+          "texture": "#1",
           "cullface": "down"
         }
       }
@@ -249,7 +250,7 @@
             10,
             12
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "east": {
           "uv": [
@@ -258,7 +259,7 @@
             6,
             8
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "south": {
           "uv": [
@@ -267,7 +268,7 @@
             11,
             12
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "west": {
           "uv": [
@@ -276,7 +277,7 @@
             0,
             0
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "up": {
           "uv": [
@@ -285,7 +286,7 @@
             0,
             9
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "down": {
           "uv": [
@@ -294,7 +295,7 @@
             0,
             15
           ],
-          "texture": "#4"
+          "texture": "#1"
         }
       }
     },
@@ -327,7 +328,7 @@
             12,
             3
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "east": {
           "uv": [
@@ -336,7 +337,7 @@
             4,
             13
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "south": {
           "uv": [
@@ -345,7 +346,7 @@
             0,
             0
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "west": {
           "uv": [
@@ -354,7 +355,7 @@
             5,
             13
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "up": {
           "uv": [
@@ -363,7 +364,7 @@
             2,
             9
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "down": {
           "uv": [
@@ -372,7 +373,7 @@
             8,
             10
           ],
-          "texture": "#4"
+          "texture": "#1"
         }
       }
     },
@@ -405,7 +406,7 @@
             5,
             13
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "east": {
           "uv": [
@@ -414,7 +415,7 @@
             0,
             0
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "south": {
           "uv": [
@@ -423,7 +424,7 @@
             4,
             13
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "west": {
           "uv": [
@@ -432,7 +433,7 @@
             12,
             4
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "up": {
           "uv": [
@@ -441,7 +442,7 @@
             5,
             0
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "down": {
           "uv": [
@@ -450,7 +451,7 @@
             8,
             10
           ],
-          "texture": "#4"
+          "texture": "#1"
         }
       }
     },
@@ -483,7 +484,7 @@
             0,
             0
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "east": {
           "uv": [
@@ -492,7 +493,7 @@
             11,
             12
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "south": {
           "uv": [
@@ -501,7 +502,7 @@
             12,
             7
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "west": {
           "uv": [
@@ -510,7 +511,7 @@
             10,
             12
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "up": {
           "uv": [
@@ -519,7 +520,7 @@
             3,
             10
           ],
-          "texture": "#4"
+          "texture": "#1"
         },
         "down": {
           "uv": [
@@ -528,7 +529,7 @@
             0,
             15
           ],
-          "texture": "#4"
+          "texture": "#1"
         }
       }
     },
@@ -556,55 +557,55 @@
       "faces": {
         "north": {
           "uv": [
-            14,
-            2,
-            16,
-            10
+            7,
+            0,
+            8,
+            4
           ],
           "texture": "#rice"
         },
         "east": {
           "uv": [
-            14,
-            4,
-            16,
-            12
+            6,
+            2,
+            7,
+            6
           ],
           "texture": "#rice"
         },
         "south": {
           "uv": [
-            14,
+            7,
             2,
-            16,
-            10
+            8,
+            6
           ],
           "texture": "#rice"
         },
         "west": {
           "uv": [
-            14,
-            2,
-            16,
-            10
+            6,
+            0,
+            7,
+            4
           ],
           "texture": "#rice"
         },
         "up": {
           "uv": [
-            14,
+            7,
             0,
-            16,
-            2
+            8,
+            1
           ],
           "texture": "#rice"
         },
         "down": {
           "uv": [
-            14,
+            7,
             0,
-            16,
-            2
+            8,
+            1
           ],
           "texture": "#rice"
         }

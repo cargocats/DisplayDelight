@@ -5,8 +5,7 @@
     16
   ],
   "textures": {
-    "particle": "displaydelight:block/bowl",
-    "missing": "displaydelight:block/bowl"
+    "particle": "displaydelight:block/bowl"
   },
   "elements": []
 }

@@ -4,6 +4,6 @@
   "render_type": "cutout",
   "parent": "displaydelight:block/apple_cider",
   "textures": {
-    "6": "displaydelight:block/edd_dragon_berath_soda"
+    "6": "displaydelight:block/edd_dragon_breath_soda"
   }
 }

@@ -1,4 +1,5 @@
 {
+  "format_version": "1.21.11",
   "credit": "Made with Blockbench",
   "parent": "displaydelight:block/bowl",
   "render_type": "cutout",
@@ -106,17 +107,17 @@
           "uv": [
             0,
             0,
-            12,
-            2
+            6,
+            1
           ],
           "texture": "#rice"
         },
         "east": {
           "uv": [
-            14,
+            7,
             0,
-            16,
-            12
+            8,
+            6
           ],
           "rotation": 270,
           "texture": "#rice"
@@ -124,9 +125,9 @@
         "south": {
           "uv": [
             0,
-            14,
-            12,
-            16
+            7,
+            6,
+            8
           ],
           "texture": "#rice"
         },
@@ -134,8 +135,8 @@
           "uv": [
             0,
             0,
-            2,
-            12
+            1,
+            6
           ],
           "rotation": 270,
           "texture": "#rice"
@@ -144,8 +145,8 @@
           "uv": [
             0,
             0,
-            12,
-            12
+            6,
+            6
           ],
           "rotation": 90,
           "texture": "#rice"
@@ -178,17 +179,17 @@
           "uv": [
             0,
             0,
-            10,
-            2
+            5,
+            1
           ],
           "texture": "#rice"
         },
         "east": {
           "uv": [
-            10,
+            5,
             0,
-            12,
-            10
+            6,
+            5
           ],
           "rotation": 270,
           "texture": "#rice"
@@ -196,9 +197,9 @@
         "south": {
           "uv": [
             0,
-            10,
-            10,
-            12
+            5,
+            5,
+            6
           ],
           "texture": "#rice"
         },
@@ -206,8 +207,8 @@
           "uv": [
             0,
             0,
-            2,
-            10
+            1,
+            5
           ],
           "rotation": 270,
           "texture": "#rice"
@@ -216,8 +217,8 @@
           "uv": [
             0,
             0,
-            10,
-            10
+            5,
+            5
           ],
           "texture": "#rice"
         }
@@ -654,6 +655,18 @@
         0
       ]
     },
+    "firstperson_lefthand": {
+      "rotation": [
+        4,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        7,
+        0
+      ]
+    },
     "ground": {
       "translation": [
         0,
@@ -670,7 +683,7 @@
       "rotation": [
         -153,
         20,
-        180
+        -180
       ],
       "translation": [
         0.25,
@@ -710,18 +723,6 @@
         2,
         2,
         2
-      ]
-    },
-    "firstperson_lefthand": {
-      "rotation": [
-        4,
-        0,
-        0
-      ],
-      "translation": [
-        0,
-        7,
-        0
       ]
     }
   },

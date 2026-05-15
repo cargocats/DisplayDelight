@@ -5,7 +5,6 @@
     "2": "farmers3d/stuffed_pumpkin_details",
     "3": "farmers3d/df_cactus_soup",
     "4": "displaydelight:block/bowl2",
-    "missing": "farmers3d/df_cactus_soup",
     "particle": "farmers3d/df_cactus_soup"
   },
   "elements": [
@@ -420,7 +419,7 @@
             6,
             8
           ],
-          "texture": "#missing"
+          "texture": "#3"
         },
         "east": {
           "uv": [
@@ -429,7 +428,7 @@
             6,
             8
           ],
-          "texture": "#missing"
+          "texture": "#3"
         },
         "south": {
           "uv": [
@@ -438,7 +437,7 @@
             12,
             2
           ],
-          "texture": "#missing"
+          "texture": "#3"
         },
         "west": {
           "uv": [
@@ -447,7 +446,7 @@
             12,
             2
           ],
-          "texture": "#missing"
+          "texture": "#3"
         },
         "up": {
           "uv": [

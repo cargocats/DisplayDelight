@@ -133,6 +133,14 @@
       "required": false
     },
     {
+      "id": "farmersdelight:gleaming_salad",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:onion_soup",
+      "required": false
+    },
+    {
       "id": "oceansdelight:bowl_of_guardian_soup",
       "required": false
     },

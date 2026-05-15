@@ -10,7 +10,6 @@
     "2": "farmers3d/stuffed_pumpkin_details",
     "4": "displaydelight:block/bowl2",
     "6": "farmers3d/pumpkin_soup",
-    "missing": "farmers3d/fruit_salad",
     "fruit_salad": "farmers3d/fruit_salad"
   },
   "elements": [
@@ -579,7 +578,7 @@
             6,
             8
           ],
-          "texture": "#missing"
+          "texture": "#6"
         },
         "east": {
           "uv": [
@@ -588,7 +587,7 @@
             6,
             8
           ],
-          "texture": "#missing"
+          "texture": "#6"
         },
         "south": {
           "uv": [
@@ -597,7 +596,7 @@
             12,
             2
           ],
-          "texture": "#missing"
+          "texture": "#6"
         },
         "west": {
           "uv": [
@@ -606,7 +605,7 @@
             12,
             2
           ],
-          "texture": "#missing"
+          "texture": "#6"
         },
         "up": {
           "uv": [

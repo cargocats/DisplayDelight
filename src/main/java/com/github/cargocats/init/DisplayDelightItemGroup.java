@@ -14,7 +14,7 @@ public class DisplayDelightItemGroup {
     public static final ResourceKey<CreativeModeTab> ITEM_GROUP_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), DisplayDelight.id("item_group"));
     public static final CreativeModeTab ITEM_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(DisplayDelightItems.EMPTY_PLATE))
-            .title(Component.translatable("itemGroup.displayDelight"))
+            .title(Component.translatable("itemGroup.displaydelight"))
             .build();
 
     public static void init() {

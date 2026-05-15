@@ -3,6 +3,7 @@
   "render_type": "cutout",
   "parent": "displaydelight:block/melon_juice",
   "textures": {
-    "3": "displaydelight:block/crd_kelp_shake"
+    "3": "displaydelight:block/crd_kelp_shake",
+    "particle": "displaydelight:block/crd_kelp_shake"
   }
 }

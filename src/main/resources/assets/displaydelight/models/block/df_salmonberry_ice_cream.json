@@ -8,7 +8,7 @@
   "textures": {
     "4": "displaydelight:block/bowl2",
     "5": "displaydelight:block/df_milkshake",
-    "particle": "displaydelight:block/mushroom_stew"
+    "particle": "displaydelight:block/df_milkshake"
   },
   "elements": [
     {

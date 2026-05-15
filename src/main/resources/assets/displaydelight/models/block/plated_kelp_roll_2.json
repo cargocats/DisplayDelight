@@ -1,9 +1,6 @@
 {
+  "format_version": "1.9.0",
   "credit": "Made with Blockbench",
-  "texture_size": [
-    3,
-    16
-  ],
   "parent": "displaydelight:block/parent_bowl",
   "textures": {
     "0": "farmers3d/kelp_roll",
@@ -12,6 +9,170 @@
     "tray_bottom": "farmers3d/tray_bottom"
   },
   "elements": [
+    {
+      "name": "kelp_roll_slice",
+      "from": [
+        4.5,
+        2,
+        1.5
+      ],
+      "to": [
+        7.5,
+        5,
+        13.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          6,
+          3.5,
+          7.5
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "rotation": 180,
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            3,
+            3,
+            15
+          ],
+          "rotation": 270,
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            3,
+            3,
+            15
+          ],
+          "rotation": 90,
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            15,
+            3,
+            3
+          ],
+          "rotation": 180,
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            3,
+            3,
+            15
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "kelp_roll_slice",
+      "from": [
+        9,
+        2,
+        2.5
+      ],
+      "to": [
+        12,
+        5,
+        14.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          10.5,
+          3.5,
+          8.5
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "rotation": 180,
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            3,
+            3,
+            15
+          ],
+          "rotation": 270,
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            3,
+            3,
+            15
+          ],
+          "rotation": 90,
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            15,
+            3,
+            3
+          ],
+          "rotation": 180,
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            3,
+            3,
+            15
+          ],
+          "texture": "#0"
+        }
+      }
+    },
     {
       "name": "tray",
       "from": [
@@ -24,6 +185,15 @@
         2,
         15
       ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8.05021,
+          2,
+          6.07479
+        ]
+      },
       "faces": {
         "north": {
           "uv": [
@@ -77,172 +247,8 @@
             15,
             15
           ],
-          "texture": "#tray_top",
+          "texture": "#tray_bottom",
           "cullface": "down"
-        }
-      }
-    },
-    {
-      "name": "kelp_roll_slice",
-      "from": [
-        4.5,
-        2,
-        1.5
-      ],
-      "to": [
-        7.5,
-        5,
-        13.5
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "y",
-        "origin": [
-          6,
-          3.5,
-          7.5
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "rotation": 180,
-          "texture": "#0"
-        },
-        "east": {
-          "uv": [
-            0,
-            3,
-            16,
-            15
-          ],
-          "rotation": 270,
-          "texture": "#0"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#0"
-        },
-        "west": {
-          "uv": [
-            0,
-            3,
-            16,
-            15
-          ],
-          "rotation": 90,
-          "texture": "#0"
-        },
-        "up": {
-          "uv": [
-            0,
-            15,
-            16,
-            3
-          ],
-          "rotation": 180,
-          "texture": "#0"
-        },
-        "down": {
-          "uv": [
-            0,
-            3,
-            16,
-            15
-          ],
-          "texture": "#0"
-        }
-      }
-    },
-    {
-      "name": "kelp_roll_slice",
-      "from": [
-        9,
-        2,
-        2.5
-      ],
-      "to": [
-        12,
-        5,
-        14.5
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "y",
-        "origin": [
-          10.5,
-          3.5,
-          8.5
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "rotation": 180,
-          "texture": "#0"
-        },
-        "east": {
-          "uv": [
-            0,
-            3,
-            16,
-            15
-          ],
-          "rotation": 270,
-          "texture": "#0"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#0"
-        },
-        "west": {
-          "uv": [
-            0,
-            3,
-            16,
-            15
-          ],
-          "rotation": 90,
-          "texture": "#0"
-        },
-        "up": {
-          "uv": [
-            0,
-            15,
-            16,
-            3
-          ],
-          "rotation": 180,
-          "texture": "#0"
-        },
-        "down": {
-          "uv": [
-            0,
-            3,
-            16,
-            15
-          ],
-          "texture": "#0"
         }
       }
     }
@@ -321,19 +327,19 @@
     },
     "gui": {
       "rotation": [
-        -30,
-        0,
-        -30
+        37,
+        44,
+        0
       ],
       "translation": [
-        1.75,
-        1.75,
+        0,
+        4,
         0
       ],
       "scale": [
-        1.2,
-        1.2,
-        1.2
+        0.8,
+        0.8,
+        0.8
       ]
     },
     "head": {

@@ -1,13 +1,15 @@
 {
+  "format_version": "1.9.0",
   "credit": "Made with Blockbench",
   "parent": "displaydelight:block/parent_bowl",
   "texture_size": [
-    4,
-    7
+    8,
+    8
   ],
   "textures": {
     "1": "farmers3d/salmon_roll",
-    "bowl": "farmers3d/small_plate"
+    "bowl": "farmers3d/small_plate",
+    "particle": "farmers3d/salmon_roll"
   },
   "elements": [
     {
@@ -35,18 +37,18 @@
         "north": {
           "uv": [
             0,
-            11.42857,
-            8,
-            16
+            5,
+            2,
+            7
           ],
           "texture": "#1"
         },
         "east": {
           "uv": [
-            8,
-            4.57143,
-            16,
-            16
+            2,
+            2,
+            4,
+            7
           ],
           "rotation": 270,
           "texture": "#1"
@@ -54,18 +56,18 @@
         "south": {
           "uv": [
             0,
-            11.42857,
-            8,
-            16
+            5,
+            2,
+            7
           ],
           "texture": "#1"
         },
         "west": {
           "uv": [
-            8,
-            16,
-            16,
-            4.57143
+            2,
+            7,
+            4,
+            2
           ],
           "rotation": 270,
           "texture": "#1"
@@ -74,17 +76,17 @@
           "uv": [
             0,
             0,
-            8,
-            11.42857
+            2,
+            5
           ],
           "texture": "#1"
         },
         "down": {
           "uv": [
-            8,
-            4.57143,
-            12,
-            16
+            2,
+            2,
+            3,
+            3
           ],
           "texture": "#1"
         }

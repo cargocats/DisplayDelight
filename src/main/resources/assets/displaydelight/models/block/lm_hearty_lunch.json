@@ -1,4 +1,5 @@
 {
+  "format_version": "1.21.11",
   "credit": "Made with Blockbench",
   "parent": "displaydelight:block/parent_bowl",
   "textures": {
@@ -246,8 +247,8 @@
         "north": {
           "uv": [
             0,
-            4,
-            6,
+            5,
+            3,
             6
           ],
           "texture": "#rice"
@@ -255,17 +256,17 @@
         "east": {
           "uv": [
             0,
-            12,
-            14,
-            14
+            6,
+            7,
+            7
           ],
           "texture": "#rice"
         },
         "south": {
           "uv": [
             0,
-            4,
-            6,
+            5,
+            3,
             6
           ],
           "texture": "#rice"
@@ -273,17 +274,17 @@
         "west": {
           "uv": [
             0,
-            12,
-            14,
-            14
+            6,
+            7,
+            7
           ],
           "texture": "#rice"
         },
         "up": {
           "uv": [
-            16,
-            6,
-            2,
+            8,
+            3,
+            1,
             0
           ],
           "rotation": 90,
@@ -316,43 +317,43 @@
         "north": {
           "uv": [
             0,
-            14,
-            6,
-            16
+            7,
+            3,
+            8
           ],
           "texture": "#rice"
         },
         "east": {
           "uv": [
             0,
+            4,
             8,
-            16,
-            10
+            5
           ],
           "texture": "#rice"
         },
         "south": {
           "uv": [
-            2,
-            8,
-            8,
-            10
+            1,
+            4,
+            4,
+            5
           ],
           "texture": "#rice"
         },
         "west": {
           "uv": [
             0,
+            4,
             8,
-            16,
-            10
+            5
           ],
           "texture": "#rice"
         },
         "up": {
           "uv": [
+            4,
             8,
-            16,
             0,
             0
           ],
@@ -364,23 +365,6 @@
   ],
   "gui_light": "front",
   "display": {
-    "gui": {
-      "rotation": [
-        37,
-        44,
-        0
-      ],
-      "translation": [
-        0,
-        4,
-        0
-      ],
-      "scale": [
-        0.8,
-        0.8,
-        0.8
-      ]
-    },
     "thirdperson_righthand": {
       "rotation": [
         63,
@@ -449,6 +433,23 @@
         0.5,
         0.5,
         0.5
+      ]
+    },
+    "gui": {
+      "rotation": [
+        37,
+        44,
+        0
+      ],
+      "translation": [
+        0,
+        4,
+        0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
       ]
     },
     "head": {

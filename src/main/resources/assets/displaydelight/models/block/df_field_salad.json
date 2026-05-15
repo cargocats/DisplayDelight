@@ -9,7 +9,8 @@
   ],
   "textures": {
     "1": "farmers3d/bowl",
-    "7": "displaydelight:block/df_field_salad"
+    "7": "displaydelight:block/df_field_salad",
+    "particle": "displaydelight:block/df_field_salad"
   },
   "elements": [
     {

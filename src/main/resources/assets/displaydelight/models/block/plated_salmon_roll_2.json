@@ -1,9 +1,6 @@
 {
+  "format_version": "1.9.0",
   "credit": "Made with Blockbench",
-  "texture_size": [
-    4,
-    7
-  ],
   "parent": "displaydelight:block/parent_bowl",
   "textures": {
     "0": "farmers3d/salmon_roll",
@@ -11,6 +8,166 @@
     "tray_bottom": "farmers3d/tray_bottom"
   },
   "elements": [
+    {
+      "name": "cod_roll",
+      "from": [
+        10.5,
+        2,
+        8.5
+      ],
+      "to": [
+        12.5,
+        4,
+        13.5
+      ],
+      "rotation": {
+        "angle": 22.5,
+        "axis": "y",
+        "origin": [
+          11.5,
+          3,
+          11
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            5,
+            2,
+            7
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            2,
+            2,
+            4,
+            7
+          ],
+          "rotation": 270,
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            5,
+            2,
+            7
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            2,
+            7,
+            4,
+            2
+          ],
+          "rotation": 270,
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            2,
+            2,
+            3,
+            7
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "cod_roll",
+      "from": [
+        7,
+        2,
+        8.5
+      ],
+      "to": [
+        9,
+        4,
+        13.5
+      ],
+      "rotation": {
+        "angle": 22.5,
+        "axis": "y",
+        "origin": [
+          8,
+          3,
+          11
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            5,
+            2,
+            7
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            2,
+            2,
+            4,
+            7
+          ],
+          "rotation": 270,
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            5,
+            2,
+            7
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            2,
+            7,
+            4,
+            2
+          ],
+          "rotation": 270,
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            2,
+            2,
+            3,
+            7
+          ],
+          "texture": "#0"
+        }
+      }
+    },
     {
       "name": "tray",
       "from": [
@@ -23,6 +180,15 @@
         2,
         15
       ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8.05021,
+          2,
+          6.07479
+        ]
+      },
       "faces": {
         "north": {
           "uv": [
@@ -76,168 +242,8 @@
             15,
             15
           ],
-          "texture": "#tray_top",
+          "texture": "#tray_bottom",
           "cullface": "down"
-        }
-      }
-    },
-    {
-      "name": "cod_roll",
-      "from": [
-        10.5,
-        2,
-        8.5
-      ],
-      "to": [
-        12.5,
-        4,
-        13.5
-      ],
-      "rotation": {
-        "angle": 22.5,
-        "axis": "y",
-        "origin": [
-          11.5,
-          3,
-          11
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            11.42857,
-            8,
-            16
-          ],
-          "texture": "#0"
-        },
-        "east": {
-          "uv": [
-            8,
-            4.57143,
-            16,
-            16
-          ],
-          "rotation": 270,
-          "texture": "#0"
-        },
-        "south": {
-          "uv": [
-            0,
-            11.42857,
-            8,
-            16
-          ],
-          "texture": "#0"
-        },
-        "west": {
-          "uv": [
-            8,
-            16,
-            16,
-            4.57143
-          ],
-          "rotation": 270,
-          "texture": "#0"
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            8,
-            11.42857
-          ],
-          "texture": "#0"
-        },
-        "down": {
-          "uv": [
-            8,
-            4.57143,
-            12,
-            16
-          ],
-          "texture": "#0"
-        }
-      }
-    },
-    {
-      "name": "cod_roll",
-      "from": [
-        7,
-        2,
-        8.5
-      ],
-      "to": [
-        9,
-        4,
-        13.5
-      ],
-      "rotation": {
-        "angle": 22.5,
-        "axis": "y",
-        "origin": [
-          8,
-          3,
-          11
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            11.42857,
-            8,
-            16
-          ],
-          "texture": "#0"
-        },
-        "east": {
-          "uv": [
-            8,
-            4.57143,
-            16,
-            16
-          ],
-          "rotation": 270,
-          "texture": "#0"
-        },
-        "south": {
-          "uv": [
-            0,
-            11.42857,
-            8,
-            16
-          ],
-          "texture": "#0"
-        },
-        "west": {
-          "uv": [
-            8,
-            16,
-            16,
-            4.57143
-          ],
-          "rotation": 270,
-          "texture": "#0"
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            8,
-            11.42857
-          ],
-          "texture": "#0"
-        },
-        "down": {
-          "uv": [
-            8,
-            4.57143,
-            12,
-            16
-          ],
-          "texture": "#0"
         }
       }
     }

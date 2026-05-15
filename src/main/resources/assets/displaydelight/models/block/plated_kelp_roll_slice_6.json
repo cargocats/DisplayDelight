@@ -1,10 +1,7 @@
 {
+  "format_version": "1.9.0",
   "credit": "Made with Blockbench",
   "parent": "displaydelight:block/parent_bowl",
-  "texture_size": [
-    3,
-    16
-  ],
   "textures": {
     "tray_top": "farmers3d/tray_top",
     "tray_bottom": "farmers3d/tray_bottom",
@@ -12,6 +9,474 @@
     "food": "farmers3d/kelp_roll"
   },
   "elements": [
+    {
+      "name": "kelp_roll_slice",
+      "from": [
+        6.5,
+        2,
+        6.5
+      ],
+      "to": [
+        9.5,
+        5,
+        9.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8,
+          3.5,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "south": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        }
+      }
+    },
+    {
+      "name": "kelp_roll_slice",
+      "from": [
+        2.5,
+        2,
+        6
+      ],
+      "to": [
+        5.5,
+        5,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          4,
+          3.5,
+          7.5
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "south": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        }
+      }
+    },
+    {
+      "name": "kelp_roll_slice",
+      "from": [
+        10.5,
+        2,
+        4.5
+      ],
+      "to": [
+        13.5,
+        5,
+        7.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          12,
+          3.5,
+          6
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "south": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        }
+      }
+    },
+    {
+      "name": "kelp_roll_slice",
+      "from": [
+        10,
+        2,
+        9.5
+      ],
+      "to": [
+        13,
+        5,
+        12.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          11.5,
+          3.5,
+          11
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "south": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        }
+      }
+    },
+    {
+      "name": "kelp_roll_slice",
+      "from": [
+        6.5,
+        2,
+        2.5
+      ],
+      "to": [
+        9.5,
+        5,
+        5.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8,
+          3.5,
+          4
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "south": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        }
+      }
+    },
+    {
+      "name": "kelp_roll_slice",
+      "from": [
+        5,
+        2,
+        10.5
+      ],
+      "to": [
+        8,
+        5,
+        13.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          6.5,
+          3.5,
+          12
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "south": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            15
+          ],
+          "texture": "#food"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "texture": "#food"
+        }
+      }
+    },
     {
       "name": "tray",
       "from": [
@@ -24,6 +489,15 @@
         2,
         15
       ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8.05021,
+          2,
+          6.07479
+        ]
+      },
       "faces": {
         "north": {
           "uv": [
@@ -77,476 +551,8 @@
             15,
             15
           ],
-          "texture": "#tray_top",
+          "texture": "#tray_bottom",
           "cullface": "down"
-        }
-      }
-    },
-    {
-      "name": "kelp_roll_slice",
-      "from": [
-        6.5,
-        2,
-        6.5
-      ],
-      "to": [
-        9.5,
-        5,
-        9.5
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "y",
-        "origin": [
-          8,
-          3.5,
-          8
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "east": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "south": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "west": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        },
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        }
-      }
-    },
-    {
-      "name": "kelp_roll_slice",
-      "from": [
-        2.5,
-        2,
-        6
-      ],
-      "to": [
-        5.5,
-        5,
-        9
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "y",
-        "origin": [
-          4,
-          3.5,
-          7.5
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "east": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "south": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "west": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        },
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        }
-      }
-    },
-    {
-      "name": "kelp_roll_slice",
-      "from": [
-        10.5,
-        2,
-        4.5
-      ],
-      "to": [
-        13.5,
-        5,
-        7.5
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "y",
-        "origin": [
-          12,
-          3.5,
-          6
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "east": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "south": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "west": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        },
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        }
-      }
-    },
-    {
-      "name": "kelp_roll_slice",
-      "from": [
-        10,
-        2,
-        9.5
-      ],
-      "to": [
-        13,
-        5,
-        12.5
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "y",
-        "origin": [
-          11.5,
-          3.5,
-          11
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "east": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "south": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "west": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        },
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        }
-      }
-    },
-    {
-      "name": "kelp_roll_slice",
-      "from": [
-        6.5,
-        2,
-        2.5
-      ],
-      "to": [
-        9.5,
-        5,
-        5.5
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "y",
-        "origin": [
-          8,
-          3.5,
-          4
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "east": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "south": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "west": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        },
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        }
-      }
-    },
-    {
-      "name": "kelp_roll_slice",
-      "from": [
-        5,
-        2,
-        10.5
-      ],
-      "to": [
-        8,
-        5,
-        13.5
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "y",
-        "origin": [
-          6.5,
-          3.5,
-          12
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "east": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "south": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "west": {
-          "uv": [
-            0,
-            12,
-            16,
-            15
-          ],
-          "texture": "#food"
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
-        },
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            3
-          ],
-          "texture": "#food"
         }
       }
     }
@@ -671,7 +677,6 @@
     }
   },
   "groups": [
-    0,
     {
       "name": "group",
       "origin": [
@@ -682,6 +687,7 @@
       "color": 0,
       "children": []
     },
+    0,
     1,
     2,
     3,

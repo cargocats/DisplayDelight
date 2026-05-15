@@ -42,7 +42,7 @@
             13,
             5
           ],
-          "texture": "#missing"
+          "texture": "#5"
         },
         "east": {
           "uv": [
@@ -52,7 +52,7 @@
             11
           ],
           "rotation": 270,
-          "texture": "#missing"
+          "texture": "#5"
         },
         "south": {
           "uv": [
@@ -61,7 +61,7 @@
             13,
             12
           ],
-          "texture": "#missing"
+          "texture": "#5"
         },
         "west": {
           "uv": [
@@ -71,7 +71,7 @@
             11
           ],
           "rotation": 90,
-          "texture": "#missing"
+          "texture": "#5"
         },
         "up": {
           "uv": [

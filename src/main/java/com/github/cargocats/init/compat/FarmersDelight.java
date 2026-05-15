@@ -4,9 +4,6 @@ import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class FarmersDelight {
     public static final Block GLOW_BERRY_CUSTARD = DisplayDelightBlocks.createDrinkFoodBlock("glow_berry_custard");
     public static final Block FRUIT_SALAD = DisplayDelightBlocks.createFoodBlock("fruit_salad");
@@ -38,6 +35,8 @@ public class FarmersDelight {
     public static final Block APPLE_CIDER = DisplayDelightBlocks.createDrinkFoodBlock("apple_cider");
     public static final Block MELON_JUICE = DisplayDelightBlocks.createDrinkFoodBlock("melon_juice");
     public static final Block HOT_COCOA = DisplayDelightBlocks.createHotDrinkFoodBlock("hot_cocoa");
+    public static final Block GLEAMING_SALAD = DisplayDelightBlocks.createFoodBlock("gleaming_salad");
+    public static final Block ONION_SOUP = DisplayDelightBlocks.createFoodBlock("onion_soup");
 
     public static final Block SMALL_PLATED_CAKE_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("small_plated_cake_slice");
     public static final Block SMALL_PLATED_APPLE_PIE_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("small_plated_apple_pie_slice");

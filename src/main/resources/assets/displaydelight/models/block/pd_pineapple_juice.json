@@ -1,9 +1,9 @@
 {
+  "format_version": "1.21.11",
   "credit": "Made with Blockbench",
-  "render_type": "cutout",
   "parent": "displaydelight:block/apple_cider",
+  "render_type": "cutout",
   "textures": {
-    "6": "displaydelight:block/pd_pineapple_juice",
-    "particle": "displaydelight:block/pd_pineapple_juice"
+    "6": "displaydelight:block/pd_pineapple_juice"
   }
 }
