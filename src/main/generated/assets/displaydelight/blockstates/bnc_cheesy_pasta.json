@@ -1,19 +1,39 @@
 {
-  "variants": {
-    "facing=east": {
-      "model": "displaydelight:block/bnc_cheesy_pasta",
-      "y": 90
+  "multipart": [
+    {
+      "apply": {
+        "model": "displaydelight:block/bnc_cheesy_pasta"
+      },
+      "when": {
+        "facing": "north"
+      }
     },
-    "facing=north": {
-      "model": "displaydelight:block/bnc_cheesy_pasta"
+    {
+      "apply": {
+        "model": "displaydelight:block/bnc_cheesy_pasta",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
     },
-    "facing=south": {
-      "model": "displaydelight:block/bnc_cheesy_pasta",
-      "y": 180
+    {
+      "apply": {
+        "model": "displaydelight:block/bnc_cheesy_pasta",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
     },
-    "facing=west": {
-      "model": "displaydelight:block/bnc_cheesy_pasta",
-      "y": 270
+    {
+      "apply": {
+        "model": "displaydelight:block/bnc_cheesy_pasta",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
     }
-  }
+  ]
 }

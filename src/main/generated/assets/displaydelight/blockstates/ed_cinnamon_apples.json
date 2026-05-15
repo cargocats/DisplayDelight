@@ -1,19 +1,39 @@
 {
-  "variants": {
-    "facing=east": {
-      "model": "displaydelight:block/ed_cinnamon_apples",
-      "y": 90
+  "multipart": [
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_cinnamon_apples"
+      },
+      "when": {
+        "facing": "north"
+      }
     },
-    "facing=north": {
-      "model": "displaydelight:block/ed_cinnamon_apples"
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_cinnamon_apples",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
     },
-    "facing=south": {
-      "model": "displaydelight:block/ed_cinnamon_apples",
-      "y": 180
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_cinnamon_apples",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
     },
-    "facing=west": {
-      "model": "displaydelight:block/ed_cinnamon_apples",
-      "y": 270
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_cinnamon_apples",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
     }
-  }
+  ]
 }

@@ -3,17 +3,13 @@ package com.github.cargocats.data.provider;
 import com.github.cargocats.block.PlatedFoodBlock;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import com.github.cargocats.init.DisplayDelightItems;
-import com.mojang.math.Quadrant;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.renderer.block.model.Variant;
-import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -23,35 +19,54 @@ public class DDModelProvider extends FabricModelProvider {
     public DDModelProvider(FabricDataOutput output) {
         super(output);
     }
-    public static final PropertyDispatch<VariantMutator> ROTATION_HORIZONTAL_FACING = PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
-            .select(Direction.EAST, VariantMutator.Y_ROT.withValue(Quadrant.R90))
-            .select(Direction.SOUTH, VariantMutator.Y_ROT.withValue(Quadrant.R180))
-            .select(Direction.WEST, VariantMutator.Y_ROT.withValue(Quadrant.R270))
-            .select(Direction.NORTH, variant -> variant);
 
     @Override
     public void generateBlockStateModels(@NonNull BlockModelGenerators blockStateModelGenerator) {
-        for (net.minecraft.world.level.block.Block block : DisplayDelightBlocks.DISPLAYABLE_BLOCKS) {
-            blockStateModelGenerator.createNonTemplateHorizontalBlock(block);
+        for (Block block : DisplayDelightBlocks.DISPLAYABLE_BLOCKS) {
+            generateRotatableMultiPart(blockStateModelGenerator, block);
         }
 
         for (Block block : DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS) {
-            blockStateModelGenerator.createNonTemplateHorizontalBlock(block);
+            generateRotatableMultiPart(blockStateModelGenerator, block);
         }
 
-        for (Block block : DisplayDelightBlocks.PLATEABLE_BLOCKS) {
+        for (Block block: DisplayDelightBlocks.PLATEABLE_BLOCKS) {
             if (!(block instanceof PlatedFoodBlock plated)) continue;
+            var multiPart = MultiPartGenerator.multiPart(block);
 
-            var supplier = MultiVariantGenerator.dispatch(block);
-            var variantMap = PropertyDispatch.C1.initial(PlatedFoodBlock.STACKS);
+            for (int stack = 1; stack <= plated.getMaxStacks(); stack++) {
+                var stackVariant = BlockModelGenerators.plainVariant(
+                        ModelLocationUtils.getModelLocation(block, "_" + stack)
+                );
 
-            for (int i = 1; i <= 6; i++) {
-                variantMap.select(i, BlockModelGenerators.variant(
-                        new Variant(ModelLocationUtils.getModelLocation(block).withSuffix("_" + Math.min(i, plated.getMaxStacks())))
-                ));
+                multiPart
+                        .with(
+                                BlockModelGenerators.condition()
+                                        .term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH)
+                                        .term(PlatedFoodBlock.STACKS, stack),
+                                stackVariant
+                        )
+                        .with(
+                                BlockModelGenerators.condition()
+                                        .term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH)
+                                        .term(PlatedFoodBlock.STACKS, stack),
+                                stackVariant.with(BlockModelGenerators.Y_ROT_180)
+                        )
+                        .with(
+                                BlockModelGenerators.condition()
+                                        .term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST)
+                                        .term(PlatedFoodBlock.STACKS, stack),
+                                stackVariant.with(BlockModelGenerators.Y_ROT_90)
+                        )
+                        .with(
+                                BlockModelGenerators.condition()
+                                        .term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST)
+                                        .term(PlatedFoodBlock.STACKS, stack),
+                                stackVariant.with(BlockModelGenerators.Y_ROT_270)
+                        );
             }
 
-            blockStateModelGenerator.blockStateOutput.accept(supplier.with(variantMap).with(ROTATION_HORIZONTAL_FACING));
+            blockStateModelGenerator.blockStateOutput.accept(multiPart);
             blockStateModelGenerator.registerSimpleItemModel(block, ModelLocationUtils.getModelLocation(block).withSuffix("_" + plated.getMaxStacks()));
         }
 
@@ -63,5 +78,16 @@ public class DDModelProvider extends FabricModelProvider {
     public void generateItemModels(@NonNull ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(DisplayDelightItems.SMALL_EMPTY_PLATE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(DisplayDelightItems.EMPTY_PLATE, ModelTemplates.FLAT_ITEM);
+    }
+
+    private void generateRotatableMultiPart(BlockModelGenerators blockStateModelGenerator, Block block) {
+        var baseVariant = BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(block));
+        var multiPart = MultiPartGenerator.multiPart(block)
+                .with(BlockModelGenerators.condition().term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), baseVariant)
+                .with(BlockModelGenerators.condition().term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), baseVariant.with(BlockModelGenerators.Y_ROT_90))
+                .with(BlockModelGenerators.condition().term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), baseVariant.with(BlockModelGenerators.Y_ROT_180))
+                .with(BlockModelGenerators.condition().term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), baseVariant.with(BlockModelGenerators.Y_ROT_270));
+
+        blockStateModelGenerator.blockStateOutput.accept(multiPart);
     }
 }

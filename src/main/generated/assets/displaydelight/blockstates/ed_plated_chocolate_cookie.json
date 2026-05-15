@@ -1,94 +1,160 @@
 {
-  "variants": {
-    "facing=east,stacks=1": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_1",
-      "y": 90
+  "multipart": [
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_1"
+      },
+      "when": {
+        "facing": "north",
+        "stacks": "1"
+      }
     },
-    "facing=east,stacks=2": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_2",
-      "y": 90
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_1",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "stacks": "1"
+      }
     },
-    "facing=east,stacks=3": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_3",
-      "y": 90
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_1",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "stacks": "1"
+      }
     },
-    "facing=east,stacks=4": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
-      "y": 90
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_1",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "stacks": "1"
+      }
     },
-    "facing=east,stacks=5": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
-      "y": 90
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_2"
+      },
+      "when": {
+        "facing": "north",
+        "stacks": "2"
+      }
     },
-    "facing=east,stacks=6": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
-      "y": 90
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_2",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "stacks": "2"
+      }
     },
-    "facing=north,stacks=1": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_1"
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_2",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "stacks": "2"
+      }
     },
-    "facing=north,stacks=2": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_2"
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_2",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "stacks": "2"
+      }
     },
-    "facing=north,stacks=3": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_3"
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_3"
+      },
+      "when": {
+        "facing": "north",
+        "stacks": "3"
+      }
     },
-    "facing=north,stacks=4": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4"
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_3",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "stacks": "3"
+      }
     },
-    "facing=north,stacks=5": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4"
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_3",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "stacks": "3"
+      }
     },
-    "facing=north,stacks=6": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4"
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_3",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "stacks": "3"
+      }
     },
-    "facing=south,stacks=1": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_1",
-      "y": 180
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_4"
+      },
+      "when": {
+        "facing": "north",
+        "stacks": "4"
+      }
     },
-    "facing=south,stacks=2": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_2",
-      "y": 180
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "stacks": "4"
+      }
     },
-    "facing=south,stacks=3": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_3",
-      "y": 180
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "stacks": "4"
+      }
     },
-    "facing=south,stacks=4": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
-      "y": 180
-    },
-    "facing=south,stacks=5": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
-      "y": 180
-    },
-    "facing=south,stacks=6": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
-      "y": 180
-    },
-    "facing=west,stacks=1": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_1",
-      "y": 270
-    },
-    "facing=west,stacks=2": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_2",
-      "y": 270
-    },
-    "facing=west,stacks=3": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_3",
-      "y": 270
-    },
-    "facing=west,stacks=4": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
-      "y": 270
-    },
-    "facing=west,stacks=5": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
-      "y": 270
-    },
-    "facing=west,stacks=6": {
-      "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
-      "y": 270
+    {
+      "apply": {
+        "model": "displaydelight:block/ed_plated_chocolate_cookie_4",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "stacks": "4"
+      }
     }
-  }
+  ]
 }

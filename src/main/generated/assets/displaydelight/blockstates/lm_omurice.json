@@ -1,19 +1,39 @@
 {
-  "variants": {
-    "facing=east": {
-      "model": "displaydelight:block/lm_omurice",
-      "y": 90
+  "multipart": [
+    {
+      "apply": {
+        "model": "displaydelight:block/lm_omurice"
+      },
+      "when": {
+        "facing": "north"
+      }
     },
-    "facing=north": {
-      "model": "displaydelight:block/lm_omurice"
+    {
+      "apply": {
+        "model": "displaydelight:block/lm_omurice",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
     },
-    "facing=south": {
-      "model": "displaydelight:block/lm_omurice",
-      "y": 180
+    {
+      "apply": {
+        "model": "displaydelight:block/lm_omurice",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
     },
-    "facing=west": {
-      "model": "displaydelight:block/lm_omurice",
-      "y": 270
+    {
+      "apply": {
+        "model": "displaydelight:block/lm_omurice",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
     }
-  }
+  ]
 }

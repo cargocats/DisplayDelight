@@ -47,6 +47,7 @@ public class FarmersDelight {
     public static final Block SMALL_PLATED_SALMON_ROLL = DisplayDelightBlocks.createSmallPlatedBlock("small_plated_salmon_roll");
     public static final Block SMALL_PLATED_KELP_ROLL_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("small_plated_kelp_roll_slice");
     public static final Block SMALL_PLATED_CABBAGE_ROLLS = DisplayDelightBlocks.createSmallPlatedBlock("small_plated_cabbage_rolls");
+    public static final Block SMALL_PLATED_PUMPKIN_PIE_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("small_plated_pumpkin_pie_slice");
 
     public static final Block PLATED_DUMPLINGS = DisplayDelightBlocks.createStackablePlatedBlock("plated_dumplings", 2);
     public static final Block PLATED_HAMBURGER = DisplayDelightBlocks.createPlatedBlock("plated_hamburger");

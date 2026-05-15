@@ -1,19 +1,39 @@
 {
-  "variants": {
-    "facing=east": {
-      "model": "displaydelight:block/edd_dragon_leg_with_sauce",
-      "y": 90
+  "multipart": [
+    {
+      "apply": {
+        "model": "displaydelight:block/edd_dragon_leg_with_sauce"
+      },
+      "when": {
+        "facing": "north"
+      }
     },
-    "facing=north": {
-      "model": "displaydelight:block/edd_dragon_leg_with_sauce"
+    {
+      "apply": {
+        "model": "displaydelight:block/edd_dragon_leg_with_sauce",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
     },
-    "facing=south": {
-      "model": "displaydelight:block/edd_dragon_leg_with_sauce",
-      "y": 180
+    {
+      "apply": {
+        "model": "displaydelight:block/edd_dragon_leg_with_sauce",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
     },
-    "facing=west": {
-      "model": "displaydelight:block/edd_dragon_leg_with_sauce",
-      "y": 270
+    {
+      "apply": {
+        "model": "displaydelight:block/edd_dragon_leg_with_sauce",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
     }
-  }
+  ]
 }

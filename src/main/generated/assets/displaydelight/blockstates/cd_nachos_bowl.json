@@ -1,19 +1,39 @@
 {
-  "variants": {
-    "facing=east": {
-      "model": "displaydelight:block/cd_nachos_bowl",
-      "y": 90
+  "multipart": [
+    {
+      "apply": {
+        "model": "displaydelight:block/cd_nachos_bowl"
+      },
+      "when": {
+        "facing": "north"
+      }
     },
-    "facing=north": {
-      "model": "displaydelight:block/cd_nachos_bowl"
+    {
+      "apply": {
+        "model": "displaydelight:block/cd_nachos_bowl",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
     },
-    "facing=south": {
-      "model": "displaydelight:block/cd_nachos_bowl",
-      "y": 180
+    {
+      "apply": {
+        "model": "displaydelight:block/cd_nachos_bowl",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
     },
-    "facing=west": {
-      "model": "displaydelight:block/cd_nachos_bowl",
-      "y": 270
+    {
+      "apply": {
+        "model": "displaydelight:block/cd_nachos_bowl",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
     }
-  }
+  ]
 }
