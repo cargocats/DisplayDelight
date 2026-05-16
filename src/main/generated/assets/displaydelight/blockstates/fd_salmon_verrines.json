@@ -2,6 +2,14 @@
   "multipart": [
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/fd_salmon_verrines"
       },
       "when": {

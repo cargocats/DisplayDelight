@@ -1,6 +1,8 @@
 package com.github.cargocats.block;
 
 import com.github.cargocats.init.DisplayDelightItems;
+import com.github.cargocats.init.DisplayDelightProperties;
+import com.github.cargocats.util.BlockSupport;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -17,14 +19,12 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.SupportType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -42,11 +42,12 @@ public class FoodBlock extends HorizontalDirectionalBlock {
                     Identifier.CODEC.fieldOf("food_item_id").forGetter(block -> block.foodItemId), propertiesCodec()).apply(instance, FoodBlock::new)
     );
 
+    public static final BooleanProperty SUPPORT = DisplayDelightProperties.SUPPORT;
     private final Identifier foodItemId;
 
     public FoodBlock(Identifier foodItemId, Properties settings) {
         super(settings);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(SUPPORT, false));
         this.foodItemId = foodItemId;
     }
 
@@ -81,11 +82,11 @@ public class FoodBlock extends HorizontalDirectionalBlock {
                 droppedStacks.add(new ItemStack(block));
             } else {
                 droppedStacks.add(new ItemStack(foodItem, !fallBack ? platedFoodBlock.getStacks(state) : 1));
-                if (!fallBack) droppedStacks.add(new ItemStack(DisplayDelightItems.EMPTY_PLATE));
+                if (!fallBack && platedFoodBlock.hasPlate(state)) droppedStacks.add(new ItemStack(DisplayDelightItems.EMPTY_PLATE));
             }
-        } else if (block instanceof SmallPlatedFoodBlock) {
+        } else if (block instanceof SmallPlatedFoodBlock smallPlatedFoodBlock) {
             droppedStacks.add(new ItemStack(foodItem));
-            if (!fallBack) droppedStacks.add(new ItemStack(DisplayDelightItems.SMALL_EMPTY_PLATE));
+            if (!fallBack && smallPlatedFoodBlock.hasPlate(state)) droppedStacks.add(new ItemStack(DisplayDelightItems.SMALL_EMPTY_PLATE));
         } else {
             droppedStacks.add(new ItemStack(foodItem));
         }
@@ -99,13 +100,13 @@ public class FoodBlock extends HorizontalDirectionalBlock {
 
     @Override
     protected boolean canSurvive(@NonNull BlockState state, LevelReader world, BlockPos pos) {
-        return world.getBlockState(pos.below()).isFaceSturdy(world, pos.below(), Direction.UP, SupportType.CENTER);
+        return !world.getBlockState(pos.below()).isAir();
     }
 
     @Override
-    protected void tick(BlockState state, @NonNull ServerLevel world, @NonNull BlockPos pos, @NonNull RandomSource random) {
-        if (!state.canSurvive(world, pos)) {
-            world.destroyBlock(pos, true);
+    protected void tick(BlockState blockState, @NonNull ServerLevel serverLevel, @NonNull BlockPos blockPos, @NonNull RandomSource randomSource) {
+        if (!blockState.canSurvive(serverLevel, blockPos)) {
+            serverLevel.destroyBlock(blockPos, true);
         }
     }
 
@@ -114,12 +115,23 @@ public class FoodBlock extends HorizontalDirectionalBlock {
         if (!blockState.canSurvive(levelReader, blockPos)) {
             scheduledTickAccess.scheduleTick(blockPos, this, 1);
         }
+
+        if (direction == Direction.DOWN) {
+            return blockState.setValue(SUPPORT, BlockSupport.needSupport(levelReader, blockPos2, blockState2));
+        }
+
         return super.updateShape(blockState, levelReader, scheduledTickAccess, blockPos, direction, blockPos2, blockState2, randomSource);
     }
 
     @Override
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext ctx) {
-        return defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
+        Level level = ctx.getLevel();
+        BlockPos below = ctx.getClickedPos().below();
+        BlockState stateBelow = level.getBlockState(below);
+
+        return defaultBlockState()
+                .setValue(FACING, ctx.getHorizontalDirection().getOpposite())
+                .setValue(SUPPORT, BlockSupport.needSupport(level, below, stateBelow));
     }
 
     @Override
@@ -135,6 +147,6 @@ public class FoodBlock extends HorizontalDirectionalBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.@NonNull Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(FACING);
+        builder.add(FACING, SUPPORT);
     }
 }

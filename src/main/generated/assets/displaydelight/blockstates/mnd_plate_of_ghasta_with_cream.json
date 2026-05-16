@@ -2,6 +2,14 @@
   "multipart": [
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/mnd_plate_of_ghasta_with_cream"
       },
       "when": {

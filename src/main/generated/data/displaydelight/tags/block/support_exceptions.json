@@ -1,0 +1,42 @@
+{
+  "values": [
+    {
+      "id": "#minecraft:doors",
+      "required": false
+    },
+    {
+      "id": "#minecraft:stairs",
+      "required": false
+    },
+    "minecraft:honey_block",
+    "minecraft:composter",
+    "minecraft:dirt_path",
+    "minecraft:farmland",
+    {
+      "id": "#minecraft:fence_gates",
+      "required": false
+    },
+    "minecraft:potted_cactus",
+    "minecraft:potted_bamboo",
+    "minecraft:bamboo",
+    {
+      "id": "#minecraft:leaves",
+      "required": false
+    },
+    "minecraft:cauldron",
+    "minecraft:water_cauldron",
+    "minecraft:lava_cauldron",
+    "minecraft:powder_snow_cauldron",
+    "minecraft:big_dripleaf",
+    "minecraft:hopper",
+    "minecraft:lectern",
+    {
+      "id": "#c:fence_gates",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:basket",
+      "required": false
+    }
+  ]
+}

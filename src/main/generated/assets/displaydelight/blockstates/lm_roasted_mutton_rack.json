@@ -2,6 +2,14 @@
   "multipart": [
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/lm_roasted_mutton_rack"
       },
       "when": {

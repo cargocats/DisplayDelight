@@ -1,5 +1,6 @@
 package com.github.cargocats.data;
 
+import com.github.cargocats.data.provider.DDBlockTagsProvider;
 import com.github.cargocats.data.provider.DDItemTagsProvider;
 import com.github.cargocats.data.provider.DDModelProvider;
 import com.github.cargocats.data.provider.DDRecipeProvider;
@@ -12,6 +13,7 @@ public class DisplayDelightDataGenerator implements DataGeneratorEntrypoint {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
         pack.addProvider(DDItemTagsProvider::new);
+        pack.addProvider(DDBlockTagsProvider::new);
         pack.addProvider(DDRecipeProvider::new);
         pack.addProvider(DDModelProvider::new);
     }

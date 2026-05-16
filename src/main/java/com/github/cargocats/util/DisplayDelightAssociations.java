@@ -102,6 +102,30 @@ public class DisplayDelightAssociations {
         put("fd_", "festive_delight");
     }};
 
+    private static final Map<String, String> READABLE_NAMESPACES = new HashMap<>() {{
+        put("vna_", "Minecraft");
+        put("od_", "Ocean's Delight");
+        put("pd_", "Pineapple Delight");
+        put("cd_", "Corn Delight");
+        put("edd_", "End's Delight");
+        put("mnd_", "My Nether's Delight");
+        put("nd_", "Nether's Delight");
+        put("ed_", "Expanded Delight");
+        put("df_", "Delightful");
+        put("ad_", "Alex Delight");
+        put("acd_", "Aquaculture Delight");
+        put("bnc_", "Brewin' And Chewin'");
+        put("crd_", "Crabber's Delight");
+        put("erd_", "Ender's Delight");
+        put("ctd_", "Cultural Delights");
+        put("lm_", "Large Meals");
+        put("fd_", "Festive Delight");
+    }};
+
+    public static String getReadableName(String prefix) {
+        return READABLE_NAMESPACES.getOrDefault(prefix, "Farmer's Delight");
+    }
+
     public static String getNamespace(String prefix) {
         for (String key : COMPAT_NAMESPACES.keySet()) {
             if (COMPAT_NAMESPACES.get(key).equals(prefix)) {

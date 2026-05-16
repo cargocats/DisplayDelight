@@ -2,6 +2,14 @@
   "multipart": [
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/pasta_with_mutton_chop"
       },
       "when": {

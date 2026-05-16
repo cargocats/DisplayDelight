@@ -2,6 +2,14 @@
   "multipart": [
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/edd_plated_end_barbecue_stick_1"
       },
       "when": {
@@ -41,6 +49,14 @@
     },
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/edd_plated_end_barbecue_stick_2"
       },
       "when": {
@@ -76,6 +92,14 @@
       "when": {
         "facing": "west",
         "stacks": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
       }
     },
     {

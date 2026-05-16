@@ -2,6 +2,14 @@
   "multipart": [
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/ctd_plated_pork_wrap_1"
       },
       "when": {
@@ -37,6 +45,14 @@
       "when": {
         "facing": "west",
         "stacks": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
       }
     },
     {

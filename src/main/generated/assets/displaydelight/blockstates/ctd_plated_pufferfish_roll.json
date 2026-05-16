@@ -2,6 +2,14 @@
   "multipart": [
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/ctd_plated_pufferfish_roll_1"
       },
       "when": {
@@ -37,6 +45,14 @@
       "when": {
         "facing": "west",
         "stacks": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
       }
     },
     {
@@ -80,6 +96,14 @@
     },
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/ctd_plated_pufferfish_roll_3"
       },
       "when": {
@@ -115,6 +139,14 @@
       "when": {
         "facing": "west",
         "stacks": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
       }
     },
     {
@@ -158,6 +190,14 @@
     },
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/ctd_plated_pufferfish_roll_5"
       },
       "when": {
@@ -193,6 +233,14 @@
       "when": {
         "facing": "west",
         "stacks": "5"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
       }
     },
     {

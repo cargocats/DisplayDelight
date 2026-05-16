@@ -1,12 +1,15 @@
 package com.github.cargocats.data.provider;
 
+import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.block.PlatedFoodBlock;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import com.github.cargocats.init.DisplayDelightItems;
+import com.github.cargocats.init.DisplayDelightProperties;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
@@ -19,6 +22,7 @@ public class DDModelProvider extends FabricModelProvider {
     public DDModelProvider(FabricDataOutput output) {
         super(output);
     }
+    public MultiVariant woodSupportModelVariant = BlockModelGenerators.plainVariant(DisplayDelight.id("block/wood_support"));
 
     @Override
     public void generateBlockStateModels(@NonNull BlockModelGenerators blockStateModelGenerator) {
@@ -30,7 +34,7 @@ public class DDModelProvider extends FabricModelProvider {
             generateRotatableMultiPart(blockStateModelGenerator, block);
         }
 
-        for (Block block: DisplayDelightBlocks.PLATEABLE_BLOCKS) {
+        for (Block block : DisplayDelightBlocks.PLATEABLE_BLOCKS) {
             if (!(block instanceof PlatedFoodBlock plated)) continue;
             var multiPart = MultiPartGenerator.multiPart(block);
 
@@ -40,6 +44,7 @@ public class DDModelProvider extends FabricModelProvider {
                 );
 
                 multiPart
+                        .with(BlockModelGenerators.condition().term(DisplayDelightProperties.SUPPORT, true), woodSupportModelVariant)
                         .with(
                                 BlockModelGenerators.condition()
                                         .term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH)
@@ -82,7 +87,9 @@ public class DDModelProvider extends FabricModelProvider {
 
     private void generateRotatableMultiPart(BlockModelGenerators blockStateModelGenerator, Block block) {
         var baseVariant = BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(block));
+
         var multiPart = MultiPartGenerator.multiPart(block)
+                .with(BlockModelGenerators.condition().term(DisplayDelightProperties.SUPPORT, true), woodSupportModelVariant)
                 .with(BlockModelGenerators.condition().term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), baseVariant)
                 .with(BlockModelGenerators.condition().term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), baseVariant.with(BlockModelGenerators.Y_ROT_90))
                 .with(BlockModelGenerators.condition().term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), baseVariant.with(BlockModelGenerators.Y_ROT_180))

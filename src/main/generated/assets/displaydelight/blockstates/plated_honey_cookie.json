@@ -2,6 +2,14 @@
   "multipart": [
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/plated_honey_cookie_1"
       },
       "when": {
@@ -37,6 +45,14 @@
       "when": {
         "facing": "west",
         "stacks": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
       }
     },
     {
@@ -80,6 +96,14 @@
     },
     {
       "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
+    },
+    {
+      "apply": {
         "model": "displaydelight:block/plated_honey_cookie_3"
       },
       "when": {
@@ -115,6 +139,14 @@
       "when": {
         "facing": "west",
         "stacks": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
       }
     },
     {

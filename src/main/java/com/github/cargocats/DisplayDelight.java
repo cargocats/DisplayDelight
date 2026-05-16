@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +19,7 @@ public class DisplayDelight implements ModInitializer {
     public static final TagKey<Item> DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("displayable"));
     public static final TagKey<Item> PLATE_DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("plate_displayable"));
     public static final TagKey<Item> SMALL_PLATE_DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("small_plate_displayable"));
+    public static final TagKey<Block> SUPPORT_EXCEPTIONS = TagKey.create(Registries.BLOCK, DisplayDelight.id("support_exceptions"));
 
     @Override
     public void onInitialize() {

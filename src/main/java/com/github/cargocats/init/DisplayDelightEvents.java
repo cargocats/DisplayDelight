@@ -1,12 +1,16 @@
 package com.github.cargocats.init;
 
 import com.github.cargocats.DisplayDelight;
+import com.github.cargocats.block.FoodBlock;
 import com.github.cargocats.util.InteractionManager;
+import net.fabricmc.fabric.api.event.player.PlayerPickItemEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 public class DisplayDelightEvents {
     public static void init() {
@@ -35,6 +39,19 @@ public class DisplayDelightEvents {
             if (success) return InteractionResult.SUCCESS;
 
             return InteractionResult.PASS;
+        });
+
+        PlayerPickItemEvents.BLOCK.register((player, pos, state, includeData) -> {
+            if (!(state.getBlock() instanceof FoodBlock foodBlock)) return null;
+            Item foodItem = foodBlock.getFoodItem();
+
+            if (!foodItem.equals(Items.AIR) && !player.isShiftKeyDown()) {
+                // Use normal pick block behavior
+                return null;
+            } else {
+                // The item doesn't exist or player is sneaking, try to give the block itself instead.
+                return new ItemStack(state.getBlock().asItem());
+            }
         });
     }
 }
