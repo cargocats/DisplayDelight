@@ -1,8 +1,10 @@
 package com.github.cargocats.block;
 
+import com.github.cargocats.init.DisplayDelightItems;
 import com.github.cargocats.init.DisplayDelightProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,7 +16,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.NonNull;
 
-public class PlatedFoodBlock extends FoodBlock implements StackablePlate {
+public class PlatedFoodBlock extends FoodBlock implements StackablePlate, PlateHolder {
     public static final IntegerProperty STACKS = DisplayDelightProperties.STACKS;
     public static final BooleanProperty PLATE_HIDDEN = DisplayDelightProperties.PLATE_HIDDEN;
 
@@ -55,6 +57,11 @@ public class PlatedFoodBlock extends FoodBlock implements StackablePlate {
 
     public boolean hasPlate(BlockState state) {
         return !state.getValue(PLATE_HIDDEN);
+    }
+
+    @Override
+    public ItemStack getPlate() {
+        return new ItemStack(DisplayDelightItems.EMPTY_PLATE);
     }
 
     @Override

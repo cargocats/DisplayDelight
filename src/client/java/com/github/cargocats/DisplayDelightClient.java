@@ -1,10 +1,15 @@
 package com.github.cargocats;
 
+import com.github.cargocats.block.PlatedFoodBlock;
+import com.github.cargocats.block.SmallPlatedFoodBlock;
 import com.github.cargocats.init.DisplayDelightBlocks;
 import com.github.cargocats.init.DisplayDelightItems;
+import com.github.cargocats.renderer.PlateHidingBakedModel;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
+import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
+import net.fabricmc.fabric.api.client.model.loading.v1.ModelModifier;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
@@ -25,6 +30,15 @@ public class DisplayDelightClient implements ClientModInitializer {
 		cutoutBlocks.addAll(DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS);
 
 		BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT, cutoutBlocks.toArray(new Block[0]));
+
+		ModelLoadingPlugin.register(ctx -> ctx.modifyBlockModelAfterBake().register(ModelModifier.WRAP_PHASE, (model, context) -> {
+            Block block = context.state().getBlock();
+            if (block instanceof PlatedFoodBlock || block instanceof SmallPlatedFoodBlock) {
+                return new PlateHidingBakedModel(model, context);
+            }
+
+            return model;
+        }));
 
 		ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, textList) -> {
 			Identifier id = BuiltInRegistries.ITEM.getKey(itemStack.getItem());

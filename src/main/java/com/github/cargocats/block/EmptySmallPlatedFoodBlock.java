@@ -24,4 +24,9 @@ public class EmptySmallPlatedFoodBlock extends SmallPlatedFoodBlock {
     protected @NonNull ItemStack getCloneItemStack(@NonNull LevelReader levelReader, @NonNull BlockPos blockPos, @NonNull BlockState blockState, boolean bl) {
         return new ItemStack(DisplayDelightItems.SMALL_EMPTY_PLATE);
     }
+
+    @Override
+    public ItemStack getPlate() {
+        return ItemStack.EMPTY;
+    }
 }

@@ -116,7 +116,7 @@ public class FoodBlock extends HorizontalDirectionalBlock {
             scheduledTickAccess.scheduleTick(blockPos, this, 1);
         }
 
-        if (direction == Direction.DOWN) {
+        if (direction == Direction.DOWN && !blockState2.isAir()) {
             return blockState.setValue(SUPPORT, BlockSupport.needSupport(levelReader, blockPos2, blockState2));
         }
 

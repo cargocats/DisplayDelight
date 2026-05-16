@@ -2,9 +2,12 @@ package com.github.cargocats.util;
 
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.block.FoodBlock;
+import com.github.cargocats.block.PlateHolder;
 import com.github.cargocats.block.PlatedFoodBlock;
 import com.github.cargocats.block.SmallPlatedFoodBlock;
 import com.github.cargocats.init.DisplayDelightBlocks;
+import com.github.cargocats.init.DisplayDelightItems;
+import com.github.cargocats.init.DisplayDelightProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -16,6 +19,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -182,6 +186,65 @@ public class InteractionManager {
             } else {
                 player.setItemInHand(hand, new ItemStack(plateItem, count));
             }
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean tryTakePlateWithAxe(Player player, ServerLevel world, InteractionHand hand, BlockHitResult result) {
+        BlockPos blockPos = result.getBlockPos();
+        BlockState blockState = world.getBlockState(blockPos);
+
+        if (blockState.getBlock() instanceof PlateHolder plateHolder && plateHolder.hasPlate(blockState)) {
+            if (plateHolder.getPlate() == ItemStack.EMPTY) return false;
+            float babyAdditive = plateHolder.getPlate().is(DisplayDelightItems.SMALL_EMPTY_PLATE) ? 0.5f : 0;
+            BlockState newState = blockState.setValue(DisplayDelightProperties.PLATE_HIDDEN, true);
+            world.setBlock(blockPos, newState, 2);
+
+            if (plateHolder.getFoodItem() != Items.AIR) {
+                Block.popResource(world, blockPos, plateHolder.getPlate());
+                player.getItemInHand(hand).hurtAndBreak(1, player, hand);
+            }
+
+            world.playSound(null, blockPos, SoundEvents.AXE_STRIP, SoundSource.PLAYERS, 1.0F, (float) (babyAdditive + 0.8F + (Math.random() * 0.2)));
+            player.swing(hand, true);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean testInsertPlate(Player player, Level world, InteractionHand hand, BlockHitResult blockHitResult) {
+        BlockPos pos = blockHitResult.getBlockPos();
+        BlockState state = world.getBlockState(pos);
+        ItemStack stack = player.getItemInHand(hand);
+
+        return state.getBlock() instanceof PlateHolder plateHolder && !plateHolder.hasPlate(state) &&
+                plateHolder.getPlate().getItem().equals(stack.getItem());
+    }
+
+    public static boolean tryInsertPlate(Player player, ServerLevel world, InteractionHand hand, BlockHitResult blockHitResult) {
+        BlockPos pos = blockHitResult.getBlockPos();
+        BlockState state = world.getBlockState(pos);
+        ItemStack stack = player.getItemInHand(hand);
+
+        if (state.getBlock() instanceof PlateHolder plateHolder && !plateHolder.hasPlate(state) &&
+                plateHolder.getPlate().getItem().equals(stack.getItem())) {
+
+            BlockState newState = state.setValue(DisplayDelightProperties.PLATE_HIDDEN, false);
+            world.setBlock(pos, newState, Block.UPDATE_ALL | Block.UPDATE_IMMEDIATE);
+            world.sendBlockUpdated(pos, state, newState, Block.UPDATE_ALL);
+
+            world.playSound(null, pos, state.getSoundType().getPlaceSound(), SoundSource.PLAYERS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
+
+            if (plateHolder.getFoodItem() != Items.AIR) {
+                stack.consume(1, player);
+            }
+
+            player.swing(hand, true);
+
             return true;
         }
 
