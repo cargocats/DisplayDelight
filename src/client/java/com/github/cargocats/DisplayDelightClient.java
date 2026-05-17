@@ -2,7 +2,6 @@ package com.github.cargocats;
 
 import com.github.cargocats.block.PlatedFoodBlock;
 import com.github.cargocats.block.SmallPlatedFoodBlock;
-import com.github.cargocats.init.DisplayDelightBlocks;
 import com.github.cargocats.init.DisplayDelightItems;
 import com.github.cargocats.renderer.PlateHidingBakedModel;
 import com.github.cargocats.util.DisplayDelightAssociations;
@@ -10,27 +9,15 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
 import net.fabricmc.fabric.api.client.model.loading.v1.ModelModifier;
-import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class DisplayDelightClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		List<Block> cutoutBlocks = new ArrayList<>();
-		cutoutBlocks.addAll(DisplayDelightBlocks.DISPLAYABLE_BLOCKS);
-		cutoutBlocks.addAll(DisplayDelightBlocks.PLATEABLE_BLOCKS);
-		cutoutBlocks.addAll(DisplayDelightBlocks.SMALL_PLATEABLE_BLOCKS);
-
-		BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT, cutoutBlocks.toArray(new Block[0]));
-
 		ModelLoadingPlugin.register(ctx -> ctx.modifyBlockModelAfterBake().register(ModelModifier.WRAP_PHASE, (model, context) -> {
             Block block = context.state().getBlock();
             if (block instanceof PlatedFoodBlock || block instanceof SmallPlatedFoodBlock) {

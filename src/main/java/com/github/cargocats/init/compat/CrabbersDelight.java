@@ -24,6 +24,6 @@ public class CrabbersDelight {
 
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Crabber's Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Crabber's Delight");
     }
 }

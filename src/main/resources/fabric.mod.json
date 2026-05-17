@@ -24,7 +24,10 @@
       "com.github.cargocats.data.DisplayDelightDataGenerator"
     ]
   },
-  "mixins": [],
+  "mixins": [
+    "displaydelight.mixins.json"
+  ],
+  "accessWidener": "display-delight.classtweaker",
   "depends": {
     "fabricloader": ">=0.18.1",
     "minecraft": "~26.1.2",

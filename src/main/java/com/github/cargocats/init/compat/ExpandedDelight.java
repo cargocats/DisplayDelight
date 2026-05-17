@@ -41,6 +41,6 @@ public class ExpandedDelight {
     public static final Block ED_SMALL_PLATED_HONEYED_GOAT_CHEESE_TART_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("ed_small_plated_honeyed_goat_cheese_tart_slice");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Expanded Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Expanded Delight");
     }
 }

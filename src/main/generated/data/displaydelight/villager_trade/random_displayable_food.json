@@ -1,0 +1,596 @@
+{
+  "given_item_modifiers": [
+    {
+      "function": "displaydelight:random_item_function",
+      "item_candidate_list": [
+        {
+          "id": "displaydelight:vna_mushroom_stew"
+        },
+        {
+          "id": "displaydelight:vna_rabbit_stew"
+        },
+        {
+          "id": "displaydelight:vna_beetroot_soup"
+        },
+        {
+          "id": "displaydelight:glow_berry_custard"
+        },
+        {
+          "id": "displaydelight:fruit_salad"
+        },
+        {
+          "id": "displaydelight:cooked_rice"
+        },
+        {
+          "id": "displaydelight:mixed_salad"
+        },
+        {
+          "id": "displaydelight:beef_stew"
+        },
+        {
+          "id": "displaydelight:chicken_soup"
+        },
+        {
+          "id": "displaydelight:vegetable_soup"
+        },
+        {
+          "id": "displaydelight:fish_stew"
+        },
+        {
+          "id": "displaydelight:fried_rice"
+        },
+        {
+          "id": "displaydelight:pumpkin_soup"
+        },
+        {
+          "id": "displaydelight:baked_cod_stew"
+        },
+        {
+          "id": "displaydelight:noodle_soup"
+        },
+        {
+          "id": "displaydelight:bone_broth"
+        },
+        {
+          "id": "displaydelight:bacon_and_eggs"
+        },
+        {
+          "id": "displaydelight:pasta_with_meatballs"
+        },
+        {
+          "id": "displaydelight:pasta_with_mutton_chop"
+        },
+        {
+          "id": "displaydelight:roasted_mutton_chops"
+        },
+        {
+          "id": "displaydelight:steak_and_potatoes"
+        },
+        {
+          "id": "displaydelight:vegetable_noodles"
+        },
+        {
+          "id": "displaydelight:ratatouille"
+        },
+        {
+          "id": "displaydelight:squid_ink_pasta"
+        },
+        {
+          "id": "displaydelight:grilled_salmon"
+        },
+        {
+          "id": "displaydelight:mushroom_rice"
+        },
+        {
+          "id": "displaydelight:roast_chicken"
+        },
+        {
+          "id": "displaydelight:stuffed_pumpkin"
+        },
+        {
+          "id": "displaydelight:honey_glazed_ham"
+        },
+        {
+          "id": "displaydelight:shepherds_pie"
+        },
+        {
+          "id": "displaydelight:apple_cider"
+        },
+        {
+          "id": "displaydelight:melon_juice"
+        },
+        {
+          "id": "displaydelight:hot_cocoa"
+        },
+        {
+          "id": "displaydelight:gleaming_salad"
+        },
+        {
+          "id": "displaydelight:onion_soup"
+        },
+        {
+          "id": "displaydelight:od_bowl_of_guardian_soup"
+        },
+        {
+          "id": "displaydelight:od_braised_sea_pickle"
+        },
+        {
+          "id": "displaydelight:od_seagrass_salad"
+        },
+        {
+          "id": "displaydelight:od_squid_rings"
+        },
+        {
+          "id": "displaydelight:pd_pineapple_fried_rice"
+        },
+        {
+          "id": "displaydelight:pd_pineapple_ice_cream"
+        },
+        {
+          "id": "displaydelight:pd_pineapple_milk_shake"
+        },
+        {
+          "id": "displaydelight:pd_pineapple_juice"
+        },
+        {
+          "id": "displaydelight:cd_nachos_bowl"
+        },
+        {
+          "id": "displaydelight:cd_creamy_corn_drink"
+        },
+        {
+          "id": "displaydelight:cd_cornbread_stuffing"
+        },
+        {
+          "id": "displaydelight:cd_corn_soup"
+        },
+        {
+          "id": "displaydelight:cd_creamed_corn"
+        },
+        {
+          "id": "displaydelight:edd_dragon_breath_and_chorus_soup"
+        },
+        {
+          "id": "displaydelight:edd_shulker_soup"
+        },
+        {
+          "id": "displaydelight:edd_ender_noodle"
+        },
+        {
+          "id": "displaydelight:edd_enderman_gristle_stew"
+        },
+        {
+          "id": "displaydelight:edd_stir_fried_shulker_meat"
+        },
+        {
+          "id": "displaydelight:edd_roasted_dragon_steak"
+        },
+        {
+          "id": "displaydelight:edd_end_mixed_salad"
+        },
+        {
+          "id": "displaydelight:edd_assorted_salad"
+        },
+        {
+          "id": "displaydelight:edd_ender_congee"
+        },
+        {
+          "id": "displaydelight:edd_chorus_fruit_milk_tea"
+        },
+        {
+          "id": "displaydelight:edd_chorus_fruit_wine"
+        },
+        {
+          "id": "displaydelight:edd_bubble_tea"
+        },
+        {
+          "id": "displaydelight:edd_dragon_breath_soda"
+        },
+        {
+          "id": "displaydelight:edd_chorus_flower_tea"
+        },
+        {
+          "id": "displaydelight:edd_grilled_shulker"
+        },
+        {
+          "id": "displaydelight:edd_dragon_meat_stew"
+        },
+        {
+          "id": "displaydelight:edd_steamed_dragon_egg"
+        },
+        {
+          "id": "displaydelight:edd_dragon_leg_with_sauce"
+        },
+        {
+          "id": "displaydelight:mnd_sizzling_pudding"
+        },
+        {
+          "id": "displaydelight:mnd_rock_soup"
+        },
+        {
+          "id": "displaydelight:mnd_spicy_noodle_soup"
+        },
+        {
+          "id": "displaydelight:mnd_strider_stew"
+        },
+        {
+          "id": "displaydelight:mnd_ghast_salad"
+        },
+        {
+          "id": "displaydelight:mnd_dried_ghast_with_milk"
+        },
+        {
+          "id": "displaydelight:mnd_sausage_and_potatoes"
+        },
+        {
+          "id": "displaydelight:mnd_spicy_hoglin_stew"
+        },
+        {
+          "id": "displaydelight:mnd_egg_soup"
+        },
+        {
+          "id": "displaydelight:mnd_breakfast_sampler"
+        },
+        {
+          "id": "displaydelight:mnd_fried_hoglin_chop"
+        },
+        {
+          "id": "displaydelight:mnd_twisted_ghasta"
+        },
+        {
+          "id": "displaydelight:mnd_strider_with_grilled_fungus"
+        },
+        {
+          "id": "displaydelight:mnd_scotch_eggs"
+        },
+        {
+          "id": "displaydelight:mnd_giant_takoyaki"
+        },
+        {
+          "id": "displaydelight:mnd_blue_tenderloin_steak"
+        },
+        {
+          "id": "displaydelight:mnd_crimson_stroganoff"
+        },
+        {
+          "id": "displaydelight:mnd_spicy_curry"
+        },
+        {
+          "id": "displaydelight:mnd_bleeding_tartar"
+        },
+        {
+          "id": "displaydelight:mnd_hot_wings"
+        },
+        {
+          "id": "displaydelight:mnd_plate_of_ghasta_with_cream"
+        },
+        {
+          "id": "displaydelight:mnd_plate_of_stuffed_hoglin_snout"
+        },
+        {
+          "id": "displaydelight:mnd_plate_of_stuffed_hoglin_ham"
+        },
+        {
+          "id": "displaydelight:mnd_plate_of_stuffed_hoglin"
+        },
+        {
+          "id": "displaydelight:mnd_plate_of_cold_striderloaf"
+        },
+        {
+          "id": "displaydelight:mnd_plate_of_striderloaf"
+        },
+        {
+          "id": "displaydelight:ed_asparagus_soup"
+        },
+        {
+          "id": "displaydelight:ed_asparagus_soup_creamy"
+        },
+        {
+          "id": "displaydelight:ed_asparagus_and_bacon_cheesy"
+        },
+        {
+          "id": "displaydelight:ed_peperonata"
+        },
+        {
+          "id": "displaydelight:ed_peanut_honey_soup"
+        },
+        {
+          "id": "displaydelight:ed_mac_and_cheese"
+        },
+        {
+          "id": "displaydelight:ed_peanut_salad"
+        },
+        {
+          "id": "displaydelight:ed_sweet_potato_salad"
+        },
+        {
+          "id": "displaydelight:ed_cinnamon_rice"
+        },
+        {
+          "id": "displaydelight:ed_cinnamon_apples"
+        },
+        {
+          "id": "displaydelight:ed_apple_juice"
+        },
+        {
+          "id": "displaydelight:ed_sweet_berry_juice"
+        },
+        {
+          "id": "displaydelight:ed_glow_berry_juice"
+        },
+        {
+          "id": "displaydelight:ed_cranberry_juice"
+        },
+        {
+          "id": "displaydelight:ed_cranberry_chicken"
+        },
+        {
+          "id": "displaydelight:ed_asparagus_mushroom_pasta"
+        },
+        {
+          "id": "displaydelight:ed_sweet_potato_casserole"
+        },
+        {
+          "id": "displaydelight:df_matcha_ice_cream"
+        },
+        {
+          "id": "displaydelight:df_matcha_milkshake"
+        },
+        {
+          "id": "displaydelight:df_salmonberry_ice_cream"
+        },
+        {
+          "id": "displaydelight:df_salmonberry_milkshake"
+        },
+        {
+          "id": "displaydelight:df_matcha_latte"
+        },
+        {
+          "id": "displaydelight:df_ender_nectar"
+        },
+        {
+          "id": "displaydelight:df_berry_matcha_latte"
+        },
+        {
+          "id": "displaydelight:df_cactus_chili"
+        },
+        {
+          "id": "displaydelight:df_field_salad"
+        },
+        {
+          "id": "displaydelight:df_stuffed_cantaloupe"
+        },
+        {
+          "id": "displaydelight:df_sinigang"
+        },
+        {
+          "id": "displaydelight:df_cactus_soup"
+        },
+        {
+          "id": "displaydelight:ad_maggot_salad"
+        },
+        {
+          "id": "displaydelight:ad_kangaroo_stew"
+        },
+        {
+          "id": "displaydelight:ad_acacia_blossom_soup"
+        },
+        {
+          "id": "displaydelight:ad_lobster_pasta"
+        },
+        {
+          "id": "displaydelight:ad_kangaroo_pasta"
+        },
+        {
+          "id": "displaydelight:ctd_hearty_salad"
+        },
+        {
+          "id": "displaydelight:ctd_creamed_corn"
+        },
+        {
+          "id": "displaydelight:ctd_spicy_curry"
+        },
+        {
+          "id": "displaydelight:ctd_fried_eggplant_pasta"
+        },
+        {
+          "id": "displaydelight:ctd_poached_eggplants"
+        },
+        {
+          "id": "displaydelight:ctd_eggplant_parmesan"
+        },
+        {
+          "id": "displaydelight:lm_pufferfish_broth"
+        },
+        {
+          "id": "displaydelight:lm_potato_soup"
+        },
+        {
+          "id": "displaydelight:lm_red_soup"
+        },
+        {
+          "id": "displaydelight:lm_tomato_egg_soup"
+        },
+        {
+          "id": "displaydelight:lm_cod_deluxe"
+        },
+        {
+          "id": "displaydelight:lm_hearty_lunch"
+        },
+        {
+          "id": "displaydelight:lm_chicken_curry"
+        },
+        {
+          "id": "displaydelight:lm_pasta_with_mushroom_sauce"
+        },
+        {
+          "id": "displaydelight:lm_omurice"
+        },
+        {
+          "id": "displaydelight:lm_mushroom_pot_pie"
+        },
+        {
+          "id": "displaydelight:lm_roasted_mutton_rack"
+        },
+        {
+          "id": "displaydelight:lm_sweet_berry_custard"
+        },
+        {
+          "id": "displaydelight:lm_rice_pudding"
+        },
+        {
+          "id": "displaydelight:fd_festive_chicken"
+        },
+        {
+          "id": "displaydelight:fd_christmas_tea"
+        },
+        {
+          "id": "displaydelight:fd_salmon_verrines"
+        },
+        {
+          "id": "displaydelight:erd_chorus_juice"
+        },
+        {
+          "id": "displaydelight:erd_amberveil_stew"
+        },
+        {
+          "id": "displaydelight:erd_amberveiled_curry"
+        },
+        {
+          "id": "displaydelight:erd_chorus_stew"
+        },
+        {
+          "id": "displaydelight:erd_twisted_cereal"
+        },
+        {
+          "id": "displaydelight:erd_endermite_stew"
+        },
+        {
+          "id": "displaydelight:erd_ender_paella"
+        },
+        {
+          "id": "displaydelight:erd_chicken_curry"
+        },
+        {
+          "id": "displaydelight:erd_steak_fries"
+        },
+        {
+          "id": "displaydelight:erd_veil_of_flames_risotto"
+        },
+        {
+          "id": "displaydelight:erd_pearl_pasta"
+        },
+        {
+          "id": "displaydelight:erd_stuffed_shulker_bowl"
+        },
+        {
+          "id": "displaydelight:acd_poor_fisher_chowder"
+        },
+        {
+          "id": "displaydelight:acd_jellyfish_jelly"
+        },
+        {
+          "id": "displaydelight:acd_unusual_fish_soup"
+        },
+        {
+          "id": "displaydelight:acd_bass_stew"
+        },
+        {
+          "id": "displaydelight:acd_fish_chorba"
+        },
+        {
+          "id": "displaydelight:acd_fish_and_chips"
+        },
+        {
+          "id": "displaydelight:acd_halaszle"
+        },
+        {
+          "id": "displaydelight:acd_crispy_nori_kelp"
+        },
+        {
+          "id": "displaydelight:acd_baked_pollock_with_carrots"
+        },
+        {
+          "id": "displaydelight:acd_large_fish_with_vegetables"
+        },
+        {
+          "id": "displaydelight:acd_rollmops"
+        },
+        {
+          "id": "displaydelight:acd_tuna_spaghetti"
+        },
+        {
+          "id": "displaydelight:acd_halibut_with_tartar_sauce"
+        },
+        {
+          "id": "displaydelight:acd_buckling"
+        },
+        {
+          "id": "displaydelight:acd_turtle_meat_dish"
+        },
+        {
+          "id": "displaydelight:bnc_fiery_fondue"
+        },
+        {
+          "id": "displaydelight:bnc_scarlet_pierogi"
+        },
+        {
+          "id": "displaydelight:bnc_horror_lasagna"
+        },
+        {
+          "id": "displaydelight:bnc_cheesy_pasta"
+        },
+        {
+          "id": "displaydelight:bnc_creamy_onion_soup"
+        },
+        {
+          "id": "displaydelight:bnc_vegetable_omelet"
+        },
+        {
+          "id": "displaydelight:crd_kelp_shake"
+        },
+        {
+          "id": "displaydelight:crd_coconut_pudding"
+        },
+        {
+          "id": "displaydelight:crd_coconut_milk"
+        },
+        {
+          "id": "displaydelight:crd_clam_bake"
+        },
+        {
+          "id": "displaydelight:crd_surf_and_turf"
+        },
+        {
+          "id": "displaydelight:crd_seafood_gumbo"
+        },
+        {
+          "id": "displaydelight:crd_shrimp_fried_rice"
+        },
+        {
+          "id": "displaydelight:crd_coral_crunch"
+        },
+        {
+          "id": "displaydelight:crd_clam_chowder"
+        },
+        {
+          "id": "displaydelight:crd_bisque"
+        }
+      ]
+    }
+  ],
+  "gives": {
+    "id": "displaydelight:food_plate"
+  },
+  "max_uses": 2.0,
+  "reputation_discount": 0.1,
+  "wants": {
+    "count": {
+      "type": "minecraft:uniform",
+      "max": 8.0,
+      "min": 4.0
+    },
+    "id": "minecraft:emerald"
+  },
+  "xp": 10.0
+}

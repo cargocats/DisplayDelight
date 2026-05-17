@@ -20,6 +20,6 @@ public class OceansDelight {
     public static final Block OD_SMALL_FUGU_ROLL = DisplayDelightBlocks.createSmallPlatedBlock("od_small_plated_fugu_roll");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Oceans Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Ocean's Delight");
     }
 }

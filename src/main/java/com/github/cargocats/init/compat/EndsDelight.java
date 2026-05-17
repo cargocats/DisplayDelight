@@ -33,6 +33,6 @@ public class EndsDelight {
     public static final Block EDD_SMALL_PLATED_CHORUS_FRUIT_PIE_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("edd_small_plated_chorus_fruit_pie_slice");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized End's Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("End's Delight");
     }
 }

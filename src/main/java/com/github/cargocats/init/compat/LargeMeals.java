@@ -20,6 +20,6 @@ public class LargeMeals {
     public static final Block LM_RICE_PUDDING = DisplayDelightBlocks.createFoodBlock("lm_rice_pudding");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Large Meals compatibility");
+        DisplayDelight.loadedCompatibility.add("Large Meals");
     }
 }

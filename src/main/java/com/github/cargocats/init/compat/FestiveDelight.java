@@ -10,6 +10,6 @@ public class FestiveDelight {
     public static final Block FD_SALMON_VERRINES = DisplayDelightBlocks.createDrinkFoodBlock("fd_salmon_verrines");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Festive Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Festive Delight");
     }
 }

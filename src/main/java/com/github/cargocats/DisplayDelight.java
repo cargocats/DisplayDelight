@@ -9,12 +9,17 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DisplayDelight implements ModInitializer {
     public static final String MOD_ID = "displaydelight";
     public static final Logger LOG = LoggerFactory.getLogger(MOD_ID);
+    public static final List<String> loadedCompatibility = new ArrayList<>();
 
     public static final TagKey<Item> DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("displayable"));
     public static final TagKey<Item> PLATE_DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("plate_displayable"));
@@ -30,9 +35,9 @@ public class DisplayDelight implements ModInitializer {
         DisplayDelightItems.init();
         DisplayDelightEvents.init();
         DisplayDelightItemGroup.init();
-        DisplayDelightTrades.init();
+        DisplayDelightLoot.init();
 
-        LOG.info("Initialized Display Delight");
+        LOG.info("Initialized Display Delight 😋");
     }
 
     private void extraneousModBlocks() {
@@ -57,6 +62,8 @@ public class DisplayDelight implements ModInitializer {
         AquacultureDelight.init();
         BrewinAndChewin.init();
         CrabbersDelight.init();
+
+        DisplayDelight.LOG.info("Initialized compatability for {}", String.join(", ", loadedCompatibility));
     }
 
     public static Identifier id(String path) {

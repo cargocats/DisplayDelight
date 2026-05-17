@@ -103,23 +103,23 @@ public class DisplayDelightAssociations {
     }};
 
     private static final Map<String, String> READABLE_NAMESPACES = new HashMap<>() {{
-        put("vna_", "Minecraft");
-        put("od_", "Ocean's Delight");
-        put("pd_", "Pineapple Delight");
-        put("cd_", "Corn Delight");
-        put("edd_", "End's Delight");
-        put("mnd_", "My Nether's Delight");
-        put("nd_", "Nether's Delight");
-        put("ed_", "Expanded Delight");
-        put("df_", "Delightful");
-        put("ad_", "Alex Delight");
+        put("ad_", "Alex's Delight");
         put("acd_", "Aquaculture Delight");
         put("bnc_", "Brewin' And Chewin'");
+        put("cd_", "Corn Delight");
         put("crd_", "Crabber's Delight");
-        put("erd_", "Ender's Delight");
         put("ctd_", "Cultural Delights");
-        put("lm_", "Large Meals");
+        put("df_", "Delightful");
+        put("ed_", "Expanded Delight");
+        put("edd_", "End's Delight");
+        put("erd_", "Ender's Delight");
         put("fd_", "Festive Delight");
+        put("lm_", "Large Meals");
+        put("mnd_", "My Nether's Delight");
+        put("nd_", "Nether's Delight");
+        put("od_", "Ocean's Delight");
+        put("pd_", "Pineapple Delight");
+        put("vna_", "Minecraft");
     }};
 
     public static String getReadableName(String prefix) {

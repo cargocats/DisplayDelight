@@ -41,6 +41,6 @@ public class CulturalDelight {
     public static final Block CTD_CUT_PICKLE = DisplayDelightBlocks.createSmallPlatedBlock("ctd_small_plated_cut_pickle");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Cultural Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Cultural Delight");
     }
 }

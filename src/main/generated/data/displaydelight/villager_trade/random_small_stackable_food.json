@@ -1,0 +1,112 @@
+{
+  "given_item_modifiers": [
+    {
+      "function": "displaydelight:random_item_function",
+      "item_candidate_list": [
+        {
+          "id": "displaydelight:small_plated_cake_slice"
+        },
+        {
+          "id": "displaydelight:small_plated_apple_pie_slice"
+        },
+        {
+          "id": "displaydelight:small_plated_chocolate_pie_slice"
+        },
+        {
+          "id": "displaydelight:small_plated_sweet_berry_cheesecake_slice"
+        },
+        {
+          "id": "displaydelight:small_plated_stuffed_potato"
+        },
+        {
+          "id": "displaydelight:small_plated_cod_roll"
+        },
+        {
+          "id": "displaydelight:small_plated_salmon_roll"
+        },
+        {
+          "id": "displaydelight:small_plated_kelp_roll_slice"
+        },
+        {
+          "id": "displaydelight:small_plated_cabbage_rolls"
+        },
+        {
+          "id": "displaydelight:small_plated_pumpkin_pie_slice"
+        },
+        {
+          "id": "displaydelight:od_small_plated_elder_guardian_roll"
+        },
+        {
+          "id": "displaydelight:od_small_plated_fugu_roll"
+        },
+        {
+          "id": "displaydelight:pd_small_plated_pineapple_pie_side"
+        },
+        {
+          "id": "displaydelight:edd_small_plated_chorus_fruit_pie_slice"
+        },
+        {
+          "id": "displaydelight:mnd_small_plated_magma_cake_slice"
+        },
+        {
+          "id": "displaydelight:ed_small_plated_cranberry_cobbler_slice"
+        },
+        {
+          "id": "displaydelight:ed_small_plated_honeyed_goat_cheese_tart_slice"
+        },
+        {
+          "id": "displaydelight:df_small_plated_salmonberry_pie_slice"
+        },
+        {
+          "id": "displaydelight:df_small_plated_pumpkin_pie_slice"
+        },
+        {
+          "id": "displaydelight:ctd_small_plated_chicken_roll_slice"
+        },
+        {
+          "id": "displaydelight:ctd_small_plated_midori_roll_slice"
+        },
+        {
+          "id": "displaydelight:ctd_small_plated_pufferfish_roll"
+        },
+        {
+          "id": "displaydelight:ctd_small_plated_tropical_roll"
+        },
+        {
+          "id": "displaydelight:ctd_small_plated_egg_roll"
+        },
+        {
+          "id": "displaydelight:ctd_small_plated_calamari_roll"
+        },
+        {
+          "id": "displaydelight:ctd_small_plated_cut_pickle"
+        },
+        {
+          "id": "displaydelight:erd_small_plated_chorus_pie_slice"
+        },
+        {
+          "id": "displaydelight:acd_small_plated_raw_fish_fillet_roll"
+        },
+        {
+          "id": "displaydelight:acd_small_plated_fried_perch_roll"
+        },
+        {
+          "id": "displaydelight:bnc_small_plated_quiche_slice"
+        }
+      ]
+    }
+  ],
+  "gives": {
+    "id": "displaydelight:small_food_plate"
+  },
+  "reputation_discount": 0.4,
+  "wants": {
+    "count": {
+      "type": "minecraft:uniform",
+      "max": 3.0,
+      "min": 1.0
+    },
+    "id": "minecraft:emerald"
+  },
+  "xp": 6.0
+}

@@ -15,6 +15,6 @@ public class NethersDelight {
     public static final Block ND_NETHER_SKEWER = DisplayDelightBlocks.createStackablePlatedBlock("nd_plated_nether_skewer", 2);
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Nether's Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Nether's Delight");
     }
 }

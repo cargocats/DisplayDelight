@@ -67,6 +67,6 @@ public class FarmersDelight {
     public static final Block PLATED_HONEY_COOKIE = DisplayDelightBlocks.createStackablePlatedBlock("plated_honey_cookie", 4);
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Farmers Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Farmer's Delight");
     }
 }

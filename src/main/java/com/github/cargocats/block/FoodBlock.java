@@ -14,6 +14,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemInstance;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -60,7 +61,7 @@ public class FoodBlock extends HorizontalDirectionalBlock {
     protected @NotNull List<ItemStack> getDrops(@NonNull BlockState state, LootParams.@NonNull Builder builder) {
         List<ItemStack> droppedStacks = super.getDrops(state, builder);
 
-        ItemStack tool = builder.getParameter(LootContextParams.TOOL);
+        ItemInstance tool = builder.getParameter(LootContextParams.TOOL);
         var enchantmentRegistry = builder.getLevel().registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
         var silkTouchEntry = enchantmentRegistry.getOrThrow(Enchantments.SILK_TOUCH);
         boolean usedSilkTouch = silkTouchEntry.isBound() && EnchantmentHelper.getItemEnchantmentLevel(silkTouchEntry, tool) > 0;

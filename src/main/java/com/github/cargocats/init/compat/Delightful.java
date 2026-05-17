@@ -32,6 +32,6 @@ public class Delightful {
     public static final Block DF_PUMPKIN_PIE_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("df_small_plated_pumpkin_pie_slice");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Delightful compatibility");
+        DisplayDelight.loadedCompatibility.add("Delightful");
     }
 }

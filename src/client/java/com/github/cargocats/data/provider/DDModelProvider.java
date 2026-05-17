@@ -6,7 +6,7 @@ import com.github.cargocats.init.DisplayDelightBlocks;
 import com.github.cargocats.init.DisplayDelightItems;
 import com.github.cargocats.init.DisplayDelightProperties;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.MultiVariant;
@@ -19,7 +19,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.jspecify.annotations.NonNull;
 
 public class DDModelProvider extends FabricModelProvider {
-    public DDModelProvider(FabricDataOutput output) {
+    public DDModelProvider(FabricPackOutput output) {
         super(output);
     }
     public MultiVariant woodSupportModelVariant = BlockModelGenerators.plainVariant(DisplayDelight.id("block/wood_support"));
@@ -75,8 +75,8 @@ public class DDModelProvider extends FabricModelProvider {
             blockStateModelGenerator.registerSimpleItemModel(block, ModelLocationUtils.getModelLocation(block).withSuffix("_" + plated.getMaxStacks()));
         }
 
-        blockStateModelGenerator.createNonTemplateHorizontalBlock(DisplayDelightBlocks.SMALL_EMPTY_PLATE);
-        blockStateModelGenerator.createNonTemplateHorizontalBlock(DisplayDelightBlocks.EMPTY_PLATE);
+        generateRotatableMultiPart(blockStateModelGenerator, DisplayDelightBlocks.SMALL_EMPTY_PLATE);
+        generateRotatableMultiPart(blockStateModelGenerator, DisplayDelightBlocks.EMPTY_PLATE);
     }
 
     @Override
@@ -87,7 +87,6 @@ public class DDModelProvider extends FabricModelProvider {
 
     private void generateRotatableMultiPart(BlockModelGenerators blockStateModelGenerator, Block block) {
         var baseVariant = BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(block));
-
         var multiPart = MultiPartGenerator.multiPart(block)
                 .with(BlockModelGenerators.condition().term(DisplayDelightProperties.SUPPORT, true), woodSupportModelVariant)
                 .with(BlockModelGenerators.condition().term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), baseVariant)

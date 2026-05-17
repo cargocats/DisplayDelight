@@ -16,6 +16,6 @@ public class AlexDelight {
     public static final Block AD_GONGYLIDIA_BRUSCHETTA = DisplayDelightBlocks.createStackablePlatedBlock("ad_plated_gongylidia_bruschetta", 2);
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Alex Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Alex's Delight");
     }
 }

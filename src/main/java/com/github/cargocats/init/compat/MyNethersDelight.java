@@ -47,6 +47,6 @@ public class MyNethersDelight {
     public static final Block MND_SMALL_PLATED_MAGMA_CAKE_SLICE = DisplayDelightBlocks.createFierySmallPlatedBlock("mnd_small_plated_magma_cake_slice");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized My Nether's Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("My Nether's Delight");
     }
 }

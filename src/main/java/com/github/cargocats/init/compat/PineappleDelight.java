@@ -13,6 +13,6 @@ public class PineappleDelight {
     public static final Block PD_SMALL_PLATED_PINEAPPLE_PIE_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("pd_small_plated_pineapple_pie_side");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Pineapple Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Pineapple Delight");
     }
 }

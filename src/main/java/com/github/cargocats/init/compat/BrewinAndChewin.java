@@ -17,6 +17,6 @@ public class BrewinAndChewin {
     public static final Block BNC_SMALL_PLATED_QUICHE_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("bnc_small_plated_quiche_slice");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Brewin n Chewin compatibility");
+        DisplayDelight.loadedCompatibility.add("Brewin' And Chewin'");
     }
 }

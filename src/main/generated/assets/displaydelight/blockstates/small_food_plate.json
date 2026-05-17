@@ -1,19 +1,47 @@
 {
-  "variants": {
-    "facing=east": {
-      "model": "displaydelight:block/small_food_plate",
-      "y": 90
+  "multipart": [
+    {
+      "apply": {
+        "model": "displaydelight:block/wood_support"
+      },
+      "when": {
+        "support": "true"
+      }
     },
-    "facing=north": {
-      "model": "displaydelight:block/small_food_plate"
+    {
+      "apply": {
+        "model": "displaydelight:block/small_food_plate"
+      },
+      "when": {
+        "facing": "north"
+      }
     },
-    "facing=south": {
-      "model": "displaydelight:block/small_food_plate",
-      "y": 180
+    {
+      "apply": {
+        "model": "displaydelight:block/small_food_plate",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
     },
-    "facing=west": {
-      "model": "displaydelight:block/small_food_plate",
-      "y": 270
+    {
+      "apply": {
+        "model": "displaydelight:block/small_food_plate",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "displaydelight:block/small_food_plate",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
     }
-  }
+  ]
 }

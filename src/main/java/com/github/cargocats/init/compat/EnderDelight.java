@@ -26,6 +26,6 @@ public class EnderDelight {
     public static final Block ERD_SMALL_PLATED_CHORUS_PIE_SLICE = DisplayDelightBlocks.createSmallPlatedBlock("erd_small_plated_chorus_pie_slice");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Ender Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Ender's Delight");
     }
 }

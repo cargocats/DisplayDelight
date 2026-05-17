@@ -1,0 +1,302 @@
+{
+  "given_item_modifiers": [
+    {
+      "function": "displaydelight:random_item_function",
+      "item_candidate_list": [
+        {
+          "id": "displaydelight:vna_plated_cookie"
+        },
+        {
+          "id": "displaydelight:vna_plated_pumpkin_pie"
+        },
+        {
+          "id": "displaydelight:plated_dumplings"
+        },
+        {
+          "id": "displaydelight:plated_hamburger"
+        },
+        {
+          "id": "displaydelight:plated_barbecue_stick"
+        },
+        {
+          "id": "displaydelight:plated_chicken_sandwich"
+        },
+        {
+          "id": "displaydelight:plated_egg_sandwich"
+        },
+        {
+          "id": "displaydelight:plated_kelp_roll"
+        },
+        {
+          "id": "displaydelight:plated_melon_popsicle"
+        },
+        {
+          "id": "displaydelight:plated_stuffed_potato"
+        },
+        {
+          "id": "displaydelight:plated_mutton_wrap"
+        },
+        {
+          "id": "displaydelight:plated_bacon_sandwich"
+        },
+        {
+          "id": "displaydelight:plated_cabbage_rolls"
+        },
+        {
+          "id": "displaydelight:plated_cod_roll"
+        },
+        {
+          "id": "displaydelight:plated_kelp_roll_slice"
+        },
+        {
+          "id": "displaydelight:plated_salmon_roll"
+        },
+        {
+          "id": "displaydelight:plated_sweet_berry_cookie"
+        },
+        {
+          "id": "displaydelight:plated_honey_cookie"
+        },
+        {
+          "id": "displaydelight:od_plated_baked_tentacle_on_a_stick"
+        },
+        {
+          "id": "displaydelight:od_plated_elder_guardian_roll"
+        },
+        {
+          "id": "displaydelight:od_plated_fugu_roll"
+        },
+        {
+          "id": "displaydelight:od_plated_honey_fried_kelp"
+        },
+        {
+          "id": "displaydelight:od_plated_cooked_stuffed_cod"
+        },
+        {
+          "id": "displaydelight:cd_plated_grilled_corn"
+        },
+        {
+          "id": "displaydelight:cd_plated_classic_corn_dog"
+        },
+        {
+          "id": "displaydelight:cd_plated_taco"
+        },
+        {
+          "id": "displaydelight:edd_plated_stuffed_rice_cake"
+        },
+        {
+          "id": "displaydelight:edd_plated_chorus_flower_pie"
+        },
+        {
+          "id": "displaydelight:edd_plated_ender_bamboo_rice"
+        },
+        {
+          "id": "displaydelight:edd_plated_chorus_fruit_popsicle"
+        },
+        {
+          "id": "displaydelight:edd_plated_end_barbecue_stick"
+        },
+        {
+          "id": "displaydelight:mnd_plated_stuffed_pepper"
+        },
+        {
+          "id": "displaydelight:mnd_plated_hotdog_with_mixed_salad"
+        },
+        {
+          "id": "displaydelight:mnd_plated_hotdog_with_nether_salad"
+        },
+        {
+          "id": "displaydelight:mnd_plated_chilidog"
+        },
+        {
+          "id": "displaydelight:mnd_plated_spicy_cotton"
+        },
+        {
+          "id": "displaydelight:mnd_plated_fries_ghasta"
+        },
+        {
+          "id": "displaydelight:mnd_plated_spicy_skewer"
+        },
+        {
+          "id": "displaydelight:mnd_plated_red_loin_on_a_stick"
+        },
+        {
+          "id": "displaydelight:mnd_plated_nether_burger"
+        },
+        {
+          "id": "displaydelight:mnd_plated_bacon-wrapped_sausage_on_a_stick"
+        },
+        {
+          "id": "displaydelight:ed_plated_peanut_butter_sandwich"
+        },
+        {
+          "id": "displaydelight:ed_plated_peanut_butter_honey_sandwich"
+        },
+        {
+          "id": "displaydelight:ed_plated_glow_berry_jelly_sandwich"
+        },
+        {
+          "id": "displaydelight:ed_plated_sweet_berry_jelly_sandwich"
+        },
+        {
+          "id": "displaydelight:ed_plated_cheese_sandwich"
+        },
+        {
+          "id": "displaydelight:ed_plated_grilled_cheese"
+        },
+        {
+          "id": "displaydelight:ed_plated_chocolate_cookie"
+        },
+        {
+          "id": "displaydelight:ed_plated_sugar_cookie"
+        },
+        {
+          "id": "displaydelight:ed_plated_snickerdoodle"
+        },
+        {
+          "id": "displaydelight:ed_plated_sweet_roll"
+        },
+        {
+          "id": "displaydelight:ed_plated_berry_sweet_roll"
+        },
+        {
+          "id": "displaydelight:ed_plated_glow_berry_sweet_roll"
+        },
+        {
+          "id": "displaydelight:df_plated_smore"
+        },
+        {
+          "id": "displaydelight:df_plated_cheeseburger"
+        },
+        {
+          "id": "displaydelight:df_plated_deluxe_cheeseburger"
+        },
+        {
+          "id": "displaydelight:df_plated_nut_butter_and_jelly_sandwich"
+        },
+        {
+          "id": "displaydelight:df_plated_cooked_marshmallow_stick"
+        },
+        {
+          "id": "displaydelight:df_plated_cantaloupe_popsicle"
+        },
+        {
+          "id": "displaydelight:df_plated_cantaloupe_bread"
+        },
+        {
+          "id": "displaydelight:df_plated_wrapped_cantaloupe"
+        },
+        {
+          "id": "displaydelight:ad_plated_bunfungus_sandwich"
+        },
+        {
+          "id": "displaydelight:ad_plated_bison_burger"
+        },
+        {
+          "id": "displaydelight:ad_plated_gongylidia_bruschetta"
+        },
+        {
+          "id": "displaydelight:ctd_plated_elote"
+        },
+        {
+          "id": "displaydelight:ctd_plated_empanada"
+        },
+        {
+          "id": "displaydelight:ctd_plated_beef_burrito"
+        },
+        {
+          "id": "displaydelight:ctd_plated_mutton_sandwich"
+        },
+        {
+          "id": "displaydelight:ctd_plated_eggplant_burger"
+        },
+        {
+          "id": "displaydelight:ctd_plated_avocado_toast"
+        },
+        {
+          "id": "displaydelight:ctd_plated_chicken_taco"
+        },
+        {
+          "id": "displaydelight:ctd_plated_pork_wrap"
+        },
+        {
+          "id": "displaydelight:ctd_plated_fish_taco"
+        },
+        {
+          "id": "displaydelight:ctd_plated_chicken_roll"
+        },
+        {
+          "id": "displaydelight:ctd_plated_midori_roll"
+        },
+        {
+          "id": "displaydelight:ctd_plated_chicken_roll_slice"
+        },
+        {
+          "id": "displaydelight:ctd_plated_midori_roll_slice"
+        },
+        {
+          "id": "displaydelight:ctd_plated_pufferfish_roll"
+        },
+        {
+          "id": "displaydelight:ctd_plated_tropical_roll"
+        },
+        {
+          "id": "displaydelight:ctd_plated_rice_ball"
+        },
+        {
+          "id": "displaydelight:ctd_plated_egg_roll"
+        },
+        {
+          "id": "displaydelight:ctd_plated_calamari_roll"
+        },
+        {
+          "id": "displaydelight:erd_plated_uncanny_cookies"
+        },
+        {
+          "id": "displaydelight:erd_plated_crispy_skewer"
+        },
+        {
+          "id": "displaydelight:erd_plated_strange_eclair"
+        },
+        {
+          "id": "displaydelight:erd_plated_crawling_sandwich"
+        },
+        {
+          "id": "displaydelight:acd_plated_catfish_barbecue"
+        },
+        {
+          "id": "displaydelight:bnc_plated_ham_and_cheese_sandwich"
+        },
+        {
+          "id": "displaydelight:crd_plated_frog_leg_kebab"
+        },
+        {
+          "id": "displaydelight:crd_plated_squid_kebab"
+        },
+        {
+          "id": "displaydelight:crd_plated_shrimp_skewer"
+        },
+        {
+          "id": "displaydelight:crd_plated_fish_stick"
+        },
+        {
+          "id": "displaydelight:crd_plated_stuffed_nautilus_shell"
+        }
+      ]
+    }
+  ],
+  "gives": {
+    "id": "displaydelight:food_plate"
+  },
+  "max_uses": 3.0,
+  "reputation_discount": 0.2,
+  "wants": {
+    "count": {
+      "type": "minecraft:uniform",
+      "max": 4.0,
+      "min": 2.0
+    },
+    "id": "minecraft:emerald"
+  },
+  "xp": 8.0
+}

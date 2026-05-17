@@ -16,6 +16,6 @@ public class CornDelight {
     public static final Block CD_TACO = DisplayDelightBlocks.createStackablePlatedBlock("cd_plated_taco", 2);
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Corn Delight compatibility");
+        DisplayDelight.loadedCompatibility.add("Corn Delight");
     }
 }
