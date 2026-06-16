@@ -19,6 +19,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -29,8 +30,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import java.util.Set;
 
 public class InteractionManager {
-    public static boolean tryPlaceItem(Player player, ServerLevel world, InteractionHand hand, BlockHitResult blockHitResult) {
-        ItemStack itemStack = player.getItemInHand(hand);
+    public static boolean tryPlaceItem(Player player, ServerLevel world, InteractionHand hand, BlockHitResult blockHitResult) {ItemStack itemStack = player.getItemInHand(hand);
         BlockPos clickedPos = blockHitResult.getBlockPos();
         Direction side = blockHitResult.getDirection();
 
@@ -46,9 +46,17 @@ public class InteractionManager {
         if (!world.getBlockState(placePos).isAir()) return false;
         if (!blockState.canSurvive(world, placePos)) return false;
         if (!world.isUnobstructed(blockState, placePos, CollisionContext.of(player))) return false;
+        BlockPlaceContext blockPlaceContext = new BlockPlaceContext(
+                player, hand, itemStack, blockHitResult
+        );
+
+        BlockState placementState = block.getStateForPlacement(blockPlaceContext);
+        if (placementState == null) {
+            placementState = block.defaultBlockState();
+        }
 
         itemStack.consume(1, player);
-        world.setBlock(placePos, block.defaultBlockState(), Block.UPDATE_ALL);
+        world.setBlock(placePos, placementState, Block.UPDATE_ALL);
         world.playSound(null, placePos, block.defaultBlockState().getSoundType().getPlaceSound(), SoundSource.BLOCKS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
         player.swing(hand, true);
 
