@@ -30,7 +30,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import java.util.Set;
 
 public class InteractionManager {
-    public static boolean tryPlaceItem(Player player, ServerLevel world, InteractionHand hand, BlockHitResult blockHitResult) {ItemStack itemStack = player.getItemInHand(hand);
+    public static boolean tryPlaceItem(Player player, ServerLevel world, InteractionHand hand, BlockHitResult blockHitResult) {
+        ItemStack itemStack = player.getItemInHand(hand);
         BlockPos clickedPos = blockHitResult.getBlockPos();
         Direction side = blockHitResult.getDirection();
 
@@ -95,7 +96,11 @@ public class InteractionManager {
         }
 
         itemStack.consume(1, player);
-        world.setBlock(blockPos, block.defaultBlockState().setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING)), Block.UPDATE_ALL);
+        world.setBlock(blockPos, block.defaultBlockState()
+                        .setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING))
+                        .setValue(FoodBlock.SUPPORT, BlockSupport.needSupport(world, blockPos)),
+                Block.UPDATE_ALL
+        );
 
         SoundEvent sound = blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE) ? block.defaultBlockState().getSoundType().getPlaceSound() : SoundEvents.CHICKEN_EGG;
         world.playSound(null, blockPos, sound, blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE) ? SoundSource.BLOCKS : SoundSource.PLAYERS, 1.0F, 0.8F + (float) Math.random() * 0.2F);
@@ -120,7 +125,10 @@ public class InteractionManager {
         int count = 1;
         // Convert to the actual plate block
         if (blockState.is(DisplayDelightBlocks.EMPTY_PLATE)) {
-            world.setBlock(blockPos, platedBlock.defaultBlockState().setValue(PlatedFoodBlock.STACKS, 1).setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING)), Block.UPDATE_ALL);
+            world.setBlock(blockPos, platedBlock.defaultBlockState()
+                    .setValue(PlatedFoodBlock.STACKS, 1)
+                    .setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING))
+                    .setValue(FoodBlock.SUPPORT, BlockSupport.needSupport(world, blockPos)), Block.UPDATE_ALL);
         } else {
             if (!platedBlock.equals(blockState.getBlock())) return false;
 
@@ -157,7 +165,11 @@ public class InteractionManager {
                 return false;
             }
 
-            world.setBlock(blockPos, DisplayDelightBlocks.SMALL_EMPTY_PLATE.defaultBlockState(), Block.UPDATE_ALL);
+            world.setBlock(blockPos,
+                    DisplayDelightBlocks.SMALL_EMPTY_PLATE.defaultBlockState()
+                            .setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING))
+                            .setValue(FoodBlock.SUPPORT, BlockSupport.needSupport(world, blockPos))
+                    , Block.UPDATE_ALL);
             world.playSound(null, blockPos, SoundEvents.CHICKEN_EGG, SoundSource.PLAYERS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
             player.swing(hand, true);
 
@@ -177,12 +189,20 @@ public class InteractionManager {
             int count = 1;
             if (player.isShiftKeyDown()) {
                 count = platedFoodBlock.getStacks(blockState);
-                world.setBlock(blockPos, DisplayDelightBlocks.EMPTY_PLATE.defaultBlockState().setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING)), Block.UPDATE_ALL);
+                world.setBlock(blockPos,
+                        DisplayDelightBlocks.EMPTY_PLATE.defaultBlockState()
+                                .setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING))
+                                .setValue(FoodBlock.SUPPORT, BlockSupport.needSupport(world, blockPos))
+                        , Block.UPDATE_ALL);
             } else {
                 if (platedFoodBlock.getStacks(blockState) > 1) {
                     world.setBlock(blockPos, platedFoodBlock.decrementStackState(blockState), Block.UPDATE_ALL);
                 } else {
-                    world.setBlock(blockPos, DisplayDelightBlocks.EMPTY_PLATE.defaultBlockState().setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING)), Block.UPDATE_ALL);
+                    world.setBlock(blockPos,
+                            DisplayDelightBlocks.EMPTY_PLATE.defaultBlockState()
+                                    .setValue(FoodBlock.FACING, blockState.getValue(FoodBlock.FACING))
+                                    .setValue(FoodBlock.SUPPORT, BlockSupport.needSupport(world, blockPos))
+                            , Block.UPDATE_ALL);
                 }
             }
 
