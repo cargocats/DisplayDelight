@@ -30,7 +30,7 @@
   "accessWidener": "display-delight.classtweaker",
   "depends": {
     "fabricloader": ">=0.18.1",
-    "minecraft": "~26.1.2",
+    "minecraft": "~26.2",
     "java": ">=21",
     "fabric-api": "*"
   },
