@@ -43,7 +43,7 @@ public class DisplayDelightAssociations {
         Optional<Block> optBlock = BuiltInRegistries.BLOCK.getOptional(translatedId);
         Block block = optBlock.orElse(Blocks.AIR);
 
-        if (block.equals(Blocks.AIR)) {
+        if (block.equals(Blocks.AIR) && !DisplayDelight.CONFIG.disableDebugLog) {
             DisplayDelight.LOG.warn("Could not find prefix {} block {} for item {}", prefix, translatedId, item);
         }
 
@@ -59,7 +59,7 @@ public class DisplayDelightAssociations {
         Optional<Item> optItem = BuiltInRegistries.ITEM.getOptional(translatedId);
         Item foodItem = optItem.orElse(Items.AIR);
 
-        if (foodItem.equals(Items.AIR)) {
+        if (foodItem.equals(Items.AIR) && !DisplayDelight.CONFIG.disableDebugLog) {
             DisplayDelight.LOG.warn("Could not find item from registry with food item id: {}", foodItemId);
         }
 

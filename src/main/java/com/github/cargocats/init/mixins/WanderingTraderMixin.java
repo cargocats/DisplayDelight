@@ -1,5 +1,6 @@
 package com.github.cargocats.init.mixins;
 
+import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.data.trading.DisplayDelightVillagerTrades;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
@@ -23,6 +24,9 @@ public abstract class WanderingTraderMixin extends AbstractVillager {
     @Inject(method = "updateTrades", at = @At("TAIL"))
     private void updateTrades(final ServerLevel level, final CallbackInfo ci) {
         MerchantOffers offers = this.getOffers();
-        this.addOffersFromTradeSet(level, offers, DisplayDelightVillagerTrades.WANDERING_TRADER_FOOD_TRADE_SET);
+
+        if (DisplayDelight.CONFIG.wanderingVillagerTrades) {
+            this.addOffersFromTradeSet(level, offers, DisplayDelightVillagerTrades.WANDERING_TRADER_FOOD_TRADE_SET);
+        }
     }
 }

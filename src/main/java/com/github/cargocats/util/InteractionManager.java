@@ -39,7 +39,7 @@ public class InteractionManager {
         BlockPos placePos = clickedPos.relative(side);
         BlockState blockState = block.defaultBlockState();
 
-        if (block.equals(Blocks.AIR)) {
+        if (block.equals(Blocks.AIR) && !DisplayDelight.CONFIG.disableDebugLog) {
             DisplayDelight.LOG.warn("Missing displayable block association for item {}", itemStack);
             return false;
         }
@@ -74,7 +74,7 @@ public class InteractionManager {
         BlockState blockState = world.getBlockState(blockPos);
         SmallPlatedFoodBlock smallPlatedFoodBlock = (SmallPlatedFoodBlock) blockState.getBlock();
 
-        if (block.equals(Blocks.AIR) && !blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE)) {
+        if (block.equals(Blocks.AIR) && !blockState.is(DisplayDelightBlocks.SMALL_EMPTY_PLATE) && !DisplayDelight.CONFIG.disableDebugLog) {
             DisplayDelight.LOG.warn("Missing small plate block association for item {}", itemStack);
             return false;
         }
@@ -117,7 +117,7 @@ public class InteractionManager {
         if (!(blockState.getBlock() instanceof PlatedFoodBlock)) return false;
         Block platedBlock = DisplayDelightAssociations.getPlateBlockForItem(itemStack.getItem());
 
-        if (platedBlock.equals(Blocks.AIR) && !blockState.is(DisplayDelightBlocks.EMPTY_PLATE)) {
+        if (platedBlock.equals(Blocks.AIR) && !blockState.is(DisplayDelightBlocks.EMPTY_PLATE) && !DisplayDelight.CONFIG.disableDebugLog) {
             DisplayDelight.LOG.warn("Missing plate block association for item {}", itemStack);
             return false;
         }

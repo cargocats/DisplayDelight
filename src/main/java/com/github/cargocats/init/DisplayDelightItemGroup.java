@@ -21,11 +21,13 @@ public class DisplayDelightItemGroup {
     public static void init() {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ITEM_GROUP_KEY, ITEM_GROUP);
 
-        CreativeModeTabEvents.modifyOutputEvent(ITEM_GROUP_KEY).register(entries -> {
-            entries.accept(DisplayDelightItems.SMALL_EMPTY_PLATE);
-            entries.accept(DisplayDelightItems.EMPTY_PLATE);
+        if (DisplayDelight.CONFIG.creativeTabItems) {
+            CreativeModeTabEvents.modifyOutputEvent(ITEM_GROUP_KEY).register(entries -> {
+                entries.accept(DisplayDelightItems.SMALL_EMPTY_PLATE);
+                entries.accept(DisplayDelightItems.EMPTY_PLATE);
 
-            entries.acceptAll(DisplayDelightItems.BLOCK_ITEMS.stream().map(ItemStack::new).toList());
-        });
+                entries.acceptAll(DisplayDelightItems.BLOCK_ITEMS.stream().map(ItemStack::new).toList());
+            });
+        }
     }
 }

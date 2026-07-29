@@ -1,9 +1,11 @@
 package com.github.cargocats;
 
 import com.github.cargocats.init.*;
+import com.github.cargocats.init.compat.DisplayDelightConfig;
 import com.github.cargocats.init.compat.delights.*;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
@@ -20,6 +22,7 @@ public class DisplayDelight implements ModInitializer {
     public static final String MOD_ID = "displaydelight";
     public static final Logger LOG = LoggerFactory.getLogger(MOD_ID);
     public static final List<String> loadedCompatibility = new ArrayList<>();
+    public static final DisplayDelightConfig CONFIG = DisplayDelightConfig.createToml(FabricLoader.getInstance().getConfigDir(), "", MOD_ID, DisplayDelightConfig.class);
 
     public static final TagKey<Item> DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("displayable"));
     public static final TagKey<Item> PLATE_DISPLAYABLE = TagKey.create(Registries.ITEM, DisplayDelight.id("plate_displayable"));
@@ -63,7 +66,9 @@ public class DisplayDelight implements ModInitializer {
         BrewinAndChewin.init();
         CrabbersDelight.init();
 
-        DisplayDelight.LOG.info("Initialized compatability for {}", String.join(", ", loadedCompatibility));
+        if (!DisplayDelight.CONFIG.disableDebugLog) {
+            DisplayDelight.LOG.info("Initialized compatability for {}", String.join(", ", loadedCompatibility));
+        }
     }
 
     public static Identifier id(String path) {

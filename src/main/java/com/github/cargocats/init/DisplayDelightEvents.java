@@ -15,7 +15,6 @@ import net.minecraft.world.item.Items;
 
 public class DisplayDelightEvents {
     public static void init() {
-
         UseBlockCallback.EVENT.register((playerEntity, world, hand, blockHitResult) -> {
             if (playerEntity.isSpectator()) return InteractionResult.PASS;
             if (world.isClientSide()) {

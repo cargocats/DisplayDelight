@@ -44,7 +44,9 @@ public class DisplayDelightBlocks {
     public static final Block PLATED_PUMPKIN_PIE = createPlatedBlock("vna_plated_pumpkin_pie");
 
     public static void init() {
-        DisplayDelight.LOG.info("Initialized Display Delight Blocks");
+        if (!DisplayDelight.CONFIG.disableDebugLog) {
+            DisplayDelight.LOG.info("Initialized Display Delight Blocks");
+        }
     }
 
     public static Block createFoodBlock(String name, Identifier foodItemId) {
