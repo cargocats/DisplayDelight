@@ -1,7 +1,7 @@
 package com.github.cargocats;
 
 import com.github.cargocats.init.*;
-import com.github.cargocats.init.compat.*;
+import com.github.cargocats.init.integration.delights.*;
 import com.github.cargocats.util.DisplayDelightAssociations;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.core.registries.Registries;
