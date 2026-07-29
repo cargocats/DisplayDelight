@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "displaydelight",
   "version": "${version}",
-  "name": "Display Delight [Fabric]",
+  "name": "Display Delight",
   "description": "Allows to place every food item in Farmer's Delight in 3D",
   "authors": [
     "cargocats"

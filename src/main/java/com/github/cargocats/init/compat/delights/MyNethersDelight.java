@@ -1,4 +1,4 @@
-package com.github.cargocats.init.integration.delights;
+package com.github.cargocats.init.compat.delights;
 
 import com.github.cargocats.DisplayDelight;
 import com.github.cargocats.init.DisplayDelightBlocks;
